@@ -11,5 +11,64 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r cars}
-summary(cars)
+r = 3
+pi*r^2
+sin(pi/4)
+sqrt(2)/2
+exp(2)
+log(2)
+x = c(2,4,6,-1); y =c(4,1,2,2)
+x-y
+x^y
+x*y
+length(x)
+mean(x)
+sd(x)
+var(x)
+z = c("A", "B", "a", "c")
+which(z=="a")
+z = matrix(1:6,2,3, byrow = T); z
+t(z)
+colSums(z)
+rowSums(z)
+rowMeans(z)
+apply(z,1,sum)
+apply(z,2,mean)
+m=cbind(x,y)
+m
+colnames(m)
+m[,"x"]
+dim(m)
+apply(m,2,median)
+rbind(x,y)
+dm=data.frame(x,y);dm
+dm$x; dm[,"x"]
+mean(dm$x);colnames(dm)
+n =100; mu=0;sigma=1
+u=rnorm(n,mean=mu, sd=sigma)
+u
+mean(u)
+sd(u)
+range(u)
+summary(u)
+quantile(u,prob = seq(0,1,by=0.25))
+hist(u, xlab = "Simualted standard normal random numbers", 
+     main = "Histogram",
+prob=T, ylim=c(0,0.5),las =1)
+v=seq(-2.5,2.5,length=100)
+# lines(v,dnorm(v))
+par(mfrow=c(1,2))
+plot(u,v,xlab = "u", ylab = "v", main = "scatter plot", las = 1)
+boxplot(u)
+n=10;p=1/2
+w=rbinom(n,1,prob=p)
+w
+sum(w)
+
+mean(w)
+m=20
+rbinom(1,m,prob=p)
+rbinom(10,m,prob=p)
+
+
 ```
