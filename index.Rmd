@@ -1,6 +1,6 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "NonParametric Stats"
+author: "KW"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
