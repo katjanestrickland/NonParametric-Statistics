@@ -1,5 +1,5 @@
 initial-topic
 second-topic
-third-topic
 this-is-it
 here-it-is
+third-topic
