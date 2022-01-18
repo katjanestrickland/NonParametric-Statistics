@@ -1,6 +1,6 @@
 --- 
 title: "NonParametric Stats"
-author: "KW"
+author: "Katherine Wilson"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
