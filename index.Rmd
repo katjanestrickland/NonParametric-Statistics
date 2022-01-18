@@ -5,5 +5,16 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Initial Topic
+# Hypothesis Testing
+
+
+$$\begin{equation}
+F(x) = P(X\le x) = 1 - P(X>x)
+\end{equation}$$
+
+``` {r}
+dnorm(x=0, mean=0, sd=1)
+dnorm(0,0,2)
+```
+
 
