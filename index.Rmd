@@ -7,6 +7,23 @@ site: bookdown::bookdown_site
 
 # Hypothesis Testing
 
+$$\begin{equation}
+X \sim N(\mu,\sigma^2), f(x) = \frac{1}{\sqrt{2\pi\sigma}}e-\frac{(x-\mu)^2}{2\sigma^2}, F(x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi\sigma}}e\frac{-(t-\mu)^2}{2\sigma^2}dt
+\end{equation}$$
+
+**Normal Distributions**
+
+```{r}
+x <- seq(-5,5, length=1000)
+dist_1 <- dnorm(x, mean=0, sd=1)
+dist_2 <- dnorm(x, mean=0, sd=4)
+dist_3 <- dnorm(x, mean=1, sd=1)
+dist_4 <- dnorm(x, mean=1, sd =4)
+plot(x, dist_1, type="l", lwd=1, col = "black")
+lines(x, dist_2, type = "l", col = "red")
+lines(x, dist_3, type = "l", col = "green")
+lines(x, dist_4, type = "l", col = "blue")
+```
 
 $$\begin{equation}
 F(x) = P(X\le x) = 1 - P(X>x)
