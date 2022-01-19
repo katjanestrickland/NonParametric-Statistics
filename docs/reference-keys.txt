@@ -6,3 +6,11 @@ third-topic
 hypothesis-testing
 test-text
 test-page
+third-topic-1
+third-topic-2
+wilcoxon-rank-sum
+signed-rank-test
+third-topic-3
+smoothing-methods
+two-sample-tests
+kruskal-wallis

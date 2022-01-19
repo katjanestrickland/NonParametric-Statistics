@@ -112,15 +112,71 @@ xbar=mean(x)
 sdx=sd(x)
 ```
 
+
+
+
 **One sided H_0**
 
 $$\begin{equation}
 H_0 : \mu = \mu_0 vs. H_1: \mu > Mu_0\\
-T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim t distribution with n-1 degrees of freedom \\
-Reject H_0 if t > t_{n-1,1-\alpha} \\
-Type I error: \alpha = P_{\mu_o}(T>t_{n-1,1-\alpha}) \\
-Acceptance region: T \le t_{n-1,1-\alpha}\\
+T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim \text{t distribution with n-1 degrees of freedom} \\
+\text{Reject null if t} > t_{n-1,1-\alpha} \\
+\text{Type I error}: \alpha = P_{\mu_o}(T>t_{n-1,1-\alpha}) \\
+\text{Acceptance region} : T \le t_{n-1,1-\alpha}\\
 1- \alpha = P_{\mu_0}(\frac{\sqrt{n}(\bar{X}-\mu_0)}{\hat\sigma}) \le t_{n-1,1-\alpha}\\
 = P_{\mu_0}(\bar{X} - t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}} \le \mu_0)
 \end{equation}$$
+
+Below, the critical values for alpha of 0.05 is 1.699. Given a sample mean of 1, and our critical test statistic of -6.07, probability in the lower tail is 0.99, so fail to accept the alternative that the true mean is greater than 1.
+```{r}
+alpha = 0.05
+tq = qt(1-alpha, n-1)
+c(qt(1-alpha, n-1), qt(alpha,n-1, lower.tail = F))
+mu0=1
+tstat=sqrt(n)*(xbar-mu0)/sdx;c(tstat,tq,pt(tstat,n-1,lower.tail=F))
+xbar-tq*sdx/sqrt(n)
+t.test(x,alternative="greater",mu=mu0)
+
+```
+Testing against sample mean of -1, then the tstat is 5.45, and probability in lower tail is <.05, so accept the alternative that true mean is greater than -1.
+```{r}
+mu0=-1; tstat=sqrt(n)*(xbar-mu0)/sdx
+c(tstat,tq,pt(tstat,n-1, lower.tail=F))
+xbar-tq*sdx/sqrt(n)
+t.test(x,alternative="greater",mu=mu0)
+
+```
+
+
+
+
+
+**Power**
+
+$$\begin{equation}
+\text{Reject null if }\bar{X} > \mu_0 + t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}}\\
+\text{Type II error: do not reject null when it is false} \\
+\beta = P_{H_1}\text{do not reject null}\\
+\text{Power: the probability of rejecting null when alt is true}\\
+1-\beta = P_{\mu}(\bar{X} > \mu_0 + t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}}) \\
+= P_{\mu}(\frac{\sqrt{n}(X-\mu)}{\hat\sigma} > \frac{\sqrt{n}(\mu_0 -\mu)}{\hat\sigma} + t_{n-1,1-\alpha}
+\end{equation}$$
+
+
+```{r}
+alpha = 0.05
+tq = qt(1-alpha, n-1)
+mu0=1
+mu=1.5
+tv = sqrt(n)*(mu0-mu)/sdx+tq
+pt(tv,n-1,lower.tail=F)
+power.t.test(n,delta = abs(mu0-mu), sd=sdx,
+             type = c("one.sample"), alternative = "one.sided")
+
+```
+
+
+
+
+
 
