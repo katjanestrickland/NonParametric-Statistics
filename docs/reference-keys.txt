@@ -14,3 +14,4 @@ third-topic-3
 smoothing-methods
 two-sample-tests
 kruskal-wallis
+power

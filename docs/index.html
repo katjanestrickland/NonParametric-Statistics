@@ -137,7 +137,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">TestPage</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#power"><i class="fa fa-check"></i><b>1.0.1</b> Power</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html"><i class="fa fa-check"></i><b>2</b> Wilcoxon rank sum</a>
 <ul>
 <li class="chapter" data-level="2.0.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-page"><i class="fa fa-check"></i><b>2.0.1</b> test page</a></li>
@@ -182,39 +185,19 @@ X \sim N(\mu,\sigma^2), f(x) = \frac{1}{\sqrt{2\pi\sigma}}e-\frac{(x-\mu)^2}{2\s
 <span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a>lx<span class="ot">=</span><span class="dv">100</span></span>
 <span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="at">length=</span>lx)</span>
 <span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true" tabindex="-1"></a>fx <span class="ot">=</span> <span class="fu">dnorm</span>(x,a,b)</span>
-<span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true" tabindex="-1"></a>fx</span></code></pre></div>
-<pre><code>##   [1] 0.0001338302 0.0001842953 0.0002521381 0.0003427099 0.0004627846
-##   [6] 0.0006208623 0.0008275148 0.0010957722 0.0014415473 0.0018840898
-##  [11] 0.0024464615 0.0031560163 0.0040448664 0.0051503080 0.0065151783
-##  [16] 0.0081881065 0.0102236211 0.0126820683 0.0156292995 0.0191360817
-##  [21] 0.0232771927 0.0281301641 0.0337736510 0.0402854146 0.0477399263
-##  [26] 0.0562056185 0.0657418315 0.0763955298 0.0881978860 0.1011608535
-##  [31] 0.1152738702 0.1305008512 0.1467776382 0.1640100747 0.1820728700
-##  [36] 0.2008093962 0.2200325354 0.2395266587 0.2590507715 0.2783428081
-##  [41] 0.2971250031 0.3151102096 0.3320089800 0.3475371752 0.3614238299
-##  [46] 0.3734189738 0.3833010942 0.3908839312 0.3960223134 0.3986167793
-##  [51] 0.3986167793 0.3960223134 0.3908839312 0.3833010942 0.3734189738
-##  [56] 0.3614238299 0.3475371752 0.3320089800 0.3151102096 0.2971250031
-##  [61] 0.2783428081 0.2590507715 0.2395266587 0.2200325354 0.2008093962
-##  [66] 0.1820728700 0.1640100747 0.1467776382 0.1305008512 0.1152738702
-##  [71] 0.1011608535 0.0881978860 0.0763955298 0.0657418315 0.0562056185
-##  [76] 0.0477399263 0.0402854146 0.0337736510 0.0281301641 0.0232771927
-##  [81] 0.0191360817 0.0156292995 0.0126820683 0.0102236211 0.0081881065
-##  [86] 0.0065151783 0.0051503080 0.0040448664 0.0031560163 0.0024464615
-##  [91] 0.0018840898 0.0014415473 0.0010957722 0.0008275148 0.0006208623
-##  [96] 0.0004627846 0.0003427099 0.0002521381 0.0001842953 0.0001338302</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a>bx <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a>dbx<span class="ot">=</span><span class="fu">dnorm</span>(bx,a,b)</span>
-<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a>dbx</span></code></pre></div>
+<span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true" tabindex="-1"></a>bx <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb1-8"><a href="index.html#cb1-8" aria-hidden="true" tabindex="-1"></a>dbx<span class="ot">=</span><span class="fu">dnorm</span>(bx,a,b)</span>
+<span id="cb1-9"><a href="index.html#cb1-9" aria-hidden="true" tabindex="-1"></a>dbx</span></code></pre></div>
 <pre><code>## [1] 0.2419707</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,fx, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x)&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Normal density functions&quot;</span>,</span>
-<span id="cb5-2"><a href="index.html#cb5-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">las=</span> <span class="dv">1</span>)</span>
-<span id="cb5-3"><a href="index.html#cb5-3" aria-hidden="true" tabindex="-1"></a>dist_2 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">4</span>)</span>
-<span id="cb5-4"><a href="index.html#cb5-4" aria-hidden="true" tabindex="-1"></a>dist_3 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean=</span><span class="dv">1</span>, <span class="at">sd=</span><span class="dv">1</span>)</span>
-<span id="cb5-5"><a href="index.html#cb5-5" aria-hidden="true" tabindex="-1"></a>dist_4 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean=</span><span class="dv">1</span>, <span class="at">sd =</span><span class="dv">4</span>)</span>
-<span id="cb5-6"><a href="index.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, dist_2, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb5-7"><a href="index.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, dist_3, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
-<span id="cb5-8"><a href="index.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, dist_4, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,fx, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;f(x)&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Normal density functions&quot;</span>,</span>
+<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">las=</span> <span class="dv">1</span>)</span>
+<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a>dist_2 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">4</span>)</span>
+<span id="cb3-4"><a href="index.html#cb3-4" aria-hidden="true" tabindex="-1"></a>dist_3 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean=</span><span class="dv">1</span>, <span class="at">sd=</span><span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="index.html#cb3-5" aria-hidden="true" tabindex="-1"></a>dist_4 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean=</span><span class="dv">1</span>, <span class="at">sd =</span><span class="dv">4</span>)</span>
+<span id="cb3-6"><a href="index.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, dist_2, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb3-7"><a href="index.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, dist_3, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb3-8"><a href="index.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, dist_4, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p><span class="math display">\[\begin{equation}
 F(x) = P(X\le x) = 1 - P(X&gt;x)
@@ -231,28 +214,28 @@ pnorm(0,0,2)
 pnorm(0,1,1)
 pnorm(0,1,2)
 </code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" aria-hidden="true" tabindex="-1"></a>a<span class="ot">=</span><span class="dv">0</span></span>
-<span id="cb7-2"><a href="index.html#cb7-2" aria-hidden="true" tabindex="-1"></a>b<span class="ot">=</span><span class="dv">1</span></span>
-<span id="cb7-3"><a href="index.html#cb7-3" aria-hidden="true" tabindex="-1"></a>lx<span class="ot">=</span><span class="dv">100</span></span>
-<span id="cb7-4"><a href="index.html#cb7-4" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="at">length=</span>lx)</span>
-<span id="cb7-5"><a href="index.html#cb7-5" aria-hidden="true" tabindex="-1"></a>fx<span class="ot">=</span><span class="fu">dnorm</span>(x,a,b)</span>
-<span id="cb7-6"><a href="index.html#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="index.html#cb7-7" aria-hidden="true" tabindex="-1"></a>bx<span class="ot">=</span><span class="dv">1</span></span>
-<span id="cb7-8"><a href="index.html#cb7-8" aria-hidden="true" tabindex="-1"></a>dbx<span class="ot">=</span><span class="fu">dnorm</span>(bx,a,b)</span>
-<span id="cb7-9"><a href="index.html#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="index.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,fx,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>,<span class="at">main=</span><span class="st">&quot;N(0,1)&quot;</span>,<span class="at">las=</span><span class="dv">1</span>,<span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
-<span id="cb7-11"><a href="index.html#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(bx,<span class="dv">0</span>,bx,dbx,<span class="at">lty=</span><span class="dv">3</span>)</span>
-<span id="cb7-12"><a href="index.html#cb7-12" aria-hidden="true" tabindex="-1"></a>sx<span class="ot">=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,bx,<span class="at">length=</span>lx)</span>
-<span id="cb7-13"><a href="index.html#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(sx,<span class="fu">rev</span>(sx)),<span class="fu">c</span>(<span class="fu">dnorm</span>(sx,a,b),<span class="fu">rep</span>(<span class="dv">0</span>,lx)),<span class="at">density=</span><span class="dv">2</span>,<span class="at">border=</span><span class="cn">NA</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
-<span id="cb7-14"><a href="index.html#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="index.html#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="fl">0.1</span>,<span class="fu">expression</span>(<span class="fu">P</span>(X<span class="sc">&lt;=</span>z[<span class="dv">1</span><span class="sc">-</span>alpha])<span class="sc">==</span><span class="dv">1</span><span class="sc">-</span>alpha))</span>
-<span id="cb7-16"><a href="index.html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
-<span id="cb7-17"><a href="index.html#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>,<span class="at">at=</span>bx,<span class="at">label=</span><span class="fu">expression</span>(z[<span class="dv">1</span><span class="sc">-</span>alpha]))</span>
-<span id="cb7-18"><a href="index.html#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="index.html#cb7-19" aria-hidden="true" tabindex="-1"></a>sx<span class="ot">=</span><span class="fu">seq</span>(bx,<span class="dv">4</span>,<span class="at">length=</span>lx)</span>
-<span id="cb7-20"><a href="index.html#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(sx,<span class="fu">rev</span>(sx)),<span class="fu">c</span>(<span class="fu">dnorm</span>(sx,a,b),<span class="fu">rep</span>(<span class="dv">0</span>,lx)),<span class="at">density=</span><span class="dv">3</span>,<span class="at">border=</span><span class="cn">NA</span>,</span>
-<span id="cb7-21"><a href="index.html#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="at">angle=</span><span class="sc">-</span><span class="dv">45</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
-<span id="cb7-22"><a href="index.html#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">2.5</span>,<span class="fl">0.1</span>,<span class="fu">expression</span>(<span class="fu">P</span>(X<span class="sc">&gt;</span>z[<span class="dv">1</span><span class="sc">-</span>alpha])<span class="sc">==</span>alpha))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" aria-hidden="true" tabindex="-1"></a>a<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb5-2"><a href="index.html#cb5-2" aria-hidden="true" tabindex="-1"></a>b<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb5-3"><a href="index.html#cb5-3" aria-hidden="true" tabindex="-1"></a>lx<span class="ot">=</span><span class="dv">100</span></span>
+<span id="cb5-4"><a href="index.html#cb5-4" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="at">length=</span>lx)</span>
+<span id="cb5-5"><a href="index.html#cb5-5" aria-hidden="true" tabindex="-1"></a>fx<span class="ot">=</span><span class="fu">dnorm</span>(x,a,b)</span>
+<span id="cb5-6"><a href="index.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="index.html#cb5-7" aria-hidden="true" tabindex="-1"></a>bx<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb5-8"><a href="index.html#cb5-8" aria-hidden="true" tabindex="-1"></a>dbx<span class="ot">=</span><span class="fu">dnorm</span>(bx,a,b)</span>
+<span id="cb5-9"><a href="index.html#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="index.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,fx,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>,<span class="at">main=</span><span class="st">&quot;N(0,1)&quot;</span>,<span class="at">las=</span><span class="dv">1</span>,<span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb5-11"><a href="index.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(bx,<span class="dv">0</span>,bx,dbx,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb5-12"><a href="index.html#cb5-12" aria-hidden="true" tabindex="-1"></a>sx<span class="ot">=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,bx,<span class="at">length=</span>lx)</span>
+<span id="cb5-13"><a href="index.html#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(sx,<span class="fu">rev</span>(sx)),<span class="fu">c</span>(<span class="fu">dnorm</span>(sx,a,b),<span class="fu">rep</span>(<span class="dv">0</span>,lx)),<span class="at">density=</span><span class="dv">2</span>,<span class="at">border=</span><span class="cn">NA</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb5-14"><a href="index.html#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="index.html#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="fl">0.1</span>,<span class="fu">expression</span>(<span class="fu">P</span>(X<span class="sc">&lt;=</span>z[<span class="dv">1</span><span class="sc">-</span>alpha])<span class="sc">==</span><span class="dv">1</span><span class="sc">-</span>alpha))</span>
+<span id="cb5-16"><a href="index.html#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb5-17"><a href="index.html#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>,<span class="at">at=</span>bx,<span class="at">label=</span><span class="fu">expression</span>(z[<span class="dv">1</span><span class="sc">-</span>alpha]))</span>
+<span id="cb5-18"><a href="index.html#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="index.html#cb5-19" aria-hidden="true" tabindex="-1"></a>sx<span class="ot">=</span><span class="fu">seq</span>(bx,<span class="dv">4</span>,<span class="at">length=</span>lx)</span>
+<span id="cb5-20"><a href="index.html#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(sx,<span class="fu">rev</span>(sx)),<span class="fu">c</span>(<span class="fu">dnorm</span>(sx,a,b),<span class="fu">rep</span>(<span class="dv">0</span>,lx)),<span class="at">density=</span><span class="dv">3</span>,<span class="at">border=</span><span class="cn">NA</span>,</span>
+<span id="cb5-21"><a href="index.html#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="at">angle=</span><span class="sc">-</span><span class="dv">45</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb5-22"><a href="index.html#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">2.5</span>,<span class="fl">0.1</span>,<span class="fu">expression</span>(<span class="fu">P</span>(X<span class="sc">&gt;</span>z[<span class="dv">1</span><span class="sc">-</span>alpha])<span class="sc">==</span>alpha))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p><strong>Power</strong></p>
 <p>Probability of rejecting <span class="math inline">\(H_0\)</span> when it is true is type I error (falsely reject), aka significance of the test aka <span class="math inline">\(\alpha\)</span>. Probability of not reject H_0 when it is false is a type II error, <span class="math inline">\(\beta\)</span>. Power of test is <span class="math inline">\(1-\beta\)</span>.</p>
@@ -263,16 +246,16 @@ pnorm(0,1,2)
 <p><span class="math display">\[\begin{equation}
 N(\mu, \sigma^2),binomial(n,p)
 \end{equation}\]</span></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span></span>
-<span id="cb8-2"><a href="index.html#cb8-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
-<span id="cb8-3"><a href="index.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(x)</span></code></pre></div>
-<pre><code>##  [1] -2.25340029 -2.20239154 -1.45281804 -1.30620453 -1.20858266 -1.14183048
-##  [7] -1.10232254 -1.05843893 -1.05544744 -0.99952698 -0.78925414 -0.46099935
-## [13] -0.43481601 -0.38231750 -0.37322107 -0.25838970 -0.12085997 -0.03905129
-## [19]  0.11258261  0.23559285  0.30798861  0.31111783  0.43236571  0.48475379
-## [25]  0.54605964  0.68644345  0.77180498  0.95801685  1.47873812  2.56004969</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="ot">=</span><span class="fu">mean</span>(x)</span>
-<span id="cb10-2"><a href="index.html#cb10-2" aria-hidden="true" tabindex="-1"></a>sdx<span class="ot">=</span><span class="fu">sd</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span></span>
+<span id="cb6-2"><a href="index.html#cb6-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
+<span id="cb6-3"><a href="index.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(x)</span></code></pre></div>
+<pre><code>##  [1] -2.51015837 -1.24649283 -1.20716096 -1.03415010 -0.84766943 -0.80072051
+##  [7] -0.60440065 -0.51095971 -0.47043351 -0.25527351 -0.21983188 -0.21400820
+## [13] -0.18856114 -0.18412240 -0.18174739  0.02340623  0.05257698  0.05565014
+## [19]  0.07084479  0.25880629  0.40780288  0.49474301  0.49916373  0.52306891
+## [25]  0.56389432  0.75675371  0.90002290  0.98592229  1.29774790  1.43946992</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="ot">=</span><span class="fu">mean</span>(x)</span>
+<span id="cb8-2"><a href="index.html#cb8-2" aria-hidden="true" tabindex="-1"></a>sdx<span class="ot">=</span><span class="fu">sd</span>(x)</span></code></pre></div>
 <p><strong>One sided H_0</strong></p>
 <p><span class="math display">\[\begin{equation}
 H_0 : \mu = \mu_0 vs. H_1: \mu &gt; Mu_0\\
@@ -284,45 +267,45 @@ T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim \text{t distribution with n-1 degrees of 
 = P_{\mu_0}(\bar{X} - t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}} \le \mu_0)
 \end{equation}\]</span></p>
 <p>Below, the critical values for alpha of 0.05 is 1.699. Given a sample mean of 1, and our critical test statistic of -6.07, probability in the lower tail is 0.99, so fail to accept the alternative that the true mean is greater than 1.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">0.05</span></span>
-<span id="cb11-2"><a href="index.html#cb11-2" aria-hidden="true" tabindex="-1"></a>tq <span class="ot">=</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha, n<span class="dv">-1</span>)</span>
-<span id="cb11-3"><a href="index.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha, n<span class="dv">-1</span>), <span class="fu">qt</span>(alpha,n<span class="dv">-1</span>, <span class="at">lower.tail =</span> F))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">0.05</span></span>
+<span id="cb9-2"><a href="index.html#cb9-2" aria-hidden="true" tabindex="-1"></a>tq <span class="ot">=</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha, n<span class="dv">-1</span>)</span>
+<span id="cb9-3"><a href="index.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha, n<span class="dv">-1</span>), <span class="fu">qt</span>(alpha,n<span class="dv">-1</span>, <span class="at">lower.tail =</span> F))</span></code></pre></div>
 <pre><code>## [1] 1.699127 1.699127</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">1</span></span>
-<span id="cb13-2"><a href="index.html#cb13-2" aria-hidden="true" tabindex="-1"></a>tstat<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx;<span class="fu">c</span>(tstat,tq,<span class="fu">pt</span>(tstat,n<span class="dv">-1</span>,<span class="at">lower.tail=</span>F))</span></code></pre></div>
-<pre><code>## [1] -6.5566142  1.6991270  0.9999998</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">-</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
-<pre><code>## [1] -0.5846096</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">alternative=</span><span class="st">&quot;greater&quot;</span>,<span class="at">mu=</span>mu0)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb11-2"><a href="index.html#cb11-2" aria-hidden="true" tabindex="-1"></a>tstat<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx;<span class="fu">c</span>(tstat,tq,<span class="fu">pt</span>(tstat,n<span class="dv">-1</span>,<span class="at">lower.tail=</span>F))</span></code></pre></div>
+<pre><code>## [1] -7.042911  1.699127  1.000000</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">-</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
+<pre><code>## [1] -0.3300369</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">alternative=</span><span class="st">&quot;greater&quot;</span>,<span class="at">mu=</span>mu0)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
 ## data:  x
-## t = -6.5566, df = 29, p-value = 1
+## t = -7.0429, df = 29, p-value = 1
 ## alternative hypothesis: true mean is greater than 1
 ## 95 percent confidence interval:
-##  -0.5846096        Inf
+##  -0.3300369        Inf
 ## sample estimates:
-##  mean of x 
-## -0.2584786</code></pre>
+##   mean of x 
+## -0.07152722</code></pre>
 <p>Testing against sample mean of -1, then the tstat is 5.45, and probability in lower tail is &lt;.05, so accept the alternative that true mean is greater than -1.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="sc">-</span><span class="dv">1</span>; tstat<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx</span>
-<span id="cb19-2"><a href="index.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(tstat,tq,<span class="fu">pt</span>(tstat,n<span class="dv">-1</span>, <span class="at">lower.tail=</span>F))</span></code></pre></div>
-<pre><code>## [1] 3.8632914743 1.6991270265 0.0002895716</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">-</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
-<pre><code>## [1] -0.5846096</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="index.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">alternative=</span><span class="st">&quot;greater&quot;</span>,<span class="at">mu=</span>mu0)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="sc">-</span><span class="dv">1</span>; tstat<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx</span>
+<span id="cb17-2"><a href="index.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(tstat,tq,<span class="fu">pt</span>(tstat,n<span class="dv">-1</span>, <span class="at">lower.tail=</span>F))</span></code></pre></div>
+<pre><code>## [1] 6.102646e+00 1.699127e+00 6.011637e-07</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">-</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
+<pre><code>## [1] -0.3300369</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">alternative=</span><span class="st">&quot;greater&quot;</span>,<span class="at">mu=</span>mu0)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
 ## data:  x
-## t = 3.8633, df = 29, p-value = 0.0002896
+## t = 6.1026, df = 29, p-value = 6.012e-07
 ## alternative hypothesis: true mean is greater than -1
 ## 95 percent confidence interval:
-##  -0.5846096        Inf
+##  -0.3300369        Inf
 ## sample estimates:
-##  mean of x 
-## -0.2584786</code></pre>
+##   mean of x 
+## -0.07152722</code></pre>
 <p><strong>Power</strong></p>
 <p><span class="math display">\[\begin{equation}
 \text{Reject null if }\bar{X} &gt; \mu_0 + t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}}\\
@@ -332,25 +315,94 @@ T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim \text{t distribution with n-1 degrees of 
 1-\beta = P_{\mu}(\bar{X} &gt; \mu_0 + t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}}) \\
 = P_{\mu}(\frac{\sqrt{n}(X-\mu)}{\hat\sigma} &gt; \frac{\sqrt{n}(\mu_0 -\mu)}{\hat\sigma} + t_{n-1,1-\alpha}
 \end{equation}\]</span></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="index.html#cb25-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">0.05</span></span>
-<span id="cb25-2"><a href="index.html#cb25-2" aria-hidden="true" tabindex="-1"></a>tq <span class="ot">=</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha, n<span class="dv">-1</span>)</span>
-<span id="cb25-3"><a href="index.html#cb25-3" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">1</span></span>
-<span id="cb25-4"><a href="index.html#cb25-4" aria-hidden="true" tabindex="-1"></a>mu<span class="ot">=</span><span class="fl">1.5</span></span>
-<span id="cb25-5"><a href="index.html#cb25-5" aria-hidden="true" tabindex="-1"></a>tv <span class="ot">=</span> <span class="fu">sqrt</span>(n)<span class="sc">*</span>(mu0<span class="sc">-</span>mu)<span class="sc">/</span>sdx<span class="sc">+</span>tq</span>
-<span id="cb25-6"><a href="index.html#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(tv,n<span class="dv">-1</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
-<pre><code>## [1] 0.8137597</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(n,<span class="at">delta =</span> <span class="fu">abs</span>(mu0<span class="sc">-</span>mu), <span class="at">sd=</span>sdx,</span>
-<span id="cb27-2"><a href="index.html#cb27-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;one.sample&quot;</span>), <span class="at">alternative =</span> <span class="st">&quot;one.sided&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="index.html#cb23-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">0.05</span></span>
+<span id="cb23-2"><a href="index.html#cb23-2" aria-hidden="true" tabindex="-1"></a>tq <span class="ot">=</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha, n<span class="dv">-1</span>)</span>
+<span id="cb23-3"><a href="index.html#cb23-3" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb23-4"><a href="index.html#cb23-4" aria-hidden="true" tabindex="-1"></a>mu<span class="ot">=</span><span class="fl">1.5</span></span>
+<span id="cb23-5"><a href="index.html#cb23-5" aria-hidden="true" tabindex="-1"></a>tv <span class="ot">=</span> <span class="fu">sqrt</span>(n)<span class="sc">*</span>(mu0<span class="sc">-</span>mu)<span class="sc">/</span>sdx<span class="sc">+</span>tq</span>
+<span id="cb23-6"><a href="index.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(tv,n<span class="dv">-1</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
+<pre><code>## [1] 0.9383509</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="index.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(n,<span class="at">delta =</span> <span class="fu">abs</span>(mu0<span class="sc">-</span>mu), <span class="at">sd=</span>sdx,</span>
+<span id="cb25-2"><a href="index.html#cb25-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;one.sample&quot;</span>), <span class="at">alternative =</span> <span class="st">&quot;one.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##      One-sample t test power calculation 
 ## 
 ##               n = 30
 ##           delta = 0.5
-##              sd = 1.0513
+##              sd = 0.8333197
 ##       sig.level = 0.05
-##           power = 0.8155605
+##           power = 0.9410209
 ##     alternative = one.sided</code></pre>
+<p><span class="math display">\[\begin{equation}
+t_{n-1,\beta} = \frac{\sqrt{n}(\mu_0 - \mu)}{\hat\sigma} + t_{n-1,1-\alpha}
+n = [\frac{\hat\sigma(t_{n-1,\beta}-t_{n-1,1-\alpha})}{\mu_0-\mu}]^2
+\end{equation}\]</span></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">=</span><span class="fl">0.1</span></span>
+<span id="cb27-2"><a href="index.html#cb27-2" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">=</span> <span class="fu">qt</span>(beta, n<span class="dv">-1</span>)</span>
+<span id="cb27-3"><a href="index.html#cb27-3" aria-hidden="true" tabindex="-1"></a>(sdx<span class="sc">*</span>(tb<span class="sc">-</span>tq)<span class="sc">/</span>(mu0<span class="sc">-</span>mu))<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 25.1755</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">power=</span> <span class="fl">0.9</span>, <span class="at">delta =</span> <span class="fu">abs</span>(mu0<span class="sc">-</span>mu), <span class="at">sd =</span> sdx,</span>
+<span id="cb29-2"><a href="index.html#cb29-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;one.sample&quot;</span>), <span class="at">alternative =</span> <span class="st">&quot;one.sided&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##      One-sample t test power calculation 
+## 
+##               n = 25.2039
+##           delta = 0.5
+##              sd = 0.8333197
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = one.sided</code></pre>
+<p><strong>Two sided H1</strong></p>
+<p><span class="math display">\[\begin{equation}
+H_0 : \mu = \mu_0 vs. H_1: \mu &gt; Mu_0\\
+\text{Reject null if |T|} &gt; t_{n-1,1-\frac{\alpha}{2}} \\
+\text{Acceptance region} : \frac{\sqrt{n}\mid{\bar{X} - \mu_0}\mid}{\hat\sigma} \le t_{n-1,1-\frac{\alpha}{2}}\\
+1- \alpha = P_{\mu_0}(\frac{\sqrt{n}(\bar{X}-\mu_0)}{\hat\sigma}) \le t_{n-1,1-\frac{\alpha}{2}}\\
+= P_{\mu_0}(\bar{X} - t_{n-1,1-\frac{\alpha}{2}}\frac{\hat\sigma}{\sqrt{n}} \le \mu_0 \le \bar{X} + t_{n-1,1-\frac{\alpha}{2}}\frac{\hat\sigma}{\sqrt{n}}) \\
+\text{Length of CI} : 2t_{n-1,1-\frac{\alpha}{2}}\frac{\hat\sigma}{\sqrt{n}}
+\end{equation}\]</span></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="index.html#cb31-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">0.05</span></span>
+<span id="cb31-2"><a href="index.html#cb31-2" aria-hidden="true" tabindex="-1"></a>tq <span class="ot">=</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>, n<span class="dv">-1</span>)</span>
+<span id="cb31-3"><a href="index.html#cb31-3" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb31-4"><a href="index.html#cb31-4" aria-hidden="true" tabindex="-1"></a>tstat <span class="ot">=</span> <span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx</span>
+<span id="cb31-5"><a href="index.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(tstat, tq,<span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="fu">abs</span>(tstat),n<span class="dv">-1</span>, <span class="at">lower.tail =</span>F))</span></code></pre></div>
+<pre><code>## [1] -0.4701325  2.0452296  0.6417768</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="index.html#cb33-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
+<pre><code>## [1] -0.3826939  0.2396395</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="index.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">mu=</span>mu0)</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  x
+## t = -0.47013, df = 29, p-value = 0.6418
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -0.3826939  0.2396395
+## sample estimates:
+##   mean of x 
+## -0.07152722</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="index.html#cb37-1" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb37-2"><a href="index.html#cb37-2" aria-hidden="true" tabindex="-1"></a>tstat<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx</span>
+<span id="cb37-3"><a href="index.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(tstat,tq,<span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="fu">abs</span>(tstat),n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F))</span></code></pre></div>
+<pre><code>## [1] -7.042911e+00  2.045230e+00  9.550847e-08</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="index.html#cb39-1" aria-hidden="true" tabindex="-1"></a>xbar <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
+<pre><code>## [1] -0.3826939  0.2396395</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="index.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">mu=</span>mu0)</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  x
+## t = -7.0429, df = 29, p-value = 9.551e-08
+## alternative hypothesis: true mean is not equal to 1
+## 95 percent confidence interval:
+##  -0.3826939  0.2396395
+## sample estimates:
+##   mean of x 
+## -0.07152722</code></pre>
+<div id="power" class="section level3" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> Power</h3>
 
+</div>
 </div>
             </section>
 

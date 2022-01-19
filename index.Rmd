@@ -19,7 +19,6 @@ b=1
 lx=100
 x=seq(-4,4,length=lx)
 fx = dnorm(x,a,b)
-fx
 
 bx = 1
 dbx=dnorm(bx,a,b)
@@ -175,8 +174,50 @@ power.t.test(n,delta = abs(mu0-mu), sd=sdx,
 
 ```
 
+$$\begin{equation}
+t_{n-1,\beta} = \frac{\sqrt{n}(\mu_0 - \mu)}{\hat\sigma} + t_{n-1,1-\alpha}
+n = [\frac{\hat\sigma(t_{n-1,\beta}-t_{n-1,1-\alpha})}{\mu_0-\mu}]^2
+\end{equation}$$
+
+
+```{r}
+beta =0.1
+tb = qt(beta, n-1)
+(sdx*(tb-tq)/(mu0-mu))^2
+power.t.test(power= 0.9, delta = abs(mu0-mu), sd = sdx,
+             type = c("one.sample"), alternative = "one.sided")
+```
+
+**Two sided H1**
 
 
 
+$$\begin{equation}
+H_0 : \mu = \mu_0 vs. H_1: \mu > Mu_0\\
+\text{Reject null if |T|} > t_{n-1,1-\frac{\alpha}{2}} \\
+\text{Acceptance region} : \frac{\sqrt{n}\mid{\bar{X} - \mu_0}\mid}{\hat\sigma} \le t_{n-1,1-\frac{\alpha}{2}}\\
+1- \alpha = P_{\mu_0}(\frac{\sqrt{n}(\bar{X}-\mu_0)}{\hat\sigma}) \le t_{n-1,1-\frac{\alpha}{2}}\\
+= P_{\mu_0}(\bar{X} - t_{n-1,1-\frac{\alpha}{2}}\frac{\hat\sigma}{\sqrt{n}} \le \mu_0 \le \bar{X} + t_{n-1,1-\frac{\alpha}{2}}\frac{\hat\sigma}{\sqrt{n}}) \\
+\text{Length of CI} : 2t_{n-1,1-\frac{\alpha}{2}}\frac{\hat\sigma}{\sqrt{n}}
+\end{equation}$$
 
+
+```{r}
+alpha = 0.05
+tq = qt(1-alpha/2, n-1)
+mu0=0
+tstat = sqrt(n)*(xbar-mu0)/sdx
+c(tstat, tq,2*pt(abs(tstat),n-1, lower.tail =F))
+xbar+c(-1,1)*tq*sdx/sqrt(n)
+t.test(x,mu=mu0)
+
+mu0=1
+tstat=sqrt(n)*(xbar-mu0)/sdx
+c(tstat,tq,2*pt(abs(tstat),n-1,lower.tail = F))
+xbar + c(-1,1)*tq*sdx/sqrt(n)
+t.test(x,mu=mu0)
+
+```
+
+### Power
 
