@@ -14,24 +14,113 @@ X \sim N(\mu,\sigma^2), f(x) = \frac{1}{\sqrt{2\pi\sigma}}e-\frac{(x-\mu)^2}{2\s
 **Normal Distributions**
 
 ```{r}
-x <- seq(-5,5, length=1000)
-dist_1 <- dnorm(x, mean=0, sd=1)
+a =0
+b=1
+lx=100
+x=seq(-4,4,length=lx)
+fx = dnorm(x,a,b)
+fx
+
+bx = 1
+dbx=dnorm(bx,a,b)
+dbx
+
+plot(x,fx, type = "l", xlab = "x", ylab = "f(x)", main = "Normal density functions",
+     las= 1)
 dist_2 <- dnorm(x, mean=0, sd=4)
 dist_3 <- dnorm(x, mean=1, sd=1)
 dist_4 <- dnorm(x, mean=1, sd =4)
-plot(x, dist_1, type="l", lwd=1, col = "black")
 lines(x, dist_2, type = "l", col = "red")
 lines(x, dist_3, type = "l", col = "green")
 lines(x, dist_4, type = "l", col = "blue")
 ```
 
+
+
+
 $$\begin{equation}
 F(x) = P(X\le x) = 1 - P(X>x)
 \end{equation}$$
 
-``` {r}
+when lower.tail == TRUE, probabiltiies are p[X<x]
+
+```{undefined eval=FALSE, include=TRUE}
+## density under the curve
 dnorm(x=0, mean=0, sd=1)
 dnorm(0,0,2)
+dnorm(0,1,1)
+dnorm(0,1,2)
+## probability
+pnorm(0,0,1)
+pnorm(0,0,2)
+pnorm(0,1,1)
+pnorm(0,1,2)
+
 ```
 
+
+
+```{r}
+a=0
+b=1
+lx=100
+x=seq(-4,4,length=lx)
+fx=dnorm(x,a,b)
+
+bx=1
+dbx=dnorm(bx,a,b)
+
+plot(x,fx,type="l",lwd=2,xlab="x",ylab="Density",main="N(0,1)",las=1,xaxt="n")
+segments(bx,0,bx,dbx,lty=3)
+sx=seq(-4,bx,length=lx)
+polygon(c(sx,rev(sx)),c(dnorm(sx,a,b),rep(0,lx)),density=2,border=NA,lty=3)
+
+text(-0.5,0.1,expression(P(X<=z[1-alpha])==1-alpha))
+abline(h=0,lty=3)
+axis(1,at=bx,label=expression(z[1-alpha]))
+
+sx=seq(bx,4,length=lx)
+polygon(c(sx,rev(sx)),c(dnorm(sx,a,b),rep(0,lx)),density=3,border=NA,
+angle=-45,lty=3)
+text(2.5,0.1,expression(P(X>z[1-alpha])==alpha))
+
+```
+
+
+**Power**
+
+Probability of rejecting $H_0$ when it is true is type I error (falsely reject), aka significance of the test aka $\alpha$. Probability of not reject H_0 when it is false is a type II error, $\beta$. Power of test is $1-\beta$.
+
+**Confidence Intervals**
+
+Confidence set with a confidence coefficient of $1-\alpha$ is the set.
+
+
+**Parametric Methods**
+
+Parametric distributions qith populations
+
+$$\begin{equation}
+N(\mu, \sigma^2),binomial(n,p)
+\end{equation}$$
+
+```{r}
+n=30
+x=rnorm(n,mean=0,sd=1)
+sort(x)
+xbar=mean(x)
+sdx=sd(x)
+```
+
+**One sided H_0**
+
+$$\begin{equation}
+H_0 : \mu = \mu_0 vs. H_1: \mu > Mu_0\\
+T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim t distribution with n-1 degrees of freedom \\
+Reject H_0 if t > t_{n-1,1-\alpha} \\
+Type I error: \alpha = P_{\mu_o}(T>t_{n-1,1-\alpha}) \\
+Acceptance region: T \le t_{n-1,1-\alpha}\\
+1- \alpha = P_{\mu_0}(\frac{\sqrt{n}(\bar{X}-\mu_0)}{\hat\sigma}) \le t_{n-1,1-\alpha}\\
+= P_{\mu_0}(\bar{X} - t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}} \le \mu_0)
+\end{equation}$$
 
