@@ -1,0 +1,78 @@
+# Binomial
+
+A Bernoulli random variable has only two possible values: 1 and 0, with probabilities p and 1-p, respectively.
+$$
+P(X=x)=p(x)=
+\begin{cases}
+p^x(1-p)^{1-x}, \text{if x=0 or x=1}\\
+0, \text{otherwise}\\
+\end{cases}\\
+EX = p \\
+VarX = p(1-p)
+$$
+
+**The binomial distribution**
+
+Suppose there are n identical, independent Bernoulli random variables: X1...Xn. Each $X_i$ has probability p of being 1. Then $Y=\int_{i=1}^{n}X_i$ follows the binomial(n,p) distribution, where $EY=np$ and $VarY = np(1-p)$
+$$
+P(Y=t) = \binom{N}{k}p^y(1-p)^{n-y}, y=0,...,n
+$$
+
+```{r}
+n=30; p=1/2;
+dbinom(0,n,p)
+dbinom(15,n,p)
+dbinom(30,n,p)
+```
+
+
+```{r}
+y0=15; sum(dbinom(0,y0,n,p));pbinom(y0,n,p)
+1-pbinom(y0,n,p);pbinom(y0,n,p,lower.tail=F)
+sum(dbinom((y0+1):n,n,p))
+```
+
+$$
+X_i \text{iid from Bernoulli(p), i=1,...,n. }\\
+H_0: p = p_0 vs. H_1: p>p_0\\
+\text{Reject null if } Y \ge b_{alpha,p_0}\\
+$$
+
+$$
+H_0: p = p_0 vs. H_1: p<p_0\\
+\text{Reject null if Y} \le c_{alpha,p_0}\\
+$$
+$$
+H_0: p = p_0 vs. H_1: p\ne p_0\\
+\text{Reject null if Y} \ge b_{alpha,p_0}\\
+\alpha_1 + \alpha_2 = \alpha
+$$
+```{r}
+qbinom(0.95, size = 30, prob = 1/2);qbinom(0.05, 30,1/2, lower.tail =F)
+pbinom(19,30,1/2);1-pbinom(19,30,1/2)
+pbinom(19,30,1/2,lower.tail=F)
+sum(dbinom(20:30,30,1/2))
+
+```
+
+$H_0: p=1/2$ vs.  $H_1: p\ne 1/2$
+
+```{r}
+
+n=30; y=23
+2*pbinom(22,30,1/2, lower.tail=F)
+binom.test(23,30,0.5)
+```
+
+**Normal approximation to the binomial distribution**
+
+* The approximation is best when the binomial distribution is symemtric- that is, when p =1/2
+* A frequently used rule of thumb is that the approximation is reasonable when np > 5 and n(1-p) >5
+* The approximation is especially useful for large values of n
+
+**Central Limit Theorem**
+
+
+
+
+

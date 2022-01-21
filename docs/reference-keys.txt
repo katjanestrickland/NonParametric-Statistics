@@ -15,3 +15,7 @@ smoothing-methods
 two-sample-tests
 kruskal-wallis
 power
+binomial-distribution
+wilcoxon-rank-sum-1
+test-page-1
+binomial
