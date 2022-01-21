@@ -72,6 +72,72 @@ binom.test(23,30,0.5)
 
 **Central Limit Theorem**
 
+Let ${X_1,...,X_n}$ be a sequence of iid random variables with mean $\mu$ and variance $\sigma^2 < \infty$. Let $\bar{X} = \frac{1}{n} \int_{-\infty}^{x} e^-\frac{y^2}{2}\frac{1}{\sqrt{2\pi\sigma}}$. That is, $\frac{\sqrt(n)(\bar{X}_n - \mu)}{\sigma}$ has a standard normal distribution.
+
+
+$$
+\frac{\sqrt(n)(\bar{X} - \mu)}{\sigma} = \frac{n(\bar{X}_n - \mu)}{\sqrt{n\sigma^2}} \\
+= \frac{\sum_{i=1}^{n}X_i-n\mu}{\sqrt{Var(\sum_{i=1}^2) X_i}}\\
+N(0,1)
+$$
+
+Suppose that a coin is tossed 100 times and lands heads up 60 times. The number of heads Y~binomial(n=100,p=1/2). We calculate $P(Y\ge60)$.
+
+$$
+EY = 50, VarY = np(1-p) = 25\\
+P(Y\ge60) = P(\frac{Y-50}{5} \ge \frac{60-50}{5})\\
+\approx 1- \phi(2)
+$$
+
+```{r}
+1-pbinom(50,100,1/2)
+pbinom(59,100,1/2, lower.tail=F)
+pnorm(2,0,1, lower.tail=F)
+```
+
+
+* $X_i$ \text{iid from Bernoulli(p)} \\
+* $\hat{p} = \bar{X} = \frac{1}{2} \sum_{i=1}^{n} X_i, E\hat{p} = p, Var{\hat{p}} = p(1-p)/n$\\
+* $H_0 : p = p_0 vs. H1: p \ne p_0$ \\
+* Under H_0, $T = \frac{\sqrt{n}(\hat{p-p_0})}{\sqrt(\hat{p}(1-\hat{p}))} \rightarrow N(0,1)$ as n $\rightarrow \infty$
+* Under H_0, $T = \frac{\sqrt{n}(\hat{p-p_0})}{\sqrt(p_0(1-p_0))} \rightarrow N(0,1)$ as n $\rightarrow \infty$
+* Reject $H_0$ if $|T| > z_{1-\frac{\alpha}{2}}$
+
+
+```{r}
+n=30; p0=0.5; y=23; xbar=y/n;
+tstat1=sqrt(n)*(xbar-p0)/sqrt(xbar*(1-xbar))
+tstat2=sqrt(n)*(xbar-p0)/sqrt(p0*(1-p0))
+round(c(xbar,tstat1,tstat2^2,2*pnorm(abs(tstat1),lower.tail=F),
+2*pnorm(abs(tstat2),lower.tail=F),pchisq(tstat2^2,df=1,lower.tail=F)),6)
+
+prop.test(y,n,p0,correct=F)
+```
+
+* Don't reject $H_0$ if $|T| \le z_{1-\alpha/2}$
+
+$$
+1-\alpha = P(\frac{\sqrt{n}|\hat{p}-p_0}{\sqrt{\hat{p}(1-\hat{p})}} \le z_{1-\frac{\alpha}{2}} \\
+= P(-z_{1-\frac{\alpha}{2}}\sqrt{\hat{p}(1-\hat{p})}) \le \sqrt{n}(\hat{p} - p_0) \le z_{1-\frac{\alpha}{2}}\sqrt(\hat{p}(1-\hat{p}))\\
+= P(\hat{p} - z_{1-\frac{\alpha}{2}}\sqrt{\hat{p}(1-\hat{p}/n)} \le p_0 \le \hat{p} + z_{1-\frac{\alpha}{2}}\sqrt(\hat{p}(1-\hat{p})/n)
+$$
+
+
+```{r}
+
+alpha = 0.05; qn = qnorm(1-alpha/2)
+sx = sqrt(xbar*(1-xbar)/n)
+xbar+c(-1,1)*qn*sx
+```
+
+```{r}
+
+library(binom)
+binom.confint(x=23,n=30)
+```
+
+**Bernoulli Power Calculations**
+
 
 
 

@@ -138,13 +138,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hypothesis Testing</a></li>
-<li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a>
-<ul>
-<li class="chapter" data-level="2.0.1" data-path="binomial.html"><a href="binomial.html#test-page"><i class="fa fa-check"></i><b>2.0.1</b> test page</a></li>
-</ul></li>
+<li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a></li>
 <li class="chapter" data-level="3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html"><i class="fa fa-check"></i><b>3</b> Wilcoxon rank sum</a>
 <ul>
-<li class="chapter" data-level="3.0.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-page-1"><i class="fa fa-check"></i><b>3.0.1</b> test page</a></li>
+<li class="chapter" data-level="3.0.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-page"><i class="fa fa-check"></i><b>3.0.1</b> test page</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="signed-rank-test.html"><a href="signed-rank-test.html"><i class="fa fa-check"></i><b>4</b> Signed Rank test</a></li>
 <li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a></li>
@@ -250,11 +247,12 @@ N(\mu, \sigma^2),binomial(n,p)
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span></span>
 <span id="cb6-2"><a href="index.html#cb6-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
 <span id="cb6-3"><a href="index.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(x)</span></code></pre></div>
-<pre><code>##  [1] -2.73876888 -2.02419417 -2.02185617 -0.65187772 -0.46790108 -0.34919262
-##  [7] -0.27386356 -0.16961711 -0.12825979 -0.03998276  0.01316937  0.14186416
-## [13]  0.14186789  0.17935904  0.34911714  0.35848216  0.55174388  0.70697826
-## [19]  0.74556591  0.81527263  0.84455142  1.05589159  1.22157207  1.32910440
-## [25]  1.36913401  1.40493501  1.42519365  1.66772999  2.05708674  2.72309732</code></pre>
+<pre><code>##  [1] -1.757322513 -1.693530351 -1.665952982 -1.633938197 -1.407179357
+##  [6] -1.312636795 -0.750921619 -0.561552084 -0.522096263 -0.468239562
+## [11] -0.334174620 -0.281414888 -0.239731822 -0.167130523  0.006846778
+## [16]  0.156453627  0.203021247  0.235804736  0.319794205  0.502551901
+## [21]  0.554738110  0.654941684  0.769050714  0.819851113  0.827033888
+## [26]  0.896688550  1.062691065  1.383669802  1.513959447  1.958852579</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="ot">=</span><span class="fu">mean</span>(x)</span>
 <span id="cb8-2"><a href="index.html#cb8-2" aria-hidden="true" tabindex="-1"></a>sdx<span class="ot">=</span><span class="fu">sd</span>(x)</span></code></pre></div>
 <p><strong>One sided H_0</strong></p>
@@ -274,39 +272,39 @@ T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim \text{t distribution with n-1 degrees of 
 <pre><code>## [1] 1.699127 1.699127</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">1</span></span>
 <span id="cb11-2"><a href="index.html#cb11-2" aria-hidden="true" tabindex="-1"></a>tstat<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx;<span class="fu">c</span>(tstat,tq,<span class="fu">pt</span>(tstat,n<span class="dv">-1</span>,<span class="at">lower.tail=</span>F))</span></code></pre></div>
-<pre><code>## [1] -3.0412599  1.6991270  0.9975201</code></pre>
+<pre><code>## [1] -5.5650290  1.6991270  0.9999974</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">-</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
-<pre><code>## [1] -0.02685564</code></pre>
+<pre><code>## [1] -0.3457817</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">alternative=</span><span class="st">&quot;greater&quot;</span>,<span class="at">mu=</span>mu0)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
 ## data:  x
-## t = -3.0413, df = 29, p-value = 0.9975
+## t = -5.565, df = 29, p-value = 1
 ## alternative hypothesis: true mean is greater than 1
 ## 95 percent confidence interval:
-##  -0.02685564         Inf
+##  -0.3457817        Inf
 ## sample estimates:
-## mean of x 
-## 0.3412068</code></pre>
+##   mean of x 
+## -0.03099574</code></pre>
 <p>Testing against sample mean of -1, then the tstat is 5.45, and probability in lower tail is &lt;.05, so accept the alternative that true mean is greater than -1.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="sc">-</span><span class="dv">1</span>; tstat<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx</span>
 <span id="cb17-2"><a href="index.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(tstat,tq,<span class="fu">pt</span>(tstat,n<span class="dv">-1</span>, <span class="at">lower.tail=</span>F))</span></code></pre></div>
-<pre><code>## [1] 6.191561e+00 1.699127e+00 4.714924e-07</code></pre>
+<pre><code>## [1] 5.230416e+00 1.699127e+00 6.684769e-06</code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">-</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
-<pre><code>## [1] -0.02685564</code></pre>
+<pre><code>## [1] -0.3457817</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">alternative=</span><span class="st">&quot;greater&quot;</span>,<span class="at">mu=</span>mu0)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
 ## data:  x
-## t = 6.1916, df = 29, p-value = 4.715e-07
+## t = 5.2304, df = 29, p-value = 6.685e-06
 ## alternative hypothesis: true mean is greater than -1
 ## 95 percent confidence interval:
-##  -0.02685564         Inf
+##  -0.3457817        Inf
 ## sample estimates:
-## mean of x 
-## 0.3412068</code></pre>
+##   mean of x 
+## -0.03099574</code></pre>
 <p><strong>Power</strong></p>
 <p><span class="math display">\[\begin{equation}
 \text{Reject null if }\bar{X} &gt; \mu_0 + t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}}\\
@@ -322,7 +320,7 @@ T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim \text{t distribution with n-1 degrees of 
 <span id="cb23-4"><a href="index.html#cb23-4" aria-hidden="true" tabindex="-1"></a>mu<span class="ot">=</span><span class="fl">1.5</span></span>
 <span id="cb23-5"><a href="index.html#cb23-5" aria-hidden="true" tabindex="-1"></a>tv <span class="ot">=</span> <span class="fu">sqrt</span>(n)<span class="sc">*</span>(mu0<span class="sc">-</span>mu)<span class="sc">/</span>sdx<span class="sc">+</span>tq</span>
 <span id="cb23-6"><a href="index.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(tv,n<span class="dv">-1</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
-<pre><code>## [1] 0.7263925</code></pre>
+<pre><code>## [1] 0.8371458</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="index.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(n,<span class="at">delta =</span> <span class="fu">abs</span>(mu0<span class="sc">-</span>mu), <span class="at">sd=</span>sdx,</span>
 <span id="cb25-2"><a href="index.html#cb25-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;one.sample&quot;</span>), <span class="at">alternative =</span> <span class="st">&quot;one.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
@@ -330,9 +328,9 @@ T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim \text{t distribution with n-1 degrees of 
 ## 
 ##               n = 30
 ##           delta = 0.5
-##              sd = 1.186469
+##              sd = 1.014729
 ##       sig.level = 0.05
-##           power = 0.728726
+##           power = 0.8389586
 ##     alternative = one.sided</code></pre>
 <p><span class="math display">\[\begin{equation}
 t_{n-1,\beta} = \frac{\sqrt{n}(\mu_0 - \mu)}{\hat\sigma} + t_{n-1,1-\alpha}\\
@@ -341,15 +339,15 @@ n = [\frac{\hat\sigma(t_{n-1,\beta}-t_{n-1,1-\alpha})}{\mu_0-\mu}]^2
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">=</span><span class="fl">0.1</span></span>
 <span id="cb27-2"><a href="index.html#cb27-2" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">=</span> <span class="fu">qt</span>(beta, n<span class="dv">-1</span>)</span>
 <span id="cb27-3"><a href="index.html#cb27-3" aria-hidden="true" tabindex="-1"></a>(sdx<span class="sc">*</span>(tb<span class="sc">-</span>tq)<span class="sc">/</span>(mu0<span class="sc">-</span>mu))<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
-<pre><code>## [1] 51.03489</code></pre>
+<pre><code>## [1] 37.32973</code></pre>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">power=</span> <span class="fl">0.9</span>, <span class="at">delta =</span> <span class="fu">abs</span>(mu0<span class="sc">-</span>mu), <span class="at">sd =</span> sdx,</span>
 <span id="cb29-2"><a href="index.html#cb29-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;one.sample&quot;</span>), <span class="at">alternative =</span> <span class="st">&quot;one.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##      One-sample t test power calculation 
 ## 
-##               n = 49.60617
+##               n = 36.66795
 ##           delta = 0.5
-##              sd = 1.186469
+##              sd = 1.014729
 ##       sig.level = 0.05
 ##           power = 0.9
 ##     alternative = one.sided</code></pre>
@@ -367,45 +365,45 @@ H_0 : \mu = \mu_0 vs. H_1: \mu &gt; Mu_0\\
 <span id="cb31-3"><a href="index.html#cb31-3" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">0</span></span>
 <span id="cb31-4"><a href="index.html#cb31-4" aria-hidden="true" tabindex="-1"></a>tstat <span class="ot">=</span> <span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx</span>
 <span id="cb31-5"><a href="index.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(tstat, tq,<span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="fu">abs</span>(tstat),n<span class="dv">-1</span>, <span class="at">lower.tail =</span>F))</span></code></pre></div>
-<pre><code>## [1] 1.5751504 2.0452296 0.1260695</code></pre>
+<pre><code>## [1] -0.1673064  2.0452296  0.8682902</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="index.html#cb33-1" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
-<pre><code>## [1] -0.1018279  0.7842414</code></pre>
+<pre><code>## [1] -0.4099018  0.3479103</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="index.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">mu=</span>mu0)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
 ## data:  x
-## t = 1.5752, df = 29, p-value = 0.1261
+## t = -0.16731, df = 29, p-value = 0.8683
 ## alternative hypothesis: true mean is not equal to 0
 ## 95 percent confidence interval:
-##  -0.1018279  0.7842414
+##  -0.4099018  0.3479103
 ## sample estimates:
-## mean of x 
-## 0.3412068</code></pre>
+##   mean of x 
+## -0.03099574</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="index.html#cb37-1" aria-hidden="true" tabindex="-1"></a>mu0<span class="ot">=</span><span class="dv">1</span></span>
 <span id="cb37-2"><a href="index.html#cb37-2" aria-hidden="true" tabindex="-1"></a>tstat<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>mu0)<span class="sc">/</span>sdx</span>
 <span id="cb37-3"><a href="index.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(tstat,tq,<span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="fu">abs</span>(tstat),n<span class="dv">-1</span>,<span class="at">lower.tail =</span> F))</span></code></pre></div>
-<pre><code>## [1] -3.041259869  2.045229642  0.004959875</code></pre>
+<pre><code>## [1] -5.565029e+00  2.045230e+00  5.284072e-06</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="index.html#cb39-1" aria-hidden="true" tabindex="-1"></a>xbar <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>tq<span class="sc">*</span>sdx<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
-<pre><code>## [1] -0.1018279  0.7842414</code></pre>
+<pre><code>## [1] -0.4099018  0.3479103</code></pre>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="index.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,<span class="at">mu=</span>mu0)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
 ## data:  x
-## t = -3.0413, df = 29, p-value = 0.00496
+## t = -5.565, df = 29, p-value = 5.284e-06
 ## alternative hypothesis: true mean is not equal to 1
 ## 95 percent confidence interval:
-##  -0.1018279  0.7842414
+##  -0.4099018  0.3479103
 ## sample estimates:
-## mean of x 
-## 0.3412068</code></pre>
+##   mean of x 
+## -0.03099574</code></pre>
 <p><strong>Power</strong></p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="index.html#cb43-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">0.05</span>; tq <span class="ot">=</span> <span class="fu">qt</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>);mu0<span class="ot">=</span><span class="dv">1</span>;</span>
 <span id="cb43-2"><a href="index.html#cb43-2" aria-hidden="true" tabindex="-1"></a>mu<span class="ot">=</span><span class="fl">1.5</span>;</span>
 <span id="cb43-3"><a href="index.html#cb43-3" aria-hidden="true" tabindex="-1"></a>tv0<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(mu0<span class="sc">-</span>mu)<span class="sc">/</span>sdx;</span>
 <span id="cb43-4"><a href="index.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(tv0<span class="sc">+</span>tq,n<span class="dv">-1</span>,<span class="at">lower.tail=</span>F) <span class="sc">+</span> <span class="fu">pt</span>(tv0<span class="sc">-</span>tq,n<span class="dv">-1</span>);</span></code></pre></div>
-<pre><code>## [1] 0.6028616</code></pre>
+<pre><code>## [1] 0.7407764</code></pre>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="index.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(n,<span class="at">delta=</span><span class="fu">abs</span>(mu0<span class="sc">-</span>mu), <span class="at">sd=</span>sdx,</span>
 <span id="cb45-2"><a href="index.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;one.sample&quot;</span>),<span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
@@ -413,9 +411,9 @@ H_0 : \mu = \mu_0 vs. H_1: \mu &gt; Mu_0\\
 ## 
 ##               n = 30
 ##           delta = 0.5
-##              sd = 1.186469
+##              sd = 1.014729
 ##       sig.level = 0.05
-##           power = 0.6069448
+##           power = 0.7417113
 ##     alternative = two.sided</code></pre>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="index.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(n,<span class="at">delta=</span><span class="fu">abs</span>(mu0<span class="sc">-</span>mu),<span class="at">sd=</span>sdx,</span>
 <span id="cb47-2"><a href="index.html#cb47-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span><span class="fu">c</span>(<span class="st">&quot;one.sample&quot;</span>),<span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>,<span class="at">strict=</span>T)</span></code></pre></div>
@@ -424,9 +422,9 @@ H_0 : \mu = \mu_0 vs. H_1: \mu &gt; Mu_0\\
 ## 
 ##               n = 30
 ##           delta = 0.5
-##              sd = 1.186469
+##              sd = 1.014729
 ##       sig.level = 0.05
-##           power = 0.6069584
+##           power = 0.7417137
 ##     alternative = two.sided</code></pre>
 
 </div>

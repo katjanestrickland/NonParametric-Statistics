@@ -247,6 +247,77 @@ H_0: p = p_0 vs. H_1: p\ne p_0\\
 <li>The approximation is especially useful for large values of n</li>
 </ul>
 <p><strong>Central Limit Theorem</strong></p>
+<p>Let <span class="math inline">\({X_1,...,X_n}\)</span> be a sequence of iid random variables with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2 &lt; \infty\)</span>. Let <span class="math inline">\(\bar{X} = \frac{1}{n} \int_{-\infty}^{x} e^-\frac{y^2}{2}\frac{1}{\sqrt{2\pi\sigma}}\)</span>. That is, <span class="math inline">\(\frac{\sqrt(n)(\bar{X}_n - \mu)}{\sigma}\)</span> has a standard normal distribution.</p>
+<p><span class="math display">\[
+\frac{\sqrt(n)(\bar{X} - \mu)}{\sigma} = \frac{n(\bar{X}_n - \mu)}{\sqrt{n\sigma^2}} \\
+= \frac{\sum_{i=1}^{n}X_i-n\mu}{\sqrt{Var(\sum_{i=1}^2) X_i}}\\
+N(0,1)
+\]</span></p>
+<p>Suppose that a coin is tossed 100 times and lands heads up 60 times. The number of heads Y~binomial(n=100,p=1/2). We calculate <span class="math inline">\(P(Y\ge60)\)</span>.</p>
+<p><span class="math display">\[
+EY = 50, VarY = np(1-p) = 25\\
+P(Y\ge60) = P(\frac{Y-50}{5} \ge \frac{60-50}{5})\\
+\approx 1- \phi(2)
+\]</span></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="binomial.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(<span class="dv">50</span>,<span class="dv">100</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.4602054</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="binomial.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">59</span>,<span class="dv">100</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">lower.tail=</span>F)</span></code></pre></div>
+<pre><code>## [1] 0.02844397</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="binomial.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="at">lower.tail=</span>F)</span></code></pre></div>
+<pre><code>## [1] 0.02275013</code></pre>
+<ul>
+<li><span class="math inline">\(X_i\)</span>  \</li>
+<li><span class="math inline">\(\hat{p} = \bar{X} = \frac{1}{2} \sum_{i=1}^{n} X_i, E\hat{p} = p, Var{\hat{p}} = p(1-p)/n\)</span>\</li>
+<li><span class="math inline">\(H_0 : p = p_0 vs. H1: p \ne p_0\)</span> \</li>
+<li>Under H_0, <span class="math inline">\(T = \frac{\sqrt{n}(\hat{p-p_0})}{\sqrt(\hat{p}(1-\hat{p}))} \rightarrow N(0,1)\)</span> as n <span class="math inline">\(\rightarrow \infty\)</span></li>
+<li>Under H_0, <span class="math inline">\(T = \frac{\sqrt{n}(\hat{p-p_0})}{\sqrt(p_0(1-p_0))} \rightarrow N(0,1)\)</span> as n <span class="math inline">\(\rightarrow \infty\)</span></li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(|T| &gt; z_{1-\frac{\alpha}{2}}\)</span></li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="binomial.html#cb36-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span>; p0<span class="ot">=</span><span class="fl">0.5</span>; y<span class="ot">=</span><span class="dv">23</span>; xbar<span class="ot">=</span>y<span class="sc">/</span>n;</span>
+<span id="cb36-2"><a href="binomial.html#cb36-2" aria-hidden="true" tabindex="-1"></a>tstat1<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>p0)<span class="sc">/</span><span class="fu">sqrt</span>(xbar<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>xbar))</span>
+<span id="cb36-3"><a href="binomial.html#cb36-3" aria-hidden="true" tabindex="-1"></a>tstat2<span class="ot">=</span><span class="fu">sqrt</span>(n)<span class="sc">*</span>(xbar<span class="sc">-</span>p0)<span class="sc">/</span><span class="fu">sqrt</span>(p0<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p0))</span>
+<span id="cb36-4"><a href="binomial.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(xbar,tstat1,tstat2<span class="sc">^</span><span class="dv">2</span>,<span class="dv">2</span><span class="sc">*</span><span class="fu">pnorm</span>(<span class="fu">abs</span>(tstat1),<span class="at">lower.tail=</span>F),</span>
+<span id="cb36-5"><a href="binomial.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pnorm</span>(<span class="fu">abs</span>(tstat2),<span class="at">lower.tail=</span>F),<span class="fu">pchisq</span>(tstat2<span class="sc">^</span><span class="dv">2</span>,<span class="at">df=</span><span class="dv">1</span>,<span class="at">lower.tail=</span>F)),<span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## [1] 0.766667 3.453327 8.533333 0.000554 0.003487 0.003487</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="binomial.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(y,n,p0,<span class="at">correct=</span>F)</span></code></pre></div>
+<pre><code>## 
+##  1-sample proportions test without continuity correction
+## 
+## data:  y out of n, null probability p0
+## X-squared = 8.5333, df = 1, p-value = 0.003487
+## alternative hypothesis: true p is not equal to 0.5
+## 95 percent confidence interval:
+##  0.5907167 0.8820761
+## sample estimates:
+##         p 
+## 0.7666667</code></pre>
+<ul>
+<li>Don’t reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(|T| \le z_{1-\alpha/2}\)</span></li>
+</ul>
+<p><span class="math display">\[
+1-\alpha = P(\frac{\sqrt{n}|\hat{p}-p_0}{\sqrt{\hat{p}(1-\hat{p})}} \le z_{1-\frac{\alpha}{2}} \\
+= P(-z_{1-\frac{\alpha}{2}}\sqrt{\hat{p}(1-\hat{p})}) \le \sqrt{n}(\hat{p} - p_0) \le z_{1-\frac{\alpha}{2}}\sqrt(\hat{p}(1-\hat{p}))\\
+= P(\hat{p} - z_{1-\frac{\alpha}{2}}\sqrt{\hat{p}(1-\hat{p}/n)} \le p_0 \le \hat{p} + z_{1-\frac{\alpha}{2}}\sqrt(\hat{p}(1-\hat{p})/n)
+\]</span></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="binomial.html#cb40-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> <span class="fl">0.05</span>; qn <span class="ot">=</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb40-2"><a href="binomial.html#cb40-2" aria-hidden="true" tabindex="-1"></a>sx <span class="ot">=</span> <span class="fu">sqrt</span>(xbar<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>xbar)<span class="sc">/</span>n)</span>
+<span id="cb40-3"><a href="binomial.html#cb40-3" aria-hidden="true" tabindex="-1"></a>xbar<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>qn<span class="sc">*</span>sx</span></code></pre></div>
+<pre><code>## [1] 0.6153178 0.9180155</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="binomial.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(binom)</span>
+<span id="cb42-2"><a href="binomial.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.confint</span>(<span class="at">x=</span><span class="dv">23</span>,<span class="at">n=</span><span class="dv">30</span>)</span></code></pre></div>
+<pre><code>##           method  x  n      mean     lower     upper
+## 1  agresti-coull 23 30 0.7666667 0.5879550 0.8848378
+## 2     asymptotic 23 30 0.7666667 0.6153178 0.9180155
+## 3          bayes 23 30 0.7580645 0.6083351 0.8984425
+## 4        cloglog 23 30 0.7666667 0.5720336 0.8812678
+## 5          exact 23 30 0.7666667 0.5771635 0.9006621
+## 6          logit 23 30 0.7666667 0.5850489 0.8844879
+## 7         probit 23 30 0.7666667 0.5922975 0.8892157
+## 8        profile 23 30 0.7666667 0.5973321 0.8922283
+## 9            lrt 23 30 0.7666667 0.5973357 0.8922495
+## 10     prop.test 23 30 0.7666667 0.5729977 0.8936498
+## 11        wilson 23 30 0.7666667 0.5907167 0.8820761</code></pre>
+<p><strong>Bernoulli Power Calculations</strong></p>
 
 </div>
             </section>
