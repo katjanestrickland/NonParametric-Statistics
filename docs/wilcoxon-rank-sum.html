@@ -24,7 +24,7 @@
 <meta name="author" content="Katherine Wilson" />
 
 
-<meta name="date" content="2022-01-21" />
+<meta name="date" content="2022-01-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -74,13 +74,14 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hypothesis Testing</a></li>
-<li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a>
-<ul>
-<li class="chapter" data-level="2.0.1" data-path="binomial.html"><a href="binomial.html#test-page"><i class="fa fa-check"></i><b>2.0.1</b> test page</a></li>
-</ul></li>
+<li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a></li>
 <li class="chapter" data-level="3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html"><i class="fa fa-check"></i><b>3</b> Wilcoxon rank sum</a>
 <ul>
-<li class="chapter" data-level="3.0.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-page-1"><i class="fa fa-check"></i><b>3.0.1</b> test page</a></li>
+<li class="chapter" data-level="3.0.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift"><i class="fa fa-check"></i><b>3.0.1</b> Location Shift</a></li>
+<li class="chapter" data-level="3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.1</b> Test Statistic</a></li>
+<li class="chapter" data-level="3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.2</b> Distribution of W</a></li>
+<li class="chapter" data-level="3.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.3</b> Computation</a></li>
+<li class="chapter" data-level="3.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.4</b> Example</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="signed-rank-test.html"><a href="signed-rank-test.html"><i class="fa fa-check"></i><b>4</b> Signed Rank test</a></li>
 <li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a></li>
@@ -108,8 +109,25 @@
             <section class="normal" id="section-">
 <div id="wilcoxon-rank-sum" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Wilcoxon rank sum</h1>
-<div id="test-page-1" class="section level3" number="3.0.1">
-<h3><span class="header-section-number">3.0.1</span> test page</h3>
+<p>Nonparametric test. We have two samples, from two populations (X and Y), and interest is in the difference of the two population means. T.test can be used for one smaple and for two samples.</p>
+<p>Parametric Methods assume that the data is from a standard distribution. These distributions have certain parameters associated. For non-parametric, we do not assume a certain distribution. Instead, use an empirical distribution of the data. Parametric will be more powwerful.</p>
+<p>Wilcoxon is a nonparametric version of the two sample t test. X and Y must be independent. Altnerative hypothesis is that X at a given point t is less than the given distribution of Y… in other wrods, X is larger than Y.</p>
+<div id="location-shift" class="section level3" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> Location Shift</h3>
+<p>Null is delta = 0, no shift, meaning that the distributions of X and Y are the same.</p>
+<p>Using the rank of the data, because median is more robust measure of center of distribution. So, WC is based on ranks.</p>
+</div>
+<div id="test-statistic" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Test Statistic</h2>
+</div>
+<div id="distribution-of-w" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Distribution of W</h2>
+</div>
+<div id="computation" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Computation</h2>
+</div>
+<div id="example" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Example</h2>
 
 </div>
 </div>

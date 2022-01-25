@@ -1,5 +1,25 @@
 # Wilcoxon rank sum
 
+Nonparametric test. We have two samples, from two populations (X and Y), and interest is in the difference of the two population means. T.test can be used for one smaple and for two samples. 
 
-### test page
+Parametric Methods assume that the data is from a standard distribution. These distributions have certain parameters associated. For non-parametric, we do not assume a certain distribution. Instead, use an empirical distribution of the data. Parametric will be more powwerful. 
+
+Wilcoxon is a nonparametric version of the two sample t test. X and Y must be independent. Altnerative hypothesis is that X at a given point t is less than the given distribution of Y... in other wrods, X is larger than Y. 
+
+### Location Shift
+
+Null is delta = 0, no shift, meaning that the distributions of X and Y are the same. 
+
+Using the rank of the data, because median is more robust measure of center of distribution. So, WC is based on ranks. 
+
+## Test Statistic
+
+## Distribution of W
+
+## Computation
+
+## Example
+
+
+
 

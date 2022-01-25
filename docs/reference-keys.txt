@@ -19,3 +19,8 @@ binomial-distribution
 wilcoxon-rank-sum-1
 test-page-1
 binomial
+location-shift
+test-statistic
+distribution-of-w
+computation
+example
