@@ -79,25 +79,46 @@ t.test(x,alternative="greater",mu=mu0)
 # alternative that the probability of wins <1/5
 n=10; y=1
 2*pbinom(0,10,1/2, lower.tail=F)
-binom.test(0,10,0.5, alternative = "less")
+binom.test(1,10,0.5, alternative = "less")
 
 ### n=30 and y=5, reject null that probability =1//2, accept
 # alternative that the probability of wins <1/5
 n=30; y=5
 2*pbinom(4,29,1/2, lower.tail=F)
-binom.test(4,19,0.5, alternative = "less")
+binom.test(5,19,0.5, alternative = "less")
 
 
 ####################
 ###question 4###
 ####################
 
+np = 215*0.94
+np
+var = np*(1-0.94)
+var
+sqrt(var)
+((200+0.5)-202.1)/(3.482)
+## using the pnorm
+pnorm(-0.459, lower.tail = T)
+## the proability one is available to everyone is 32.28%
+
+
 ####################
 ###question 5###
 ####################
 
+## large sampl approximation
 avg = 1100
 sd = 95
+n=50
+se = sd/sqrt(n)
+## z scores corresponding to 1075 and 1100
+
+## z score is diffrence over SE
+z = (1075-1100)/(95/sqrt(50))
+z = (1110-1100)/(95/sqrt(50))
+
+## then get the probability between each of those
 
 ####################
 ###question 6###

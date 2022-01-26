@@ -97,7 +97,7 @@ Confidence set with a confidence coefficient of $1-\alpha$ is the set.
 
 **Parametric Methods**
 
-Parametric distributions qith populations
+Parametric distributions with populations
 
 $$\begin{equation}
 N(\mu, \sigma^2),binomial(n,p)
@@ -126,7 +126,7 @@ T = \frac{\sqrt(x-\mu_0)}{\sigma} \sim \text{t distribution with n-1 degrees of 
 = P_{\mu_0}(\bar{X} - t_{n-1,1-\alpha}\frac{\hat\sigma}{\sqrt{n}} \le \mu_0)
 \end{equation}$$
 
-Below, the critical values for alpha of 0.05 is 1.699. Given a sample mean of 1, and our critical test statistic of -6.07, probability in the lower tail is 0.99, so fail to accept the alternative that the true mean is greater than 1.
+Smaller p-value, stronger evidence against H0. Critical value for alpha of 0.05 is +-1.69. The probability that mu0=1, the upper tail probability (lower.tail = F) is 0.9999, so results have a greater chance of being due to random chance than to the data itself. Alternative: that Mo0 > Mu. If p was <.05, then the probability we would see these results are minimal (given that it is true), so we'd accept alternative. Here, not enough chance that we'd see the alternative, so fail to reject null.
 ```{r}
 alpha = 0.05
 tq = qt(1-alpha, n-1)
@@ -137,7 +137,7 @@ xbar-tq*sdx/sqrt(n)
 t.test(x,alternative="greater",mu=mu0)
 
 ```
-Testing against sample mean of -1, then the tstat is 5.45, and probability in lower tail is <.05, so accept the alternative that true mean is greater than -1.
+Smaller p-value, stronger evidence against H0. The probability that mu0=-1, the upper tail probability (lower.tail = F) is <.05, so we have a lot of evidence against H0 (that these results are in the data, not due to random chance). Alternative: that Mu>-1. If <.05, then the probability we would see that is minimal (given that it is true), so we accept alternative, because seeing the alternative is not by chance. Here, very small probability of a result more extreme than the one actually observed if H0 is true. Since such a small probaility, given that we saw it in the data, then accept alternate.
 ```{r}
 mu0=-1; tstat=sqrt(n)*(xbar-mu0)/sdx
 c(tstat,tq,pt(tstat,n-1, lower.tail=F))
