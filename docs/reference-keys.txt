@@ -30,3 +30,8 @@ rank
 hodges-lehman-estimate
 example-1
 kolmogorov-smirnov
+paired-t-test
+sign-test-and-wilcoxon-signed-rank-test
+large-sample-tst
+wilcoxon-signed-rank-test
+large-sample-approximation

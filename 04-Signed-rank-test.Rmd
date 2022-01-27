@@ -1,1 +1,47 @@
-# Signed Rank test
+# Paired T-test
+
+
+$$\begin{equation}
+\text{Paired data} (X_i, Y_i), i = 1...,n\\
+(X_i, Y_i) \text{independent of} (X_j, Y_j), i \ne j \\
+X_i \sim (\mu_x, \sigma_x^2), Y_i \sim (\mu_x, \sigma_y^2)\\
+Cov(X_i, Y_i) = \sigma_{xy} = \rho\sigma_x\sigma_y \\
+D_i = X_i -Y_i \sim N(\delta = \mu_x - \mu_y, \sigma_x^2 + \sigma_y^2 -2\rho\sigma_x\sigma_y) \\ 
+D_i = \bar{X} - \bar{Y} \sim N(\delta, \frac{1}{n}(\sigma_x^2 + \sigma_y^2 - 2\rho\sigma_x\sigma_y)) \\ 
+\end{equation}$$
+```{r}
+
+n=30; x=rnorm(n,mean=1,sd=1); y=rnorm(n,mean=1.1,sd=1);
+t.test(x,y,paired=T)
+t.test(x-y)
+```
+
+
+
+## Sign test and Wilcoxon signed rank test
+
+Nonparametric version of the paired or one smaple t. test. Primary interest is centered on the location (median) of the population. 
+
+Assumptions:
+
+* Let $Z_i = Y_i - X_i, i =1,...,n$ The differences $Z_i,...Z_n$ are mutually independent. $X_i$ and $Y_i$ can be dependent
+* Each $Z_i$ comes from a continuous population (not necessarily the same one) and has a common median $\theta$
+* $P(Z_i \le \theta) = P(Z_i > \theta) = 1/2$
+* $P(Z_i - \theta \le 0) = P(Z_i -0 > 0) = 1/2$
+* $\theta$ is the treatment effect
+
+Under $H_0$:
+* Each of the distributions for the differences has median 0, corresponding to no shift in location due to the treatment. 
+* Sign statistic is the number of positive $Z_i$'s...
+* $T = \sum_{i=1}^{n}l_{{z_{i}>0}}$
+* random variable $l_{{z_{i}>0}}$ follows a Bernoulli distribution with $p = \frac{1}{2}$
+* T follows a binomial(n,1/2) distribution
+
+
+
+
+## Large sample tst
+
+## Wilcoxon signed rank test
+
+## Large sample approximation
