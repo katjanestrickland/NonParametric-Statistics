@@ -76,16 +76,16 @@ t.test(x,alternative="greater",mu=mu0)
 ####################
 
 ### n=10 and y=1, reject null that probability = 1/2, accept
-# alternative that the probability of wins <1/5
+# alternative that the probability of wins <1/2
 n=10; y=1
-2*pbinom(0,10,1/2, lower.tail=F)
+pbinom(1,10,0.5, lower.tail=T)
 binom.test(1,10,0.5, alternative = "less")
 
 ### n=30 and y=5, reject null that probability =1//2, accept
-# alternative that the probability of wins <1/5
+# alternative that the probability of wins <1/2
 n=30; y=5
-2*pbinom(4,29,1/2, lower.tail=F)
-binom.test(5,19,0.5, alternative = "less")
+pbinom(4,29,1/2, lower.tail=T)
+binom.test(5,30,0.5, alternative = "less")
 
 
 ####################
@@ -107,24 +107,38 @@ pnorm(-0.459, lower.tail = T)
 ###question 5###
 ####################
 
-## large sampl approximation
+## large sample approximation
 avg = 1100
 sd = 95
 n=50
 se = sd/sqrt(n)
 ## z scores corresponding to 1075 and 1100
-
-## z score is diffrence over SE
-z = (1075-1100)/(95/sqrt(50))
+## z score is difference over SE
+z1 = (1075-1100)/(95/sqrt(50))
 z = (1110-1100)/(95/sqrt(50))
 
-## then get the probability between each of those
+## find the probability of these z scores
+pnorm(z1, lower.tail = T)
+pnorm(z, lower.tail = T)
+0.7716594 - 0.0313857
+
 
 ####################
 ###question 6###
 ####################
 
 ### n=1000 and y=550, reject null that the probability = 1/2
+550/1000
+np = 1000*0.5
+np
+var = np*(1-0.5)
+var
+sd = sqrt(var)
+sd
+(560-500)/(sd)
+## very unlikely that this coin is fair
+pnorm(3.794733, lower.tail = F)
+### another way
 n=1000; y=550
 2*pbinom(550,1000,1/2, lower.tail=F)
 binom.test(550,1000,0.5)
@@ -134,19 +148,34 @@ binom.test(550,1000,0.5)
 ###question 7###
 ####################
 
-# if 
+### with dbinom, add them?
+n=10; p=1/2;
+dbinom(1,n,p)
+dbinom(10,n,p)
+0.009765625*2
+
+### part a
+binom.test(1,10,0.5)
+binom.test(10,10,0.5)
+0.02148 + 0.001953
+
+### part b
+binom.test(1,10,0.1)
+binom.test(10,10,0.1)
+
 
 ####################
 ###question 8###
 ####################
 
-n=36; p0=0.5; y=23; xbar=y/n;
-tstat1=sqrt(n)*(xbar-p0)/sqrt(xbar*(1-xbar))
-tstat2=sqrt(n)*(xbar-p0)/sqrt(p0*(1-p0))
-round(c(xbar,tstat1,tstat2^2,2*pnorm(abs(tstat1),lower.tail=F),
-        2*pnorm(abs(tstat2),lower.tail=F),pchisq(tstat2^2,df=1,lower.tail=F)),6)
-
-prop.test(y,n,p0,correct=F)
+avg = 8
+sd = 0.4
+n= 36
+se = sd/sqrt(n)
+## z score for 8.1 ounces
+z1 = (8.1-8)/(se)
+## find the probability of these z scores
+pnorm(z1, lower.tail = F)
 
 ####################
 ###question 9###

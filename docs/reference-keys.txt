@@ -24,3 +24,9 @@ test-statistic
 distribution-of-w
 computation
 example
+two-sample-t-test
+location-shift-model
+rank
+hodges-lehman-estimate
+example-1
+kolmogorov-smirnov

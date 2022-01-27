@@ -1,16 +1,46 @@
 # Wilcoxon rank sum
 
-Nonparametric test. We have two samples, from two populations (X and Y), and interest is in the difference of the two population means. T.test can be used for one smaple and for two samples. 
+Nonparametric test. We have two samples, from two populations (X and Y), and interest is in the difference of the two population means. T.test can be used for one sample and two sample.  Parametric Methods assume data is from a standard distribution. These distributions have certain parameters associated. For non-parametric, we do not assume a certain distribution. Instead, use an empirical distribution of the data.
 
-Parametric Methods assume that the data is from a standard distribution. These distributions have certain parameters associated. For non-parametric, we do not assume a certain distribution. Instead, use an empirical distribution of the data. Parametric will be more powwerful. 
+Wilcoxon is a nonparametric version of the two sample t test. X and Y must be independent. Alternative hypothesis is that X at a given point t is less than the given distribution of Y... in other words, X larger than Y.
 
-Wilcoxon is a nonparametric version of the two sample t test. X and Y must be independent. Altnerative hypothesis is that X at a given point t is less than the given distribution of Y... in other wrods, X is larger than Y. 
+## Two sample T test
 
-### Location Shift
 
-Null is delta = 0, no shift, meaning that the distributions of X and Y are the same. 
+$$\begin{equation}
+X_i \overset{\text{iid}}{\sim} N(\mu_x, \sigma^2), i \le m \\
+Y_j \overset{\text{iid}}{\sim} N(\mu_y, \sigma^2), j \le n\\
+X_i \text{independent} of Y_j\\
+\text{A natural estimate of} \mu_x - \mu_y is \bar{X} - \bar{Y} (MLE) \\
+\bar{X} - \bar{Y} \sim N(\mu_x - \mu_y, \sigma^2(\frac{1}{n} + \frac{1}{m})) \\
+S_x^2 = \frac{1}{m-1}\sum_{i=1}^{m}(X_i - \bar{X})^2\\
+S_y^2 = \frac{1}{n-1}\sum_{i=1}^{m}(Y_i - \bar{Y})^2\\
+S_p^2 = \frac{\sum_{i=1}^{m}(X_i-\bar{x})^2+\sum_{j=1}^{n}(Y_j-\bar{Y}^2)}{m+n-2} \\
+T = \frac{(\bar{X} - \bar{Y})- (\mu_x-\mu_y)}{s_p\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t_{m+n-2} \\
+H_o: \mu_x = \mu_y vs. h_1: \mu_x \ne \mu_y(\mu_x > \mu_y, \mu_x < \mu_y)
+\end{equation}$$
 
-Using the rank of the data, because median is more robust measure of center of distribution. So, WC is based on ranks. 
+```{r}
+m=28; n=30; x=rnorm(m,mean=1,sd=1); y=rnorm(n,mean=1.1,sd=1);
+t.test(x,y)
+
+```
+
+### Location Shift Model
+
+### Rank
+
+```{r}
+u=c(-1,0,2); c( median(u), mean(u), rank(u) );
+u[3]=100; u
+c( median(u), mean(u), rank(u));
+u[1]=-200; u
+c( median(u), mean(u), rank(u));
+u=c(-1,-1,0,2); rank(u); #?rank
+
+```
+
+
 
 ## Test Statistic
 
@@ -18,7 +48,66 @@ Using the rank of the data, because median is more robust measure of center of d
 
 ## Computation
 
+```{r}
+m=4; n=5; mn=m*n
+c( dwilcox(0,m,n), dwilcox(mn,m,n), 1/choose(m+n,m))
+
+u=0:mn; plot(u, dwilcox(u,m,n),type="h",las=1)
+
+```
+
+
 ## Example
+
+```{r}
+x=c(0.80, 0.83, 1.89, 1.04, 1.45, 1.38, 1.91, 1.64,
+0.73, 1.46); y=c(1.15, 0.88, 0.90, 0.74, 1.21);
+oxy=outer(x,y,function(u,v){(u>v)*1})
+u=sum(oxy); u
+pwilcox(u-1,length(x),length(y),lower.tail=F)
+wilcox.test(x, y, alternative = "g",conf.int=T);
+
+
+```
+
+## Hodges-Lehman Estimate
+
+```{r}
+xy=outer(x,y,"-"); median(xy)
+```
+
+## Example
+
+```{r}
+x=c(18.85,16.93,19.29,18.31,17.27,18.64,17.82,19.00,19.58,18.04,17.27,
+19.19); y=c(19.23,19.57,19.50,18.64,18.70,19.54,19.04,20.67,20.71,
+18.99,19.37,19.06); par(mfrow=c(2,1));
+hist(x,xlim=range(x,y)); hist(y,xlim=range(x,y));
+
+wilcox.test(x,y,alternative="less",conf.int=T)
+
+wilcox.test(x,y,alternative="less",conf.int=T,exact=F,
+correct=T)
+wilcox.test(x,y,alternative="less",conf.int=T,exact=F,
+correct=F)
+
+
+```
+
+
+### Kolmogorov Smirnov
+
+```{r}
+x=rnorm(50)
+y=runif(30)
+# Do x and y come from the same distribution?
+ks.test(x, y)
+
+
+```
+
+
+
 
 
 
