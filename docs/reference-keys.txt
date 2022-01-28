@@ -35,3 +35,11 @@ sign-test-and-wilcoxon-signed-rank-test
 large-sample-tst
 wilcoxon-signed-rank-test
 large-sample-approximation
+wilcoxon-rank-sum-test
+hypothesis
+normal-approximation-to-the-binomial-distribution
+central-limit-theorum
+bernoulli-power-calculations
+example-2
+large-sample-test
+example-3

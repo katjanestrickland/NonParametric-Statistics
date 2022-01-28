@@ -24,7 +24,7 @@
 <meta name="author" content="Katherine Wilson" />
 
 
-<meta name="date" content="2022-01-27" />
+<meta name="date" content="2022-01-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="binomial.html"/>
-<link rel="next" href="signed-rank-test.html"/>
+<link rel="next" href="paired-t-test.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -141,22 +141,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a></li>
 <li class="chapter" data-level="3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html"><i class="fa fa-check"></i><b>3</b> Wilcoxon rank sum</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.1</b> Two sample T test</a>
+<li class="chapter" data-level="3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.1</b> Two sample T test</a></li>
+<li class="chapter" data-level="3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>3.2</b> Wilcoxon Rank Sum Test</a></li>
+<li class="chapter" data-level="3.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hypothesis"><i class="fa fa-check"></i><b>3.3</b> Hypothesis</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.1.1</b> Location Shift Model</a></li>
-<li class="chapter" data-level="3.1.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.1.2</b> Rank</a></li>
+<li class="chapter" data-level="3.3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.3.1</b> Location Shift Model</a></li>
+<li class="chapter" data-level="3.3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.3.2</b> Rank</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.2</b> Test Statistic</a></li>
-<li class="chapter" data-level="3.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.3</b> Distribution of W</a></li>
-<li class="chapter" data-level="3.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.4</b> Computation</a></li>
-<li class="chapter" data-level="3.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.5</b> Example</a></li>
-<li class="chapter" data-level="3.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.6</b> Hodges-Lehman Estimate</a></li>
-<li class="chapter" data-level="3.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.7</b> Example</a>
+<li class="chapter" data-level="3.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.4</b> Test Statistic</a></li>
+<li class="chapter" data-level="3.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.5</b> Distribution of W</a></li>
+<li class="chapter" data-level="3.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.6</b> Computation</a></li>
+<li class="chapter" data-level="3.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.7</b> Example</a></li>
+<li class="chapter" data-level="3.8" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.8</b> Hodges-Lehman Estimate</a></li>
+<li class="chapter" data-level="3.9" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.9</b> Example</a>
 <ul>
-<li class="chapter" data-level="3.7.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.7.1</b> Kolmogorov Smirnov</a></li>
+<li class="chapter" data-level="3.9.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.9.1</b> Kolmogorov Smirnov</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="signed-rank-test.html"><a href="signed-rank-test.html"><i class="fa fa-check"></i><b>4</b> Signed Rank test</a></li>
+<li class="chapter" data-level="4" data-path="paired-t-test.html"><a href="paired-t-test.html"><i class="fa fa-check"></i><b>4</b> Paired T-test</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="paired-t-test.html"><a href="paired-t-test.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.1</b> Sign test and Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.2" data-path="paired-t-test.html"><a href="paired-t-test.html#large-sample-tst"><i class="fa fa-check"></i><b>4.2</b> Large sample tst</a></li>
+<li class="chapter" data-level="4.3" data-path="paired-t-test.html"><a href="paired-t-test.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.3</b> Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.4" data-path="paired-t-test.html"><a href="paired-t-test.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.4</b> Large sample approximation</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a></li>
 <li class="chapter" data-level="6" data-path="two-sample-tests.html"><a href="two-sample-tests.html"><i class="fa fa-check"></i><b>6</b> Two Sample Tests</a></li>
 <li class="chapter" data-level="7" data-path="smoothing-methods.html"><a href="smoothing-methods.html"><i class="fa fa-check"></i><b>7</b> Smoothing Methods</a></li>
@@ -182,8 +190,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="wilcoxon-rank-sum" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Wilcoxon rank sum</h1>
-<p>Nonparametric test. We have two samples, from two populations (X and Y), and interest is in the difference of the two population means. T.test can be used for one sample and two sample. Parametric Methods assume data is from a standard distribution. These distributions have certain parameters associated. For non-parametric, we do not assume a certain distribution. Instead, use an empirical distribution of the data.</p>
-<p>Wilcoxon is a nonparametric version of the two sample t test. X and Y must be independent. Alternative hypothesis is that X at a given point t is less than the given distribution of Y… in other words, X larger than Y.</p>
+<p>Traditional parametric testing methods are based on the assumption that dat are generated by well-known distributions, and characteristic by one or more unknown parameters. Critical values and p-values are computed according to distribution of the test statistic under the null, derived from assumptions related to the underlying distribution of data.</p>
+<p>Nonparametric methods require mild assumptions regarding the underlying populations from which data are obtained. When parametric assumptions do not hold, they are valid, and when parametric assumptions hold, nonparametric methods are only slighly less powerful than parametric.</p>
 <div id="two-sample-t-test" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Two sample T test</h2>
 <p><span class="math display">\[\begin{equation}
@@ -196,7 +204,7 @@ S_x^2 = \frac{1}{m-1}\sum_{i=1}^{m}(X_i - \bar{X})^2\\
 S_y^2 = \frac{1}{n-1}\sum_{i=1}^{m}(Y_i - \bar{Y})^2\\
 S_p^2 = \frac{\sum_{i=1}^{m}(X_i-\bar{x})^2+\sum_{j=1}^{n}(Y_j-\bar{Y}^2)}{m+n-2} \\
 T = \frac{(\bar{X} - \bar{Y})- (\mu_x-\mu_y)}{s_p\sqrt{\frac{1}{m}+\frac{1}{n}}} \sim t_{m+n-2} \\
-H_o: \mu_x = \mu_y vs. h_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
+H_o: \mu_x = \mu_y vs.H_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
 \end{equation}\]</span></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="wilcoxon-rank-sum.html#cb1-1" aria-hidden="true" tabindex="-1"></a>m<span class="ot">=</span><span class="dv">28</span>; n<span class="ot">=</span><span class="dv">30</span>; x<span class="ot">=</span><span class="fu">rnorm</span>(m,<span class="at">mean=</span><span class="dv">1</span>,<span class="at">sd=</span><span class="dv">1</span>); y<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="at">mean=</span><span class="fl">1.1</span>,<span class="at">sd=</span><span class="dv">1</span>);</span>
 <span id="cb1-2"><a href="wilcoxon-rank-sum.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,y)</span></code></pre></div>
@@ -204,18 +212,36 @@ H_o: \mu_x = \mu_y vs. h_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
 ##  Welch Two Sample t-test
 ## 
 ## data:  x and y
-## t = 0.057394, df = 54.958, p-value = 0.9544
+## t = 1.5753, df = 55.875, p-value = 0.1208
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -0.5729310  0.6067143
+##  -0.1088200  0.9098802
 ## sample estimates:
 ## mean of x mean of y 
-##  1.020825  1.003933</code></pre>
-<div id="location-shift-model" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Location Shift Model</h3>
+## 1.2888357 0.8883057</code></pre>
 </div>
-<div id="rank" class="section level3" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Rank</h3>
+<div id="wilcoxon-rank-sum-test" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Wilcoxon Rank Sum Test</h2>
+<p>We have two samples, from two populations (X and Y), and interest is in the difference of the two population means. T.test can be used for one sample and two sample. Wilcoxon is a nonparametric version of the two sample t test. X and Y must be independent. Alternative hypothesis is that X at a given point t is less than the given distribution of Y… in other words, X larger than Y.</p>
+</div>
+<div id="hypothesis" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Hypothesis</h2>
+<ul>
+<li>$H_0 : G(t) = F(t) $, for all t</li>
+<li>$H_1: G(t) F(t) $, X is stochastically larger than Y</li>
+</ul>
+<div id="location-shift-model" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Location Shift Model</h3>
+<ul>
+<li><span class="math inline">\(X = Y +\Delta\)</span></li>
+<li><span class="math inline">\(\Delta\)</span>: location shift, or treatment effect</li>
+<li>if <span class="math inline">\(\Delta &gt; 0 (&lt;0)\)</span>, it is the expected increase (decrease) due to the treatment</li>
+<li>if EX and EY exist, <span class="math inline">\(\Delta = EX - EY\)</span></li>
+<li>in terms of the location-shift model, <span class="math inline">\(H_0\)</span> becomes <span class="math inline">\(H_0: \Delta = 0\)</span></li>
+</ul>
+</div>
+<div id="rank" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Rank</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="wilcoxon-rank-sum.html#cb3-1" aria-hidden="true" tabindex="-1"></a>u<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>); <span class="fu">c</span>( <span class="fu">median</span>(u), <span class="fu">mean</span>(u), <span class="fu">rank</span>(u) );</span></code></pre></div>
 <pre><code>## [1] 0.0000000 0.3333333 1.0000000 2.0000000 3.0000000</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="wilcoxon-rank-sum.html#cb5-1" aria-hidden="true" tabindex="-1"></a>u[<span class="dv">3</span>]<span class="ot">=</span><span class="dv">100</span>; u</span></code></pre></div>
@@ -230,22 +256,44 @@ H_o: \mu_x = \mu_y vs. h_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
 <pre><code>## [1] 1.5 1.5 3.0 4.0</code></pre>
 </div>
 </div>
-<div id="test-statistic" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Test Statistic</h2>
+<div id="test-statistic" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Test Statistic</h2>
+<ul>
+<li>Combine the two sample <span class="math inline">\({X_1,...,X_m}\)</span> and <span class="math inline">\({Y_1,...,Y_n}\)</span> into one, and tank them from 1 to m+n, low to high</li>
+<li>Let <span class="math inline">\(R_i\)</span> denote the rank of <span class="math inline">\(X_i\)</span> in this combined ranking</li>
+<li>The Wilcoxon test statistic is $ W = _{i=1}^{m}R_i$</li>
+<li>where <span class="math inline">\(min W = 1+ ... + m = m(m+1)/2\)</span></li>
+<li>max <span class="math inline">\(W = (n+1) + ... + (n+m) = m(2n+m+1)/2\)</span></li>
+</ul>
 </div>
-<div id="distribution-of-w" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Distribution of W</h2>
+<div id="distribution-of-w" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Distribution of W</h2>
+<ul>
+<li><span class="math inline">\(P(W=k)\)</span> = ?, min <span class="math inline">\(W\le k \le max W\)</span></li>
+<li>P(W = minW) = P(W = maxW) = n!m!/(m+n)!</li>
+<li>The Mann-Whitney Statistic</li>
+<li><span class="math inline">\(U = \sum_{i=1}^{m}\sum_{j=1}^{n}l_{x_{i}&gt;y_{j}}\)</span></li>
+<li>The statistic U counts the number of “y before x” predecessors</li>
+<li><span class="math inline">\(W = U + \frac{m(m+1)}{2}\)</span></li>
+<li>min U = 0, max U = mn</li>
+</ul>
 </div>
-<div id="computation" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Computation</h2>
+<div id="computation" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Computation</h2>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="wilcoxon-rank-sum.html#cb15-1" aria-hidden="true" tabindex="-1"></a>m<span class="ot">=</span><span class="dv">4</span>; n<span class="ot">=</span><span class="dv">5</span>; mn<span class="ot">=</span>m<span class="sc">*</span>n</span>
 <span id="cb15-2"><a href="wilcoxon-rank-sum.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>( <span class="fu">dwilcox</span>(<span class="dv">0</span>,m,n), <span class="fu">dwilcox</span>(mn,m,n), <span class="dv">1</span><span class="sc">/</span><span class="fu">choose</span>(m<span class="sc">+</span>n,m))</span></code></pre></div>
 <pre><code>## [1] 0.007936508 0.007936508 0.007936508</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="wilcoxon-rank-sum.html#cb17-1" aria-hidden="true" tabindex="-1"></a>u<span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>mn; <span class="fu">plot</span>(u, <span class="fu">dwilcox</span>(u,m,n),<span class="at">type=</span><span class="st">&quot;h&quot;</span>,<span class="at">las=</span><span class="dv">1</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<ul>
+<li><span class="math inline">\(H_0: \Delta = 0\)</span> vs. <span class="math inline">\(H_1: \Delta &gt; 0\)</span></li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(U\ge ui_{\alpha}\)</span></li>
+<li><span class="math inline">\(H_0: \Delta = 0\)</span> vs. <span class="math inline">\(H_1: \Delta &lt;0\)</span></li>
+<li><span class="math inline">\(H_0: \Delta = 0\)</span> vs. <span class="math inline">\(H_1: \Delta \ne 0\)</span></li>
+</ul>
 </div>
-<div id="example" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Example</h2>
+<div id="example" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Example</h2>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="wilcoxon-rank-sum.html#cb18-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.80</span>, <span class="fl">0.83</span>, <span class="fl">1.89</span>, <span class="fl">1.04</span>, <span class="fl">1.45</span>, <span class="fl">1.38</span>, <span class="fl">1.91</span>, <span class="fl">1.64</span>,</span>
 <span id="cb18-2"><a href="wilcoxon-rank-sum.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fl">0.73</span>, <span class="fl">1.46</span>); y<span class="ot">=</span><span class="fu">c</span>(<span class="fl">1.15</span>, <span class="fl">0.88</span>, <span class="fl">0.90</span>, <span class="fl">0.74</span>, <span class="fl">1.21</span>);</span>
 <span id="cb18-3"><a href="wilcoxon-rank-sum.html#cb18-3" aria-hidden="true" tabindex="-1"></a>oxy<span class="ot">=</span><span class="fu">outer</span>(x,y,<span class="cf">function</span>(u,v){(u<span class="sc">&gt;</span>v)<span class="sc">*</span><span class="dv">1</span>})</span>
@@ -266,13 +314,13 @@ H_o: \mu_x = \mu_y vs. h_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
 ## difference in location 
 ##                  0.305</code></pre>
 </div>
-<div id="hodges-lehman-estimate" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Hodges-Lehman Estimate</h2>
+<div id="hodges-lehman-estimate" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Hodges-Lehman Estimate</h2>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="wilcoxon-rank-sum.html#cb24-1" aria-hidden="true" tabindex="-1"></a>xy<span class="ot">=</span><span class="fu">outer</span>(x,y,<span class="st">&quot;-&quot;</span>); <span class="fu">median</span>(xy)</span></code></pre></div>
 <pre><code>## [1] 0.305</code></pre>
 </div>
-<div id="example-1" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Example</h2>
+<div id="example-1" class="section level2" number="3.9">
+<h2><span class="header-section-number">3.9</span> Example</h2>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="wilcoxon-rank-sum.html#cb26-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">18.85</span>,<span class="fl">16.93</span>,<span class="fl">19.29</span>,<span class="fl">18.31</span>,<span class="fl">17.27</span>,<span class="fl">18.64</span>,<span class="fl">17.82</span>,<span class="fl">19.00</span>,<span class="fl">19.58</span>,<span class="fl">18.04</span>,<span class="fl">17.27</span>,</span>
 <span id="cb26-2"><a href="wilcoxon-rank-sum.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fl">19.19</span>); y<span class="ot">=</span><span class="fu">c</span>(<span class="fl">19.23</span>,<span class="fl">19.57</span>,<span class="fl">19.50</span>,<span class="fl">18.64</span>,<span class="fl">18.70</span>,<span class="fl">19.54</span>,<span class="fl">19.04</span>,<span class="fl">20.67</span>,<span class="fl">20.71</span>,</span>
 <span id="cb26-3"><a href="wilcoxon-rank-sum.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fl">18.99</span>,<span class="fl">19.37</span>,<span class="fl">19.06</span>); <span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>));</span>
@@ -320,8 +368,8 @@ H_o: \mu_x = \mu_y vs. h_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
 ## sample estimates:
 ## difference in location 
 ##              -1.002781</code></pre>
-<div id="kolmogorov-smirnov" class="section level3" number="3.7.1">
-<h3><span class="header-section-number">3.7.1</span> Kolmogorov Smirnov</h3>
+<div id="kolmogorov-smirnov" class="section level3" number="3.9.1">
+<h3><span class="header-section-number">3.9.1</span> Kolmogorov Smirnov</h3>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="wilcoxon-rank-sum.html#cb35-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">50</span>)</span>
 <span id="cb35-2"><a href="wilcoxon-rank-sum.html#cb35-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">runif</span>(<span class="dv">30</span>)</span>
 <span id="cb35-3"><a href="wilcoxon-rank-sum.html#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Do x and y come from the same distribution?</span></span>
@@ -330,7 +378,7 @@ H_o: \mu_x = \mu_y vs. h_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
 ##  Two-sample Kolmogorov-Smirnov test
 ## 
 ## data:  x and y
-## D = 0.52, p-value = 3.885e-05
+## D = 0.6, p-value = 8.598e-07
 ## alternative hypothesis: two-sided</code></pre>
 
 </div>
@@ -342,7 +390,7 @@ H_o: \mu_x = \mu_y vs. h_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
         </div>
       </div>
 <a href="binomial.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="signed-rank-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="paired-t-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

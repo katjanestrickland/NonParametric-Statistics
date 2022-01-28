@@ -20,7 +20,7 @@ t.test(x-y)
 
 ## Sign test and Wilcoxon signed rank test
 
-Nonparametric version of the paired or one smaple t. test. Primary interest is centered on the location (median) of the population. 
+Nonparametric version of the paired or one sample t. test. Primary interest is centered on the location (median) of the population. Two scenarios: pared data, such as pretreatment and posttreatment where we are looking at shift in location due to treatment, or one sample data, where obserbations from a single population about whose location we wish to make inferences.
 
 Assumptions:
 
@@ -38,10 +38,64 @@ Under $H_0$:
 * T follows a binomial(n,1/2) distribution
 
 
+## Example
+
+```{r}
+
+library(BSDA)
+x=c(1.83,0.50,1.62,2.48,1.68,1.88,1.55,3.06,1.30);
+y=c(0.878,0.647,0.598,2.05,1.06,1.29,1.06,3.14,1.29);
+plot(x,y,las=1); abline(0,1);
+z=x-y; z; sign(z) ; stat=sum(x>y);
+stat; median(z);
+2*pbinom(stat-1,length(z),1/2,lower.tail=F)
+2*pbinom(stat-1,length(z),1/2,lower.tail=F)
+SIGN.test(z);
+```
+* When $\theta = 0$, the distribution of the statistic T is symmetric about its mean $n/2$
+* A natural estimator of $\theta$ is the amount that $\hat\theta$ should be subtracted from each $Z_i$ so that the value of Y, when applied to the shifted sample $Z_i - \hat\theta, ..., Z_n = \hat\theta$ is as close to n/2 as possible
+* We estimate $\theta$ by the amount $\hat\theta$ that the Z sample should be shifted in order that $Z_i - \hat\theta, ..., Z_n = \hat\theta$ appears as a sample from a population with median 0
+
+```{r}
+z-median(z)
+median(z-median(z))
+```
 
 
-## Large sample tst
+## Large sample test
 
 ## Wilcoxon signed rank test
 
+```{r}
+n=10; rn=(n*(n+1)/2); tv=0:rn;
+plot(tv,dsignrank(tv,n),type="h",ylab="",main=paste("n=",n),las=1);
+x0=11;
+psignrank(x0,n);
+1-psignrank(rn-x0-1,n);
+psignrank(rn-x0-1,n,lower.tail=F);
+```
+
+## Example
+
+```{r}
+rbind(z, rank(z)); n=length(z)
+Tplusv=sign(z)*rank(abs(z));
+tplus=sum(Tplusv[Tplusv>0]); tplus
+psignrank(tplus-1,n,lower.tail=F)
+wilcox.test(x, y, paired = T, alternative = "greater",conf.int=T);
+zz=outer(z,z,"+"); lzz=zz[lower.tri(zz,diag=T)]; median(lzz)/2
+
+median(z-0.46)
+wilcox.test(z, alternative = "greater",conf.int=T)
+```
+
+
+
 ## Large sample approximation
+
+```{r}
+wilcox.test(z, alternative = "greater", conf.int=T,
+exact = FALSE, correct = F) ;
+```
+
+
