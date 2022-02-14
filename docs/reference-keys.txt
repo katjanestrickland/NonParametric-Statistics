@@ -53,3 +53,9 @@ sign-test-and-wilcoxon-signed-rank
 f-test
 ansari-bradley
 kruskal-wallis-1
+friedman-rank
+correlation
+pearson
+kendall
+spearman-rank
+cohens-kappa

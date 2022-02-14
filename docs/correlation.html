@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Correlation | NonParametric Stats</title>
+  <meta name="description" content="7 Correlation | NonParametric Stats" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Correlation | NonParametric Stats" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Correlation | NonParametric Stats" />
+  
+  
+  
+
+<meta name="author" content="Katherine Wilson" />
+
+
+<meta name="date" content="2022-02-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="friedman-rank.html"/>
+<link rel="next" href="third-topic.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">TestPage</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="binomial.html"><a href="binomial.html#binomial-distribution"><i class="fa fa-check"></i><b>2.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="2.2" data-path="binomial.html"><a href="binomial.html#normal-approximation-to-the-binomial-distribution"><i class="fa fa-check"></i><b>2.2</b> Normal approximation to the binomial distribution</a></li>
+<li class="chapter" data-level="2.3" data-path="binomial.html"><a href="binomial.html#central-limit-theorum"><i class="fa fa-check"></i><b>2.3</b> Central Limit Theorum</a></li>
+<li class="chapter" data-level="2.4" data-path="binomial.html"><a href="binomial.html#bernoulli-power-calculations"><i class="fa fa-check"></i><b>2.4</b> Bernoulli Power Calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html"><i class="fa fa-check"></i><b>3</b> Wilcoxon rank sum</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.1</b> Two sample T test</a></li>
+<li class="chapter" data-level="3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>3.2</b> Wilcoxon Rank Sum Test</a></li>
+<li class="chapter" data-level="3.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hypothesis"><i class="fa fa-check"></i><b>3.3</b> Hypothesis</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.3.1</b> Location Shift Model</a></li>
+<li class="chapter" data-level="3.3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.3.2</b> Rank</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.4</b> Test Statistic</a></li>
+<li class="chapter" data-level="3.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.5</b> Distribution of W</a></li>
+<li class="chapter" data-level="3.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.6</b> Computation</a></li>
+<li class="chapter" data-level="3.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.7</b> Example</a></li>
+<li class="chapter" data-level="3.8" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.8</b> Hodges-Lehman Estimate</a></li>
+<li class="chapter" data-level="3.9" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.9</b> Example</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.9.1</b> Kolmogorov Smirnov</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html"><i class="fa fa-check"></i><b>4</b> Sign test and Wilcoxon signed rank</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.1</b> Sign test and Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.2" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-2"><i class="fa fa-check"></i><b>4.2</b> Example</a></li>
+<li class="chapter" data-level="4.3" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-test"><i class="fa fa-check"></i><b>4.3</b> Large sample test</a></li>
+<li class="chapter" data-level="4.4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.4</b> Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.5" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-3"><i class="fa fa-check"></i><b>4.5</b> Example</a></li>
+<li class="chapter" data-level="4.6" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.6</b> Large sample approximation</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.1</b> F test</a></li>
+<li class="chapter" data-level="5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.2</b> Ansari-Bradley</a></li>
+<li class="chapter" data-level="5.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.3</b> Kruskal-Wallis</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="friedman-rank.html"><a href="friedman-rank.html"><i class="fa fa-check"></i><b>6</b> Friedman Rank</a></li>
+<li class="chapter" data-level="7" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>7</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="correlation.html"><a href="correlation.html#pearson"><i class="fa fa-check"></i><b>7.0.1</b> Pearson</a></li>
+<li class="chapter" data-level="7.0.2" data-path="correlation.html"><a href="correlation.html#kendall"><i class="fa fa-check"></i><b>7.0.2</b> Kendall</a></li>
+<li class="chapter" data-level="7.0.3" data-path="correlation.html"><a href="correlation.html#spearman-rank"><i class="fa fa-check"></i><b>7.0.3</b> Spearman Rank</a></li>
+<li class="chapter" data-level="7.0.4" data-path="correlation.html"><a href="correlation.html#cohens-kappa"><i class="fa fa-check"></i><b>7.0.4</b> Cohen’s kappa</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="third-topic.html"><a href="third-topic.html"><i class="fa fa-check"></i><b>8</b> Third Topic</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NonParametric Stats</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="correlation" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Correlation</h1>
+<div id="pearson" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Pearson</h3>
+<p><span class="math display">\[\begin{equation}
+\frac{\sum_{i=1}^n(X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt(\sum_{i=1}^n(X_i - \bar{X})^2)\sum_{i=1}^n(Y_i - \bar{Y}^2)}
+\end{equation}\]</span></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="correlation.html#cb24-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">44.4</span>,<span class="fl">45.9</span>, <span class="fl">41.9</span>,<span class="fl">53.3</span>,<span class="fl">44.7</span>,<span class="fl">44.1</span>,<span class="fl">50.7</span>,<span class="fl">45.2</span>,<span class="fl">60.1</span>)</span>
+<span id="cb24-2"><a href="correlation.html#cb24-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">c</span>(<span class="fl">2.6</span>,<span class="fl">3.1</span>,<span class="fl">2.5</span>, <span class="fl">5.0</span>,<span class="fl">3.6</span>,<span class="fl">4.0</span>,<span class="fl">5.2</span>,<span class="fl">2.8</span>, <span class="fl">3.8</span>);</span>
+<span id="cb24-3"><a href="correlation.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">las=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="correlation.html#cb25-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(x)</span>
+<span id="cb25-2"><a href="correlation.html#cb25-2" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">=</span><span class="fu">mean</span>(y); my<span class="ot">=</span><span class="fu">mean</span>(y)</span>
+<span id="cb25-3"><a href="correlation.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((x<span class="sc">-</span>mx)<span class="sc">*</span>(y<span class="sc">-</span>my))<span class="sc">/</span>(<span class="fu">sd</span>(x)<span class="sc">*</span><span class="fu">sd</span>(y)<span class="sc">*</span>(n<span class="dv">-1</span>)); <span class="fu">cov</span>(x,y)<span class="sc">/</span>(<span class="fu">sd</span>(x)<span class="sc">*</span><span class="fu">sd</span>(y))</span></code></pre></div>
+<pre><code>## [1] 0.5711816</code></pre>
+<pre><code>## [1] 0.5711816</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="correlation.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.5711816</span></span>
+<span id="cb28-2"><a href="correlation.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.5711816</span></span>
+<span id="cb28-3"><a href="correlation.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x,y)</span></code></pre></div>
+<pre><code>## [1] 0.5711816</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="correlation.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.5711816</span></span>
+<span id="cb30-2"><a href="correlation.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x,y,<span class="at">method=</span><span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 0.5711816</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="correlation.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x,y,<span class="at">method=</span><span class="st">&quot;pearson&quot;</span>,<span class="at">alternative=</span><span class="st">&quot;g&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  x and y
+## t = 1.8411, df = 7, p-value = 0.05409
+## alternative hypothesis: true correlation is greater than 0
+## 95 percent confidence interval:
+##  -0.02223023  1.00000000
+## sample estimates:
+##       cor 
+## 0.5711816</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="correlation.html#cb34-1" aria-hidden="true" tabindex="-1"></a>pr<span class="ot">=</span><span class="fu">cor</span>(x,y); stat<span class="ot">=</span>pr<span class="sc">*</span><span class="fu">sqrt</span>((n<span class="dv">-2</span>)<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>pr<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb34-2"><a href="correlation.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(stat , <span class="fu">pt</span>(stat,n<span class="dv">-2</span>,<span class="at">lower.tail=</span>F) )</span></code></pre></div>
+<pre><code>## [1] 1.84108264 0.05408653</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="correlation.html#cb36-1" aria-hidden="true" tabindex="-1"></a>z<span class="ot">=</span>(<span class="sc">-</span><span class="dv">10</span>)<span class="sc">:</span><span class="dv">10</span>; <span class="fu">cor</span>(z,z<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="correlation.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0</span></span>
+<span id="cb38-2"><a href="correlation.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(z,z<span class="sc">^</span><span class="dv">2</span>,<span class="at">las=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="fu">expression</span>(z<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+</div>
+<div id="kendall" class="section level3" number="7.0.2">
+<h3><span class="header-section-number">7.0.2</span> Kendall</h3>
+<p><span class="math display">\[\begin{equation}
+K = \sum_{i=1}^{n-1}\sum_{j=i+1}^{n}Q[(X_i, Y_i),(X_j,Y_j)]
+\end{equation}\]</span></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="correlation.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x,y,<span class="at">method=</span><span class="st">&quot;kendal&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 0.4444444</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="correlation.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.4444444</span></span>
+<span id="cb41-2"><a href="correlation.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x,y,<span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>,<span class="at">alternative=</span><span class="st">&quot;g&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Kendall&#39;s rank correlation tau
+## 
+## data:  x and y
+## T = 26, p-value = 0.05972
+## alternative hypothesis: true tau is greater than 0
+## sample estimates:
+##       tau 
+## 0.4444444</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="correlation.html#cb43-1" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">=</span>n<span class="sc">*</span>(n<span class="dv">-1</span>)<span class="sc">/</span><span class="dv">2</span>; oy<span class="ot">=</span><span class="fu">outer</span>(y,y,<span class="st">&quot;-&quot;</span>); z<span class="ot">=</span>oy[<span class="fu">lower.tri</span>(oy)]</span>
+<span id="cb43-2"><a href="correlation.html#cb43-2" aria-hidden="true" tabindex="-1"></a>ox<span class="ot">=</span><span class="fu">outer</span>(x,x,<span class="st">&quot;-&quot;</span>); w<span class="ot">=</span>ox[<span class="fu">lower.tri</span>(ox)]</span>
+<span id="cb43-3"><a href="correlation.html#cb43-3" aria-hidden="true" tabindex="-1"></a>Tstat<span class="ot">=</span><span class="fu">sum</span>(z<span class="sc">*</span>w<span class="sc">&gt;</span><span class="dv">0</span>); Tstat</span></code></pre></div>
+<pre><code>## [1] 26</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="correlation.html#cb45-1" aria-hidden="true" tabindex="-1"></a>K<span class="ot">=</span><span class="dv">2</span><span class="sc">*</span>Tstat<span class="sc">-</span>n2 <span class="co"># K=T- [n(n-1)/2-T] ; K/n2</span></span>
+<span id="cb45-2"><a href="correlation.html#cb45-2" aria-hidden="true" tabindex="-1"></a>sdk<span class="ot">=</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>n2<span class="sc">*</span>(<span class="dv">2</span><span class="sc">*</span>n<span class="sc">+</span><span class="dv">5</span>)<span class="sc">/</span><span class="dv">18</span>); K<span class="sc">/</span>sdk</span></code></pre></div>
+<pre><code>## [1] 1.668115</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="correlation.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(K<span class="sc">/</span>sdk,<span class="at">lower.tail=</span>F);</span></code></pre></div>
+<pre><code>## [1] 0.04764642</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="correlation.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.04764642</span></span>
+<span id="cb49-2"><a href="correlation.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x,y,<span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>,<span class="at">exact=</span>F,<span class="at">alternative=</span><span class="st">&quot;g&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Kendall&#39;s rank correlation tau
+## 
+## data:  x and y
+## z = 1.6681, p-value = 0.04765
+## alternative hypothesis: true tau is greater than 0
+## sample estimates:
+##       tau 
+## 0.4444444</code></pre>
+</div>
+<div id="spearman-rank" class="section level3" number="7.0.3">
+<h3><span class="header-section-number">7.0.3</span> Spearman Rank</h3>
+<p>$$<span class="math display">\[\begin{equation}
+
+\end{equation}\]</span>$$</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="correlation.html#cb51-1" aria-hidden="true" tabindex="-1"></a>rx<span class="ot">=</span><span class="fu">rank</span>(x); ry<span class="ot">=</span><span class="fu">rank</span>(y)</span>
+<span id="cb51-2"><a href="correlation.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x,y,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 0.6</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="correlation.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(rx,ry)</span></code></pre></div>
+<pre><code>## [1] 0.6</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="correlation.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x,y,<span class="at">method=</span><span class="st">&quot;spearman&quot;</span>,<span class="at">alternative=</span><span class="st">&quot;g&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  x and y
+## S = 48, p-value = 0.0484
+## alternative hypothesis: true rho is greater than 0
+## sample estimates:
+## rho 
+## 0.6</code></pre>
+</div>
+<div id="cohens-kappa" class="section level3" number="7.0.4">
+<h3><span class="header-section-number">7.0.4</span> Cohen’s kappa</h3>
+<p>$$<span class="math display">\[\begin{equation}
+
+\end{equation}\]</span>$$</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="correlation.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych); n<span class="ot">=</span><span class="dv">100</span></span>
+<span id="cb57-2"><a href="correlation.html#cb57-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">cbind</span>(<span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">0.05</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="fl">0.01</span>,<span class="fl">0.04</span>,<span class="dv">0</span>),</span>
+<span id="cb57-3"><a href="correlation.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fl">0.04</span>,<span class="fl">0.01</span>,<span class="fl">0.1</span>))</span>
+<span id="cb57-4"><a href="correlation.html#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cohen.kappa</span>(<span class="at">x=</span>data<span class="sc">*</span>n)</span></code></pre></div>
+<pre><code>## Call: cohen.kappa1(x = x, w = w, n.obs = n.obs, alpha = alpha, levels = levels)
+## 
+## Cohen Kappa and Weighted Kappa correlation coefficients and confidence boundaries 
+##                  lower estimate upper
+## unweighted kappa  0.50     0.68  0.85
+## weighted kappa    0.76     0.76  0.76
+## 
+##  Number of subjects = 100</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="friedman-rank.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="third-topic.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/katjanewilson/NonParametric-Statistics/edit/master/07-Correlation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/katjanewilson/NonParametric-Statistics/blob/master/07-Correlation.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
