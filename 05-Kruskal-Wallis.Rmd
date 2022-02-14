@@ -1,1 +1,84 @@
 # Kruskal Wallis
+
+## F test
+\newcommand{\indep}{\perp \!\!\! \perp}
+
+$$\begin{equation}
+X_i ~ N(\mu_x, \sigma_x^2), iid\\
+Y_j ~ N(\mu_y, \sigma_y^2), iid\\
+X_i \text{independent of} Y_j \\
+S_x^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i -\bar{x})^2\\
+S_y^2 = \frac{1}{m-1}\sum_{i=1}^{n}(Y_j -\bar{Y})^2\\ 
+\bar{X} ~ N(\mu_x, \frac{\sigma^2}{n}) \\
+\frac{(n-1)S_x^2}{\sigma_x^2} ~ X_{n-1}^2 \\
+\bar{X} \indep S_x^2 \\
+\bar{Y} \sim N(\mu_y, \frac{\sigma_y^2}{m}) \\
+\frac{(m-1)S_y^2}{\sigma_y^2} \sim X_{m-1}^2\\
+\bar{Y} \indep S_y^2\\
+if V \sim X_p^2 and U \sim X_p^2, and U \indep V, then W = \frac{V/p}{U/q} \sim F_(p,q) \\
+H_0: \sigma_x = \sigma_y \\
+\frac{S_x^2}{S_y^2} \sim F_{n-1,m-1}
+\end{equation}$$
+
+
+```{r}
+
+n=30; m = 20; x= rnorm(n, mean = 0, sd= 2)
+y = rnorm(m, mean = 1, sd= 1)
+var.test(x,y)
+```
+
+## Ansari-Bradley
+
+
+
+$$\begin{equation}
+\frac{X-\theta}{\eta_x} \overset{d}= \frac{Y-\theta}{\eta_y}\\
+\eta_x: \text{scale parameters of G}; \\
+\eta_y: \text{scale parameters of F}; \\
+\gamma = \frac{\eta_x}{\eta_y} \\
+H_0: \gamma^2 = 1
+\end{equation}$$
+
+
+```{r}
+
+x= c(111, 107, 100, 99, 102, 106, 109, 108, 104, 99,
+101, 96, 97, 102, 107, 113, 116, 113, 110, 98)
+y=c(107, 108, 106, 98, 105, 103, 110, 105, 104,
+100, 96, 108, 103, 104, 114, 114, 113, 108, 106, 99)
+summary(x)
+summary(y)
+par(mfrow=c(1,2)); rxy=range(x,y)
+hist(x,xlab="x",xlim=rxy,las=1)
+hist(y,xlab="y",xlim=rxy,las=1)
+par(mfrow=c(1,2));
+boxplot(x,xlab="x",ylim=rxy,las=1)
+boxplot(y,xlab="y",ylim=rxy,las=1)
+
+ansari.test(x,y)
+var.test(x,y)
+```
+
+## Kruskal-Wallis
+
+$$\begin{equation}
+y_{ik} = \theta + \tau_i + \epsilon_{ik} \\
+i = 1,...,1,k=1,...,n_i; \\
+\theta: \text{overall median};
+\tau_i: \text{the i-th treatment effect}\\
+\epsilon_{ik}: \text{iid from a continuous distribution with median 0}
+\end{equation}$$
+
+
+
+```{r}
+x=c(2.9, 3.0, 2.5, 2.6, 3.2) # normal subjects
+y=c(3.8, 2.7, 4.0, 2.4)#with obstructive airway disease
+z=c(2.8, 3.4, 3.7, 2.2, 2.0) # with asbestosis
+w=list(x,y,z)
+w
+kruskal.test(w)
+```
+
+

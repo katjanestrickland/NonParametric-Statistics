@@ -1,4 +1,4 @@
-# Paired T-test
+# Sign test and Wilcoxon signed rank
 
 
 $$\begin{equation}

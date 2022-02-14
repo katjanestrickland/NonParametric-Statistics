@@ -43,3 +43,13 @@ bernoulli-power-calculations
 example-2
 large-sample-test
 example-3
+question-1
+question-1-1
+question-1-2
+question-1-3
+question-1-4
+question-1-5
+sign-test-and-wilcoxon-signed-rank
+f-test
+ansari-bradley
+kruskal-wallis-1

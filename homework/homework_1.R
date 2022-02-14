@@ -71,6 +71,17 @@ xbar-tq*sdx/sqrt(n)
 t.test(x,alternative="greater",mu=mu0)
 
 
+##binomial way part a
+n=30; y=25
+# so ,yes, one of them is better than the other
+binom.test(25,30,0.5, alternative = "greater")
+
+## binomial way part b
+### accept the alternative that A < B
+binom.test(7,30,0.7666667, alternative = "less")
+
+
+
 ####################
 ###question 3###
 ####################
@@ -80,12 +91,15 @@ t.test(x,alternative="greater",mu=mu0)
 n=10; y=1
 pbinom(1,10,0.5, lower.tail=T)
 binom.test(1,10,0.5, alternative = "less")
+# 1- pbinom(9,10,0.5)
+
 
 ### n=30 and y=5, reject null that probability =1//2, accept
 # alternative that the probability of wins <1/2
 n=30; y=5
-pbinom(4,29,1/2, lower.tail=T)
+pbinom(5,30,1/2, lower.tail=T)
 binom.test(5,30,0.5, alternative = "less")
+# 1-pbinom(25,30,0.5)
 
 
 ####################
@@ -100,26 +114,34 @@ sqrt(var)
 ((200+0.5)-202.1)/(3.482)
 ## using the pnorm
 pnorm(-0.459, lower.tail = T)
+
+
 ## the proability one is available to everyone is 32.28%
+pbinom(200, 215, 0.94, lower.tail = T)
+
+## second way
+1-pbinom(14,215,.06)
+
 
 
 ####################
 ###question 5###
 ####################
 
-## large sample approximation
 avg = 1100
 sd = 95
 n=50
 se = sd/sqrt(n)
-## z scores corresponding to 1075 and 1100
-## z score is difference over SE
-z1 = (1075-1100)/(95/sqrt(50))
-z = (1110-1100)/(95/sqrt(50))
 
-## find the probability of these z scores
-pnorm(z1, lower.tail = T)
-pnorm(z, lower.tail = T)
+### STEP 1: get the t's
+tstat_1=sqrt(n)*(1110-1100)/sdx
+tstat_2=sqrt(n)*(1075-1100)/sdx
+
+### STEP 2: get the p
+pnorm(tstat, lower.tail = T)
+pnorm(tstat_2, lower.tail = T)
+
+### step 3: subtract the differences
 0.7716594 - 0.0313857
 
 
@@ -127,7 +149,7 @@ pnorm(z, lower.tail = T)
 ###question 6###
 ####################
 
-### n=1000 and y=550, reject null that the probability = 1/2
+### normal approximation
 550/1000
 np = 1000*0.5
 np
@@ -135,13 +157,17 @@ var = np*(1-0.5)
 var
 sd = sqrt(var)
 sd
-(560-500)/(sd)
-## very unlikely that this coin is fair
-pnorm(3.794733, lower.tail = F)
-### another way
+(550-500)/(sd)
+## very unlikely that this coin is fair, that we
+# see 550 if it is fair, so it's not
+2*pnorm(3.794733, lower.tail = F)
+
+### binomial way
 n=1000; y=550
 2*pbinom(550,1000,1/2, lower.tail=F)
+## two tailed binomial test
 binom.test(550,1000,0.5)
+
 
 
 ####################
@@ -154,28 +180,27 @@ dbinom(1,n,p)
 dbinom(10,n,p)
 0.009765625*2
 
-### part a
-binom.test(1,10,0.5)
-binom.test(10,10,0.5)
-0.02148 + 0.001953
 
 ### part b
-binom.test(1,10,0.1)
-binom.test(10,10,0.1)
+n=10; p=1/10;
+dbinom(1,n,p) + dbinom(10,n,p)
+
 
 
 ####################
 ###question 8###
 ####################
-
 avg = 8
-sd = 0.4
-n= 36
-se = sd/sqrt(n)
-## z score for 8.1 ounces
-z1 = (8.1-8)/(se)
-## find the probability of these z scores
-pnorm(z1, lower.tail = F)
+sdx = 0.4
+n=36
+
+### find test statistic
+tstat_1=sqrt(n)*(8.1-avg)/sdx
+## find the probability in the upper tail
+pnorm(tstat_1, lower.tail = F)
+### 6% chance it exceeds 8.1
+
+
 
 ####################
 ###question 9###

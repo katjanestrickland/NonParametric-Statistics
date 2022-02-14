@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Paired T-test | NonParametric Stats</title>
-  <meta name="description" content="4 Paired T-test | NonParametric Stats" />
+  <title>4 Sign test and Wilcoxon signed rank | NonParametric Stats</title>
+  <meta name="description" content="4 Sign test and Wilcoxon signed rank | NonParametric Stats" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Paired T-test | NonParametric Stats" />
+  <meta property="og:title" content="4 Sign test and Wilcoxon signed rank | NonParametric Stats" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Paired T-test | NonParametric Stats" />
+  <meta name="twitter:title" content="4 Sign test and Wilcoxon signed rank | NonParametric Stats" />
   
   
   
@@ -164,14 +164,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.9.1</b> Kolmogorov Smirnov</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="paired-t-test.html"><a href="paired-t-test.html"><i class="fa fa-check"></i><b>4</b> Paired T-test</a>
+<li class="chapter" data-level="4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html"><i class="fa fa-check"></i><b>4</b> Sign test and Wilcoxon signed rank</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="paired-t-test.html"><a href="paired-t-test.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.1</b> Sign test and Wilcoxon signed rank test</a></li>
-<li class="chapter" data-level="4.2" data-path="paired-t-test.html"><a href="paired-t-test.html#example-2"><i class="fa fa-check"></i><b>4.2</b> Example</a></li>
-<li class="chapter" data-level="4.3" data-path="paired-t-test.html"><a href="paired-t-test.html#large-sample-test"><i class="fa fa-check"></i><b>4.3</b> Large sample test</a></li>
-<li class="chapter" data-level="4.4" data-path="paired-t-test.html"><a href="paired-t-test.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.4</b> Wilcoxon signed rank test</a></li>
-<li class="chapter" data-level="4.5" data-path="paired-t-test.html"><a href="paired-t-test.html#example-3"><i class="fa fa-check"></i><b>4.5</b> Example</a></li>
-<li class="chapter" data-level="4.6" data-path="paired-t-test.html"><a href="paired-t-test.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.6</b> Large sample approximation</a></li>
+<li class="chapter" data-level="4.1" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.1</b> Sign test and Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.2" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-2"><i class="fa fa-check"></i><b>4.2</b> Example</a></li>
+<li class="chapter" data-level="4.3" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-test"><i class="fa fa-check"></i><b>4.3</b> Large sample test</a></li>
+<li class="chapter" data-level="4.4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.4</b> Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.5" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-3"><i class="fa fa-check"></i><b>4.5</b> Example</a></li>
+<li class="chapter" data-level="4.6" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.6</b> Large sample approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a></li>
 <li class="chapter" data-level="6" data-path="two-sample-tests.html"><a href="two-sample-tests.html"><i class="fa fa-check"></i><b>6</b> Two Sample Tests</a></li>
@@ -196,8 +196,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="paired-t-test" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Paired T-test</h1>
+<div id="sign-test-and-wilcoxon-signed-rank" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Sign test and Wilcoxon signed rank</h1>
 <p><span class="math display">\[\begin{equation}
 \text{Paired data} (X_i, Y_i), i = 1...,n\\
 (X_i, Y_i) \text{independent of} (X_j, Y_j), i \ne j \\
@@ -206,31 +206,31 @@ Cov(X_i, Y_i) = \sigma_{xy} = \rho\sigma_x\sigma_y \\
 D_i = X_i -Y_i \sim N(\delta = \mu_x - \mu_y, \sigma_x^2 + \sigma_y^2 -2\rho\sigma_x\sigma_y) \\ 
 D_i = \bar{X} - \bar{Y} \sim N(\delta, \frac{1}{n}(\sigma_x^2 + \sigma_y^2 - 2\rho\sigma_x\sigma_y)) \\ 
 \end{equation}\]</span></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="paired-t-test.html#cb1-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span>; x<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="at">mean=</span><span class="dv">1</span>,<span class="at">sd=</span><span class="dv">1</span>); y<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="at">mean=</span><span class="fl">1.1</span>,<span class="at">sd=</span><span class="dv">1</span>);</span>
-<span id="cb1-2"><a href="paired-t-test.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,y,<span class="at">paired=</span>T)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb1-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span>; x<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="at">mean=</span><span class="dv">1</span>,<span class="at">sd=</span><span class="dv">1</span>); y<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="at">mean=</span><span class="fl">1.1</span>,<span class="at">sd=</span><span class="dv">1</span>);</span>
+<span id="cb1-2"><a href="sign-test-and-wilcoxon-signed-rank.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x,y,<span class="at">paired=</span>T)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
 ## data:  x and y
-## t = -0.76694, df = 29, p-value = 0.4493
+## t = 0.45145, df = 29, p-value = 0.655
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -0.6607194  0.3003345
+##  -0.3924828  0.6148275
 ## sample estimates:
 ## mean of the differences 
-##              -0.1801924</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="paired-t-test.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x<span class="sc">-</span>y)</span></code></pre></div>
+##               0.1111723</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x<span class="sc">-</span>y)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
 ## data:  x - y
-## t = -0.76694, df = 29, p-value = 0.4493
+## t = 0.45145, df = 29, p-value = 0.655
 ## alternative hypothesis: true mean is not equal to 0
 ## 95 percent confidence interval:
-##  -0.6607194  0.3003345
+##  -0.3924828  0.6148275
 ## sample estimates:
-##  mean of x 
-## -0.1801924</code></pre>
+## mean of x 
+## 0.1111723</code></pre>
 <div id="sign-test-and-wilcoxon-signed-rank-test" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Sign test and Wilcoxon signed rank test</h2>
 <p>Nonparametric version of the paired or one sample t. test. Primary interest is centered on the location (median) of the population. Two scenarios: pared data, such as pretreatment and posttreatment where we are looking at shift in location due to treatment, or one sample data, where obserbations from a single population about whose location we wish to make inferences.</p>
@@ -251,28 +251,28 @@ D_i = \bar{X} - \bar{Y} \sim N(\delta, \frac{1}{n}(\sigma_x^2 + \sigma_y^2 - 2\r
 </div>
 <div id="example-2" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Example</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="paired-t-test.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span></code></pre></div>
 <pre><code>## Loading required package: lattice</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;BSDA&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:datasets&#39;:
 ## 
 ##     Orange</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="paired-t-test.html#cb9-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">1.83</span>,<span class="fl">0.50</span>,<span class="fl">1.62</span>,<span class="fl">2.48</span>,<span class="fl">1.68</span>,<span class="fl">1.88</span>,<span class="fl">1.55</span>,<span class="fl">3.06</span>,<span class="fl">1.30</span>);</span>
-<span id="cb9-2"><a href="paired-t-test.html#cb9-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.878</span>,<span class="fl">0.647</span>,<span class="fl">0.598</span>,<span class="fl">2.05</span>,<span class="fl">1.06</span>,<span class="fl">1.29</span>,<span class="fl">1.06</span>,<span class="fl">3.14</span>,<span class="fl">1.29</span>);</span>
-<span id="cb9-3"><a href="paired-t-test.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">las=</span><span class="dv">1</span>); <span class="fu">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>);</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb9-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">1.83</span>,<span class="fl">0.50</span>,<span class="fl">1.62</span>,<span class="fl">2.48</span>,<span class="fl">1.68</span>,<span class="fl">1.88</span>,<span class="fl">1.55</span>,<span class="fl">3.06</span>,<span class="fl">1.30</span>);</span>
+<span id="cb9-2"><a href="sign-test-and-wilcoxon-signed-rank.html#cb9-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.878</span>,<span class="fl">0.647</span>,<span class="fl">0.598</span>,<span class="fl">2.05</span>,<span class="fl">1.06</span>,<span class="fl">1.29</span>,<span class="fl">1.06</span>,<span class="fl">3.14</span>,<span class="fl">1.29</span>);</span>
+<span id="cb9-3"><a href="sign-test-and-wilcoxon-signed-rank.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">las=</span><span class="dv">1</span>); <span class="fu">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>);</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="paired-t-test.html#cb10-1" aria-hidden="true" tabindex="-1"></a>z<span class="ot">=</span>x<span class="sc">-</span>y; z; <span class="fu">sign</span>(z) ; stat<span class="ot">=</span><span class="fu">sum</span>(x<span class="sc">&gt;</span>y);</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb10-1" aria-hidden="true" tabindex="-1"></a>z<span class="ot">=</span>x<span class="sc">-</span>y; z; <span class="fu">sign</span>(z) ; stat<span class="ot">=</span><span class="fu">sum</span>(x<span class="sc">&gt;</span>y);</span></code></pre></div>
 <pre><code>## [1]  0.952 -0.147  1.022  0.430  0.620  0.590  0.490 -0.080  0.010</code></pre>
 <pre><code>## [1]  1 -1  1  1  1  1  1 -1  1</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="paired-t-test.html#cb13-1" aria-hidden="true" tabindex="-1"></a>stat; <span class="fu">median</span>(z);</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb13-1" aria-hidden="true" tabindex="-1"></a>stat; <span class="fu">median</span>(z);</span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
 <pre><code>## [1] 0.49</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="paired-t-test.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pbinom</span>(stat<span class="dv">-1</span>,<span class="fu">length</span>(z),<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pbinom</span>(stat<span class="dv">-1</span>,<span class="fu">length</span>(z),<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
 <pre><code>## [1] 0.1796875</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="paired-t-test.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pbinom</span>(stat<span class="dv">-1</span>,<span class="fu">length</span>(z),<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pbinom</span>(stat<span class="dv">-1</span>,<span class="fu">length</span>(z),<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
 <pre><code>## [1] 0.1796875</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="paired-t-test.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SIGN.test</span>(z);</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SIGN.test</span>(z);</span></code></pre></div>
 <pre><code>## 
 ##  One-sample Sign-Test
 ## 
@@ -296,9 +296,9 @@ D_i = \bar{X} - \bar{Y} \sim N(\delta, \frac{1}{n}(\sigma_x^2 + \sigma_y^2 - 2\r
 <li>A natural estimator of <span class="math inline">\(\theta\)</span> is the amount that <span class="math inline">\(\hat\theta\)</span> should be subtracted from each <span class="math inline">\(Z_i\)</span> so that the value of Y, when applied to the shifted sample <span class="math inline">\(Z_i - \hat\theta, ..., Z_n = \hat\theta\)</span> is as close to n/2 as possible</li>
 <li>We estimate <span class="math inline">\(\theta\)</span> by the amount <span class="math inline">\(\hat\theta\)</span> that the Z sample should be shifted in order that <span class="math inline">\(Z_i - \hat\theta, ..., Z_n = \hat\theta\)</span> appears as a sample from a population with median 0</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="paired-t-test.html#cb22-1" aria-hidden="true" tabindex="-1"></a>z<span class="sc">-</span><span class="fu">median</span>(z)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb22-1" aria-hidden="true" tabindex="-1"></a>z<span class="sc">-</span><span class="fu">median</span>(z)</span></code></pre></div>
 <pre><code>## [1]  0.462 -0.637  0.532 -0.060  0.130  0.100  0.000 -0.570 -0.480</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="paired-t-test.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(z<span class="sc">-</span><span class="fu">median</span>(z))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(z<span class="sc">-</span><span class="fu">median</span>(z))</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 </div>
 <div id="large-sample-test" class="section level2" number="4.3">
@@ -306,29 +306,29 @@ D_i = \bar{X} - \bar{Y} \sim N(\delta, \frac{1}{n}(\sigma_x^2 + \sigma_y^2 - 2\r
 </div>
 <div id="wilcoxon-signed-rank-test" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Wilcoxon signed rank test</h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="paired-t-test.html#cb26-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">10</span>; rn<span class="ot">=</span>(n<span class="sc">*</span>(n<span class="sc">+</span><span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span>); tv<span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>rn;</span>
-<span id="cb26-2"><a href="paired-t-test.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tv,<span class="fu">dsignrank</span>(tv,n),<span class="at">type=</span><span class="st">&quot;h&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;&quot;</span>,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">&quot;n=&quot;</span>,n),<span class="at">las=</span><span class="dv">1</span>);</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb26-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">10</span>; rn<span class="ot">=</span>(n<span class="sc">*</span>(n<span class="sc">+</span><span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span>); tv<span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>rn;</span>
+<span id="cb26-2"><a href="sign-test-and-wilcoxon-signed-rank.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tv,<span class="fu">dsignrank</span>(tv,n),<span class="at">type=</span><span class="st">&quot;h&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;&quot;</span>,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">&quot;n=&quot;</span>,n),<span class="at">las=</span><span class="dv">1</span>);</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="paired-t-test.html#cb27-1" aria-hidden="true" tabindex="-1"></a>x0<span class="ot">=</span><span class="dv">11</span>;</span>
-<span id="cb27-2"><a href="paired-t-test.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">psignrank</span>(x0,n);</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb27-1" aria-hidden="true" tabindex="-1"></a>x0<span class="ot">=</span><span class="dv">11</span>;</span>
+<span id="cb27-2"><a href="sign-test-and-wilcoxon-signed-rank.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">psignrank</span>(x0,n);</span></code></pre></div>
 <pre><code>## [1] 0.05273438</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="paired-t-test.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">psignrank</span>(rn<span class="sc">-</span>x0<span class="dv">-1</span>,n);</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">psignrank</span>(rn<span class="sc">-</span>x0<span class="dv">-1</span>,n);</span></code></pre></div>
 <pre><code>## [1] 0.05273438</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="paired-t-test.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">psignrank</span>(rn<span class="sc">-</span>x0<span class="dv">-1</span>,n,<span class="at">lower.tail=</span>F);</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">psignrank</span>(rn<span class="sc">-</span>x0<span class="dv">-1</span>,n,<span class="at">lower.tail=</span>F);</span></code></pre></div>
 <pre><code>## [1] 0.05273438</code></pre>
 </div>
 <div id="example-3" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Example</h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="paired-t-test.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(z, <span class="fu">rank</span>(z)); n<span class="ot">=</span><span class="fu">length</span>(z)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(z, <span class="fu">rank</span>(z)); n<span class="ot">=</span><span class="fu">length</span>(z)</span></code></pre></div>
 <pre><code>##    [,1]   [,2]  [,3] [,4] [,5] [,6] [,7]  [,8] [,9]
 ## z 0.952 -0.147 1.022 0.43 0.62 0.59 0.49 -0.08 0.01
 ##   8.000  1.000 9.000 4.00 7.00 6.00 5.00  2.00 3.00</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="paired-t-test.html#cb35-1" aria-hidden="true" tabindex="-1"></a>Tplusv<span class="ot">=</span><span class="fu">sign</span>(z)<span class="sc">*</span><span class="fu">rank</span>(<span class="fu">abs</span>(z));</span>
-<span id="cb35-2"><a href="paired-t-test.html#cb35-2" aria-hidden="true" tabindex="-1"></a>tplus<span class="ot">=</span><span class="fu">sum</span>(Tplusv[Tplusv<span class="sc">&gt;</span><span class="dv">0</span>]); tplus</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb35-1" aria-hidden="true" tabindex="-1"></a>Tplusv<span class="ot">=</span><span class="fu">sign</span>(z)<span class="sc">*</span><span class="fu">rank</span>(<span class="fu">abs</span>(z));</span>
+<span id="cb35-2"><a href="sign-test-and-wilcoxon-signed-rank.html#cb35-2" aria-hidden="true" tabindex="-1"></a>tplus<span class="ot">=</span><span class="fu">sum</span>(Tplusv[Tplusv<span class="sc">&gt;</span><span class="dv">0</span>]); tplus</span></code></pre></div>
 <pre><code>## [1] 40</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="paired-t-test.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">psignrank</span>(tplus<span class="dv">-1</span>,n,<span class="at">lower.tail=</span>F)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">psignrank</span>(tplus<span class="dv">-1</span>,n,<span class="at">lower.tail=</span>F)</span></code></pre></div>
 <pre><code>## [1] 0.01953125</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="paired-t-test.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(x, y, <span class="at">paired =</span> T, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,<span class="at">conf.int=</span>T);</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(x, y, <span class="at">paired =</span> T, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,<span class="at">conf.int=</span>T);</span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon signed rank exact test
 ## 
@@ -340,11 +340,11 @@ D_i = \bar{X} - \bar{Y} \sim N(\delta, \frac{1}{n}(\sigma_x^2 + \sigma_y^2 - 2\r
 ## sample estimates:
 ## (pseudo)median 
 ##           0.46</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="paired-t-test.html#cb41-1" aria-hidden="true" tabindex="-1"></a>zz<span class="ot">=</span><span class="fu">outer</span>(z,z,<span class="st">&quot;+&quot;</span>); lzz<span class="ot">=</span>zz[<span class="fu">lower.tri</span>(zz,<span class="at">diag=</span>T)]; <span class="fu">median</span>(lzz)<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb41-1" aria-hidden="true" tabindex="-1"></a>zz<span class="ot">=</span><span class="fu">outer</span>(z,z,<span class="st">&quot;+&quot;</span>); lzz<span class="ot">=</span>zz[<span class="fu">lower.tri</span>(zz,<span class="at">diag=</span>T)]; <span class="fu">median</span>(lzz)<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 0.46</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="paired-t-test.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(z<span class="fl">-0.46</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(z<span class="fl">-0.46</span>)</span></code></pre></div>
 <pre><code>## [1] 0.03</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="paired-t-test.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(z, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,<span class="at">conf.int=</span>T)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(z, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,<span class="at">conf.int=</span>T)</span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon signed rank exact test
 ## 
@@ -359,8 +359,8 @@ D_i = \bar{X} - \bar{Y} \sim N(\delta, \frac{1}{n}(\sigma_x^2 + \sigma_y^2 - 2\r
 </div>
 <div id="large-sample-approximation" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Large sample approximation</h2>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="paired-t-test.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(z, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">conf.int=</span>T,</span>
-<span id="cb47-2"><a href="paired-t-test.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct =</span> F) ;</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="sign-test-and-wilcoxon-signed-rank.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(z, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">conf.int=</span>T,</span>
+<span id="cb47-2"><a href="sign-test-and-wilcoxon-signed-rank.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct =</span> F) ;</span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon signed rank test
 ## 

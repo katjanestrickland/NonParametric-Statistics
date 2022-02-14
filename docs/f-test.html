@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | NonParametric Stats</title>
-  <meta name="description" content="Page not found | NonParametric Stats" />
+  <title>6 F test | NonParametric Stats</title>
+  <meta name="description" content="6 F test | NonParametric Stats" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | NonParametric Stats" />
+  <meta property="og:title" content="6 F test | NonParametric Stats" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | NonParametric Stats" />
+  <meta name="twitter:title" content="6 F test | NonParametric Stats" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="kruskal-wallis.html"/>
+<link rel="next" href="two-sample-tests.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -173,15 +173,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-3"><i class="fa fa-check"></i><b>4.5</b> Example</a></li>
 <li class="chapter" data-level="4.6" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.6</b> Large sample approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.1</b> F test</a></li>
-<li class="chapter" data-level="5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.2</b> Ansari-Bradley</a></li>
-<li class="chapter" data-level="5.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.3</b> Kruskal-Wallis</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="two-sample-tests.html"><a href="two-sample-tests.html"><i class="fa fa-check"></i><b>6</b> Two Sample Tests</a></li>
-<li class="chapter" data-level="7" data-path="smoothing-methods.html"><a href="smoothing-methods.html"><i class="fa fa-check"></i><b>7</b> Smoothing Methods</a></li>
-<li class="chapter" data-level="8" data-path="third-topic.html"><a href="third-topic.html"><i class="fa fa-check"></i><b>8</b> Third Topic</a></li>
+<li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a></li>
+<li class="chapter" data-level="6" data-path="f-test.html"><a href="f-test.html"><i class="fa fa-check"></i><b>6</b> F test</a></li>
+<li class="chapter" data-level="7" data-path="two-sample-tests.html"><a href="two-sample-tests.html"><i class="fa fa-check"></i><b>7</b> Two Sample Tests</a></li>
+<li class="chapter" data-level="8" data-path="smoothing-methods.html"><a href="smoothing-methods.html"><i class="fa fa-check"></i><b>8</b> Smoothing Methods</a></li>
+<li class="chapter" data-level="9" data-path="third-topic.html"><a href="third-topic.html"><i class="fa fa-check"></i><b>9</b> Third Topic</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -201,19 +197,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="f-test" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> F test</h1>
+<p><span class="math display">\[\begin{equation}
+X_i ~ N(\mu_x, \sigma_x^2), iid\\
+Y_j ~ N(\mu_y, \sigma_y^2), iid\\
+X_i \text{independent of} Y_j \\
+S_x^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i -\bar{x})^2\\
+S_y^2 = \frac{1}{m-1}\sum_{i=1}^{n}(Y_j -\bar{Y})^2\\ 
+\bar{X} ~ N(\mu_x, \frac{\sigma^2}{n}) \\
+\frac{(n-1)S_x^2}{\sigma_x^2} ~ X_{n-1}^2 \\
+\bar{X} \text{is independent of} S_x^2 \\
+\bar{Y} \sim N(\mu_y, \frac{\sigma_y^2}{m}) \\
+\frac{(m-1)S_y^2}{\sigma_y^2} \sim X_{m-1}^2\\
+\bar{Y} \text{is independent of} S_y^2\\
+if V \sim X_p^2 and U \sim X_p^2, and U is independnet of V, then W = \frac{V/p}{U/q} \sim F_(p,q) \\
+H_0: \sigma_x = \sigma_y \\
+\frac{S_x^2}{S_y^2} \sim F_{n-1,m-1}
+\end{equation}\]</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="f-test.html#cb1-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span>; m <span class="ot">=</span> <span class="dv">20</span>; x<span class="ot">=</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd=</span> <span class="dv">2</span>)</span>
+<span id="cb1-2"><a href="f-test.html#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">rnorm</span>(m, <span class="at">mean =</span> <span class="dv">1</span>, <span class="at">sd=</span> <span class="dv">1</span>)</span>
+<span id="cb1-3"><a href="f-test.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(x,y)</span></code></pre></div>
+<pre><code>## 
+##  F test to compare two variances
+## 
+## data:  x and y
+## F = 3.3673, num df = 29, denom df = 19, p-value = 0.007668
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  1.401915 7.513414
+## sample estimates:
+## ratio of variances 
+##            3.36732</code></pre>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="kruskal-wallis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="two-sample-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -244,7 +268,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/katjanewilson/NonParametric-Statistics/edit/master/%s",
+"link": "https://github.com/katjanewilson/NonParametric-Statistics/edit/master/05-Kruskal-Wallis.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -252,7 +276,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/katjanewilson/NonParametric-Statistics/blob/master/%s",
+"link": "https://github.com/katjanewilson/NonParametric-Statistics/blob/master/05-Kruskal-Wallis.Rmd",
 "text": null
 },
 "download": null,
