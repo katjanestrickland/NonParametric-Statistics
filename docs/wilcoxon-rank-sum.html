@@ -173,9 +173,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-3"><i class="fa fa-check"></i><b>4.5</b> Example</a></li>
 <li class="chapter" data-level="4.6" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.6</b> Large sample approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a></li>
-<li class="chapter" data-level="6" data-path="two-sample-tests.html"><a href="two-sample-tests.html"><i class="fa fa-check"></i><b>6</b> Two Sample Tests</a></li>
-<li class="chapter" data-level="7" data-path="smoothing-methods.html"><a href="smoothing-methods.html"><i class="fa fa-check"></i><b>7</b> Smoothing Methods</a></li>
+<li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.1</b> F test</a></li>
+<li class="chapter" data-level="5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.2</b> Ansari-Bradley</a></li>
+<li class="chapter" data-level="5.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.3</b> Kruskal-Wallis</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="friedman-rank.html"><a href="friedman-rank.html"><i class="fa fa-check"></i><b>6</b> Friedman Rank</a></li>
+<li class="chapter" data-level="7" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>7</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="correlation.html"><a href="correlation.html#pearson"><i class="fa fa-check"></i><b>7.0.1</b> Pearson</a></li>
+<li class="chapter" data-level="7.0.2" data-path="correlation.html"><a href="correlation.html#kendall"><i class="fa fa-check"></i><b>7.0.2</b> Kendall</a></li>
+<li class="chapter" data-level="7.0.3" data-path="correlation.html"><a href="correlation.html#spearman-rank"><i class="fa fa-check"></i><b>7.0.3</b> Spearman Rank</a></li>
+<li class="chapter" data-level="7.0.4" data-path="correlation.html"><a href="correlation.html#cohens-kappa"><i class="fa fa-check"></i><b>7.0.4</b> Cohen’s kappa</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="third-topic.html"><a href="third-topic.html"><i class="fa fa-check"></i><b>8</b> Third Topic</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -220,13 +231,13 @@ H_o: \mu_x = \mu_y vs.H_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
 ##  Welch Two Sample t-test
 ## 
 ## data:  x and y
-## t = -1.7938, df = 54.351, p-value = 0.0784
+## t = 0.15866, df = 55.523, p-value = 0.8745
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -1.0073237  0.0558879
+##  -0.4694483  0.5501927
 ## sample estimates:
 ## mean of x mean of y 
-##  1.007406  1.483124</code></pre>
+## 1.0125028 0.9721305</code></pre>
 </div>
 <div id="wilcoxon-rank-sum-test" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Wilcoxon Rank Sum Test</h2>
@@ -386,7 +397,7 @@ H_o: \mu_x = \mu_y vs.H_1: \mu_x \ne \mu_y(\mu_x &gt; \mu_y, \mu_x &lt; \mu_y)
 ##  Two-sample Kolmogorov-Smirnov test
 ## 
 ## data:  x and y
-## D = 0.42, p-value = 0.001826
+## D = 0.48, p-value = 0.0002033
 ## alternative hypothesis: two-sided</code></pre>
 
 </div>
