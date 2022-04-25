@@ -1,1 +1,27 @@
-# Third Topic
+# Comparing proportions in 2 X 2 tables
+
+## Large sample test procedures
+
+$$H_o: \pi_1 = \pi_2$$
+
+* $p = \frac{n_{11} + n_{21}}{{n_1} + n_{2}}$ : an estimator of the hypothesized common success probability
+
+```{r}
+
+n1=60; n2=40; n=n1+n2; n11=20; n21=30
+p1=n11/n1; p2=n21/n2; p=(n11+n21)/n
+stat=(p1-p2)/sqrt(p*(1-p)/n1+p*(1-p)/n2)
+c(stat,2*pnorm(stat))
+
+c(stat^2,pchisq(stat^2,1,lower.tail=F))
+
+s=sqrt(p1*(1-p1)/n1+p2*(1-p2)/n2); z=qnorm(0.975)
+p1-p2+c(-1,1)*z*s
+
+prop.test(c(n11,n21),c(n1,n2),correct=F)
+
+yates=min(0.5,abs(p1-p2)/(1/n1+1/n2))
+p1-p2+c(-1,1)*(z*s+yates*(1/n1+1/n2))
+
+prop.test(c(n11,n21),c(n1,n2))
+```
