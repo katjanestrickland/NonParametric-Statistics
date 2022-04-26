@@ -91,3 +91,5 @@ multiple-regression
 mcnemars
 stuart
 b-splines
+x2-chi-squared-test-of-homogeneity
+x2-chi-squared-test-of-independence

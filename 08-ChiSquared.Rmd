@@ -24,4 +24,44 @@ yates=min(0.5,abs(p1-p2)/(1/n1+1/n2))
 p1-p2+c(-1,1)*(z*s+yates*(1/n1+1/n2))
 
 prop.test(c(n11,n21),c(n1,n2))
+
+yates=min(0.5,abs(p1-p2)/(1/n1+1/n2))
+p1-p2+c(-1,1)*(z*s+yates*(1/n1+1/n2))
+## [1] -0.6170396 -0.2162937
+prop.test(c(n11,n21),c(n1,n2))
 ```
+
+## 2X2 Chi-Squared test of homogeneity
+
+```{r}
+n.1=n11+n21; p=n.1/n
+nv=c(n11,n1-n11,n21,n2-n21)
+ev=c(n1*p,n1*(1-p),n2*p,n2*(1-p))
+cstat=sum((abs(nv -ev) - yates)^2/ev)
+pchisq(cstat, 1, lower.tail = F)
+## [1] 0.0001051636
+prop.test(c(n11,n21),c(n1,n2))
+
+xm=matrix(c(n11,n1-n11,n21,n2-n21),2,2,byrow=T)
+xm
+
+chisq.test(xm)
+
+```
+
+## 2X2 Chi-Squared test of independence
+
+```{r}
+n11=50; n12=40; n21=60; n22=50
+xm=matrix(c(n11,n12,n21,n22),2,2,byrow=T);
+xm
+
+chisq.test(xm,correct=F)
+
+n1=n11+n12; n2=n21+n22
+prop.test(c(n11,n21),c(n1,n2),correct=F)
+
+chitest=chisq.test(xm,correct=F)
+names(chitest)
+```
+
