@@ -93,3 +93,10 @@ stuart
 b-splines
 x2-chi-squared-test-of-homogeneity
 x2-chi-squared-test-of-independence
+relative-riskodds-ratio
+relative-risk
+odds
+example-4
+hypergeometric-distribution
+binomial-coefficient
+multinomial-distribution

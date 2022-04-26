@@ -1,0 +1,15 @@
+# Relative Risk/Odds Ratio
+
+### Relative Risk
+
+### Odds
+
+### Example
+
+```{r}
+
+
+```
+
+### Hypergeometric distribution
+

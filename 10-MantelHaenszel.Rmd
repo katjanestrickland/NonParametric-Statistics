@@ -1,1 +1,14 @@
 # MH
+
+
+## Binomial coefficient
+
+The number of unordered samples of y objects selected from n objects without replacement is 
+
+$$ {n \choose y} = \frac{n \times (n-1) \times (n-y-1)}{y!}) \\
+ = \frac{[n \times (n-1) \times (n-y+1)](n-1)!}{(n-1)!y!} \\
+ = \frac{n!}{(n-1)!y!}$$
+ 
+## Multinomial Distribution
+
+
