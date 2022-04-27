@@ -114,3 +114,7 @@ example-7
 local-linear-estimator
 local-polynomial-estimator
 example-8
+semi-parametric-regression-with-splines
+basis-functions
+example-9
+broken-stick-model
