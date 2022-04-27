@@ -106,3 +106,11 @@ the-empirical-distribution-function
 example-5
 kernal-function
 triangle-kernal
+nonparametric-regression
+step-up
+example-6
+nearest-neighborhood-method
+example-7
+local-linear-estimator
+local-polynomial-estimator
+example-8

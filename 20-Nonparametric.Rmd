@@ -1,23 +1,90 @@
-# Friedman Rank
+# Nonparametric Regression
 
-Nonparametric version of two-way ANOVA. The collected data of an experimental design involves two factors, each at two or more levels, the treatment factor and blocking factor. 
 
+## Step up
+
+* Data: $(x_{i}, y_{i}), i = 1.,,,,n$
+* $y_i = m(x_{i}) + \epsilon_{i}, i =1,...,n$
+* m unknown, usually continuous and smooth
+* For example, $m(x_{i}) = \beta_{0} + \beta_{1}x_{i} +\beta_{2}x_{i}^2$
+* $\epsilon_i$ iid from a continuous distribution, $E\epsilon_i = 0$
+* $E(y_{i} \mid x_{1}) = m(x_{i})$
+
+## Example
 
 ```{r}
-library(BSDA)
-x=c(1.83,0.50,1.62,2.48,1.68,1.88,1.55,3.06,1.30);
-y=c(0.878,0.647,0.598,2.05,1.06,1.29,1.06,3.14,1.29);
-plot(x,y,las=1); abline(0,1)
-xy=cbind(x,y); xy
-axy=apply(xy,1,rank); axy
-(rowMeans(axy)-3/2)^2
-S=sum((rowMeans(axy)-3/2)^2)*12*9/6
-S
-pchisq(S,1,lower.tail=F)
-n=length(x); da=cbind(z=c(x,y),gr=c(rep(1,n),rep(2,n)),blk=rep(1:n,2))
-da
-friedman.test(z~gr|blk,data=da)
-test.stat=(sum(x>y)-n/2)/sqrt(n/4); t2=test.stat^2
-c(2*pnorm(test.stat,lower.tail=F),t2,pchisq(t2,1,lower.tail=F))
-wilcox.test(x,y,paired=T)
+n=30; x=sort(runif(n,0,1)); y=sin(x*pi)+rnorm(n,0,0.1)
+plot(x,y); m1=lm(y~x); abline(m1)
+
+x2=x^2; m2=update(m1,~.+x2)
+plot(x,y); abline(m1); lines(x,m2$fit,col=2)
+
+summary(m1)
+
+summary(m2)
+
+y=sin(x*pi*2)+rnorm(n,0,0.1); plot(x,y); m1=lm(y~x); abline(m1,lty=3)
+
+m2=update(m1,~.+I(x^2));plot(x,y); abline(m1,lty=3);
+lines(x,m2$fit,col=2,lty=2)
+
+range(x); cx5=cut(x,5); levels(cx5);
+
+cx5=cut(x,5,include.lowest=T); levels(cx5)
+
+m3=lm(y~cx5);
+summary(m3)$coef
+
+tapply(y,cx5,mean)
+
+plot(x,y); abline(m1,lty=3); lines(x,m2$fit,col=2,lty=2)
+lines(x,m3$fit,col="blue",lty=5,type="b")
+
+cx10=cut(x,10,include.lowest=T); m4=update(m3,~cx10)
+plot(x,y); abline(m1,lty=3); lines(x,m2$fit,col=2,lty=2)
+lines(x,m3$fit,col="blue",lty=5,type="b");
+lines(x,m4$fit,col="darkgreen",lty=1,type="b")
+
+
+
+
 ```
+
+### Nearest Neighborhood method
+
+* Local averaging
+* Local linear regression
+
+## Example
+
+```{r}
+
+library(KernSmooth); data(geyser, package = "MASS")
+
+xis=geyser$duration; yis=geyser$waiting
+plot(xis, yis,xlab="Duration",ylab="Waiting",las=1)
+fit1=ksmooth(xis, yis, bandwidth = 0.5); lines(fit1,col=2)
+fit2=ksmooth(xis, yis,band= 1);lines(fit2,col=4)
+fit3=ksmooth(xis, yis,band= 5);lines(fit3,col=3)
+
+```
+
+## Local linear estimator
+
+## Local polynomial estimator
+
+## Example
+
+```{r}
+est=locpoly(xis, bandwidth = 0.25); do=density(xis);
+hist(xis,prob=T,ylim=c(0,0.6),xlim=range(est$x,xis,do$x),las=1)
+lines(est$x,est$y); lines(do$x,do$y,col=2)
+
+plot(xis, yis,xlab="Duration",ylab="Waiting",las=1)
+fit1=locpoly(xis, yis, degree=1,band= 0.25); lines(fit1,col=2)
+fit2=locpoly(xis, yis, degree=2,band= 0.25);lines(fit2,col=4)
+fit3=locpoly(xis, yis, degree=2,band= 0.5);lines(fit3,col=3)
+```
+
+
+

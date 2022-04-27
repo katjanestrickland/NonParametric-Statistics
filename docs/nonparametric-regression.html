@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | NonParametric Stats</title>
-  <meta name="description" content="Page not found | NonParametric Stats" />
+  <title>19 Nonparametric Regression | NonParametric Stats</title>
+  <meta name="description" content="19 Nonparametric Regression | NonParametric Stats" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | NonParametric Stats" />
+  <meta property="og:title" content="19 Nonparametric Regression | NonParametric Stats" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | NonParametric Stats" />
+  <meta name="twitter:title" content="19 Nonparametric Regression | NonParametric Stats" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="density.html"/>
+<link rel="next" href="semi-parametric.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -260,19 +260,144 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="nonparametric-regression" class="section level1" number="19">
+<h1><span class="header-section-number">19</span> Nonparametric Regression</h1>
+<div id="step-up" class="section level2" number="19.1">
+<h2><span class="header-section-number">19.1</span> Step up</h2>
+<ul>
+<li>Data: <span class="math inline">\((x_{i}, y_{i}), i = 1.,,,,n\)</span></li>
+<li><span class="math inline">\(y_i = m(x_{i}) + \epsilon_{i}, i =1,...,n\)</span></li>
+<li>m unknown, usually continuous and smooth</li>
+<li>For example, <span class="math inline">\(m(x_{i}) = \beta_{0} + \beta_{1}x_{i} +\beta_{2}x_{i}^2\)</span></li>
+<li><span class="math inline">\(\epsilon_i\)</span> iid from a continuous distribution, <span class="math inline">\(E\epsilon_i = 0\)</span></li>
+<li><span class="math inline">\(E(y_{i} \mid x_{1}) = m(x_{i})\)</span></li>
+</ul>
+</div>
+<div id="example-6" class="section level2" number="19.2">
+<h2><span class="header-section-number">19.2</span> Example</h2>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="nonparametric-regression.html#cb43-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span>; x<span class="ot">=</span><span class="fu">sort</span>(<span class="fu">runif</span>(n,<span class="dv">0</span>,<span class="dv">1</span>)); y<span class="ot">=</span><span class="fu">sin</span>(x<span class="sc">*</span>pi)<span class="sc">+</span><span class="fu">rnorm</span>(n,<span class="dv">0</span>,<span class="fl">0.1</span>)</span>
+<span id="cb43-2"><a href="nonparametric-regression.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y); m1<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x); <span class="fu">abline</span>(m1)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="nonparametric-regression.html#cb44-1" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">=</span>x<span class="sc">^</span><span class="dv">2</span>; m2<span class="ot">=</span><span class="fu">update</span>(m1,<span class="sc">~</span>.<span class="sc">+</span>x2)</span>
+<span id="cb44-2"><a href="nonparametric-regression.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y); <span class="fu">abline</span>(m1); <span class="fu">lines</span>(x,m2<span class="sc">$</span>fit,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="nonparametric-regression.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.71616 -0.24359  0.06758  0.24594  0.48140 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.64795    0.13095   4.948  3.2e-05 ***
+## x            0.08651    0.22398   0.386    0.702    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.342 on 28 degrees of freedom
+## Multiple R-squared:  0.0053, Adjusted R-squared:  -0.03022 
+## F-statistic: 0.1492 on 1 and 28 DF,  p-value: 0.7022</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="nonparametric-regression.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x + x2)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.166123 -0.053245  0.005157  0.056727  0.185725 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -0.04444    0.04656  -0.954    0.348    
+## x            4.32840    0.21207  20.410   &lt;2e-16 ***
+## x2          -4.35165    0.20998 -20.724   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.08471 on 27 degrees of freedom
+## Multiple R-squared:  0.9412, Adjusted R-squared:  0.9368 
+## F-statistic:   216 on 2 and 27 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="nonparametric-regression.html#cb49-1" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">sin</span>(x<span class="sc">*</span>pi<span class="sc">*</span><span class="dv">2</span>)<span class="sc">+</span><span class="fu">rnorm</span>(n,<span class="dv">0</span>,<span class="fl">0.1</span>); <span class="fu">plot</span>(x,y); m1<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x); <span class="fu">abline</span>(m1,<span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-3.png" width="672" /></p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="nonparametric-regression.html#cb50-1" aria-hidden="true" tabindex="-1"></a>m2<span class="ot">=</span><span class="fu">update</span>(m1,<span class="sc">~</span>.<span class="sc">+</span><span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>));<span class="fu">plot</span>(x,y); <span class="fu">abline</span>(m1,<span class="at">lty=</span><span class="dv">3</span>);</span>
+<span id="cb50-2"><a href="nonparametric-regression.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,m2<span class="sc">$</span>fit,<span class="at">col=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-4.png" width="672" /></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="nonparametric-regression.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(x); cx5<span class="ot">=</span><span class="fu">cut</span>(x,<span class="dv">5</span>); <span class="fu">levels</span>(cx5);</span></code></pre></div>
+<pre><code>## [1] 0.02791506 0.99661324</code></pre>
+<pre><code>## [1] &quot;(0.0269,0.222]&quot; &quot;(0.222,0.415]&quot;  &quot;(0.415,0.609]&quot;  &quot;(0.609,0.803]&quot; 
+## [5] &quot;(0.803,0.998]&quot;</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="nonparametric-regression.html#cb54-1" aria-hidden="true" tabindex="-1"></a>cx5<span class="ot">=</span><span class="fu">cut</span>(x,<span class="dv">5</span>,<span class="at">include.lowest=</span>T); <span class="fu">levels</span>(cx5)</span></code></pre></div>
+<pre><code>## [1] &quot;[0.0269,0.222]&quot; &quot;(0.222,0.415]&quot;  &quot;(0.415,0.609]&quot;  &quot;(0.609,0.803]&quot; 
+## [5] &quot;(0.803,0.998]&quot;</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="nonparametric-regression.html#cb56-1" aria-hidden="true" tabindex="-1"></a>m3<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>cx5);</span>
+<span id="cb56-2"><a href="nonparametric-regression.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m3)<span class="sc">$</span>coef</span></code></pre></div>
+<pre><code>##                    Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept)       0.6211089 0.09190806   6.757937 4.403900e-07
+## cx5(0.222,0.415]  0.2874353 0.16780039   1.712960 9.909708e-02
+## cx5(0.415,0.609] -0.7964956 0.12585029  -6.328913 1.266533e-06
+## cx5(0.609,0.803] -1.5348934 0.12997762 -11.808905 1.012543e-11
+## cx5(0.803,0.998] -1.1562994 0.14238335  -8.121030 1.785084e-08</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="nonparametric-regression.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(y,cx5,mean)</span></code></pre></div>
+<pre><code>## [0.0269,0.222]  (0.222,0.415]  (0.415,0.609]  (0.609,0.803]  (0.803,0.998] 
+##      0.6211089      0.9085441     -0.1753867     -0.9137846     -0.5351906</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="nonparametric-regression.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y); <span class="fu">abline</span>(m1,<span class="at">lty=</span><span class="dv">3</span>); <span class="fu">lines</span>(x,m2<span class="sc">$</span>fit,<span class="at">col=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb60-2"><a href="nonparametric-regression.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,m3<span class="sc">$</span>fit,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lty=</span><span class="dv">5</span>,<span class="at">type=</span><span class="st">&quot;b&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-5.png" width="672" /></p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="nonparametric-regression.html#cb61-1" aria-hidden="true" tabindex="-1"></a>cx10<span class="ot">=</span><span class="fu">cut</span>(x,<span class="dv">10</span>,<span class="at">include.lowest=</span>T); m4<span class="ot">=</span><span class="fu">update</span>(m3,<span class="sc">~</span>cx10)</span>
+<span id="cb61-2"><a href="nonparametric-regression.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y); <span class="fu">abline</span>(m1,<span class="at">lty=</span><span class="dv">3</span>); <span class="fu">lines</span>(x,m2<span class="sc">$</span>fit,<span class="at">col=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb61-3"><a href="nonparametric-regression.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,m3<span class="sc">$</span>fit,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lty=</span><span class="dv">5</span>,<span class="at">type=</span><span class="st">&quot;b&quot;</span>);</span>
+<span id="cb61-4"><a href="nonparametric-regression.html#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,m4<span class="sc">$</span>fit,<span class="at">col=</span><span class="st">&quot;darkgreen&quot;</span>,<span class="at">lty=</span><span class="dv">1</span>,<span class="at">type=</span><span class="st">&quot;b&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-6.png" width="672" /></p>
+<div id="nearest-neighborhood-method" class="section level3" number="19.2.1">
+<h3><span class="header-section-number">19.2.1</span> Nearest Neighborhood method</h3>
+<ul>
+<li>Local averaging</li>
+<li>Local linear regression</li>
+</ul>
+</div>
+</div>
+<div id="example-7" class="section level2" number="19.3">
+<h2><span class="header-section-number">19.3</span> Example</h2>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="nonparametric-regression.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(KernSmooth); <span class="fu">data</span>(geyser, <span class="at">package =</span> <span class="st">&quot;MASS&quot;</span>)</span></code></pre></div>
+<pre><code>## KernSmooth 2.23 loaded
+## Copyright M. P. Wand 1997-2009</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="nonparametric-regression.html#cb64-1" aria-hidden="true" tabindex="-1"></a>xis<span class="ot">=</span>geyser<span class="sc">$</span>duration; yis<span class="ot">=</span>geyser<span class="sc">$</span>waiting</span>
+<span id="cb64-2"><a href="nonparametric-regression.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(xis, yis,<span class="at">xlab=</span><span class="st">&quot;Duration&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Waiting&quot;</span>,<span class="at">las=</span><span class="dv">1</span>)</span>
+<span id="cb64-3"><a href="nonparametric-regression.html#cb64-3" aria-hidden="true" tabindex="-1"></a>fit1<span class="ot">=</span><span class="fu">ksmooth</span>(xis, yis, <span class="at">bandwidth =</span> <span class="fl">0.5</span>); <span class="fu">lines</span>(fit1,<span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb64-4"><a href="nonparametric-regression.html#cb64-4" aria-hidden="true" tabindex="-1"></a>fit2<span class="ot">=</span><span class="fu">ksmooth</span>(xis, yis,<span class="at">band=</span> <span class="dv">1</span>);<span class="fu">lines</span>(fit2,<span class="at">col=</span><span class="dv">4</span>)</span>
+<span id="cb64-5"><a href="nonparametric-regression.html#cb64-5" aria-hidden="true" tabindex="-1"></a>fit3<span class="ot">=</span><span class="fu">ksmooth</span>(xis, yis,<span class="at">band=</span> <span class="dv">5</span>);<span class="fu">lines</span>(fit3,<span class="at">col=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="local-linear-estimator" class="section level2" number="19.4">
+<h2><span class="header-section-number">19.4</span> Local linear estimator</h2>
+</div>
+<div id="local-polynomial-estimator" class="section level2" number="19.5">
+<h2><span class="header-section-number">19.5</span> Local polynomial estimator</h2>
+</div>
+<div id="example-8" class="section level2" number="19.6">
+<h2><span class="header-section-number">19.6</span> Example</h2>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="nonparametric-regression.html#cb65-1" aria-hidden="true" tabindex="-1"></a>est<span class="ot">=</span><span class="fu">locpoly</span>(xis, <span class="at">bandwidth =</span> <span class="fl">0.25</span>); do<span class="ot">=</span><span class="fu">density</span>(xis);</span>
+<span id="cb65-2"><a href="nonparametric-regression.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(xis,<span class="at">prob=</span>T,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.6</span>),<span class="at">xlim=</span><span class="fu">range</span>(est<span class="sc">$</span>x,xis,do<span class="sc">$</span>x),<span class="at">las=</span><span class="dv">1</span>)</span>
+<span id="cb65-3"><a href="nonparametric-regression.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(est<span class="sc">$</span>x,est<span class="sc">$</span>y); <span class="fu">lines</span>(do<span class="sc">$</span>x,do<span class="sc">$</span>y,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="nonparametric-regression.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(xis, yis,<span class="at">xlab=</span><span class="st">&quot;Duration&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Waiting&quot;</span>,<span class="at">las=</span><span class="dv">1</span>)</span>
+<span id="cb66-2"><a href="nonparametric-regression.html#cb66-2" aria-hidden="true" tabindex="-1"></a>fit1<span class="ot">=</span><span class="fu">locpoly</span>(xis, yis, <span class="at">degree=</span><span class="dv">1</span>,<span class="at">band=</span> <span class="fl">0.25</span>); <span class="fu">lines</span>(fit1,<span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb66-3"><a href="nonparametric-regression.html#cb66-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="ot">=</span><span class="fu">locpoly</span>(xis, yis, <span class="at">degree=</span><span class="dv">2</span>,<span class="at">band=</span> <span class="fl">0.25</span>);<span class="fu">lines</span>(fit2,<span class="at">col=</span><span class="dv">4</span>)</span>
+<span id="cb66-4"><a href="nonparametric-regression.html#cb66-4" aria-hidden="true" tabindex="-1"></a>fit3<span class="ot">=</span><span class="fu">locpoly</span>(xis, yis, <span class="at">degree=</span><span class="dv">2</span>,<span class="at">band=</span> <span class="fl">0.5</span>);<span class="fu">lines</span>(fit3,<span class="at">col=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="density.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="semi-parametric.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -303,7 +428,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/katjanewilson/NonParametric-Statistics/edit/master/%s",
+"link": "https://github.com/katjanewilson/NonParametric-Statistics/edit/master/20-Nonparametric.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -311,7 +436,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/katjanewilson/NonParametric-Statistics/blob/master/%s",
+"link": "https://github.com/katjanewilson/NonParametric-Statistics/blob/master/20-Nonparametric.Rmd",
 "text": null
 },
 "download": null,
