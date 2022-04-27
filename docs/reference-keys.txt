@@ -120,3 +120,15 @@ example-9
 broken-stick-model
 exasmple
 example-10
+generalized-linear-model
+review
+b-splines-1
+example-11
+glm
+exponential-family
+normal-distribution
+poisson
+binomial-1
+canonical-link-function
+generalized-additive-models
+bootsrap

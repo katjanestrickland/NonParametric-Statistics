@@ -1,0 +1,63 @@
+# Generalized Linear Model
+
+## Review
+
+Let $\mu_i = EY_{i}$
+
+* Multiple linear regression:
+$$
+\begin{aligned}
+\mu_{i} = \beta_0 + \sum_{j=1}^{p}\beta_{j}x_{ij}
+\end{aligned}
+$$
+* Loglinear models (Poisson regression)
+$$
+\begin{aligned}
+log(\mu_{i}) = \beta_{0} + \sum_{j=1}^p \beta_jx_{ij}
+\end{aligned}
+$$
+* Logistic regression:
+$$
+\begin{aligned}
+log\frac{\mu_i}{1-\mu_i} = \beta_0 + \sum_{j=1}^p \beta_jx_{ij}
+\end{aligned}
+$$
+
+## GLM
+
+A generalized linear model (GLM) is defined by specifying two components:
+
+* The response should be a member of the exponential family distribution
+* The link function, g, describes how the mean of the response, $\mu$, and a linear combination of the predictors, $\beta_0 + \sum_{j=1}^{p}\beta_{j}x_{ij} \\ \text{are related} \\ g(\mu_{i}) = \beta_0 + \sum_{j=1}^{p}\beta_j{x_{ij}} $
+
+Any monotone continuous and differentiable function will do, but there are some convenient and common choices for the standard GLMs
+
+## Exponential Family
+
+In a GLM the distribution of Y is from the exponential family of distributions which take the general form:
+$f(y \mid \theta, \phi) = exp\{ \frac{y\theta-b(\theta)}{a(\phi)} + c(y, \phi) \}$
+
+
+* $\theta$: the canonical parameter representing the location
+* $\phi$: the dispersion parameter representing the scale
+* a, b, and c: known functions
+* $EY = \mu = b'(\theta)$ The mean is a function of $\theta$ only
+* $VarY = b''(\theta)a(\phi)$ The variance is a product of functions of the location and the scale
+** $b''(\theta)$ is called the variance function and describes how the variance relates to the mean using the known relatinship between $\theta$ and $\mu$
+
+
+## Normal Distribution
+
+$$ f(y\mid \mu, \sigma^2) = \frac{1}{\sqrt(2\pi\sigma)}exp{\Big\{-\frac{(y-\mu)^2}{2\sigma^2}} \Big\} \\
+= exp \Big\{\frac{y\mu - \frac{\mu^2}{2}}{{\sigma^2}} -  \frac{1}{2}\Big[\frac{y^2}{\sigma^2} + log(2\pi\sigma^2)\Big] \Big\} 
+$$
+
+
+## Poisson
+
+## Binomial
+
+## Canonical link function
+
+
+
