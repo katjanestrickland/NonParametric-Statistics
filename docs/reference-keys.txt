@@ -101,3 +101,8 @@ hypergeometric-distribution
 binomial-coefficient
 multinomial-distribution
 parametric-continuous-distribution
+nonparametric-density-estimation
+the-empirical-distribution-function
+example-5
+kernal-function
+triangle-kernal

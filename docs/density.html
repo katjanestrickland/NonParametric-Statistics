@@ -221,6 +221,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18" data-path="density.html"><a href="density.html"><i class="fa fa-check"></i><b>18</b> Density</a>
 <ul>
 <li class="chapter" data-level="18.1" data-path="density.html"><a href="density.html#parametric-continuous-distribution"><i class="fa fa-check"></i><b>18.1</b> Parametric continuous distribution</a></li>
+<li class="chapter" data-level="18.2" data-path="density.html"><a href="density.html#nonparametric-density-estimation"><i class="fa fa-check"></i><b>18.2</b> Nonparametric density estimation</a></li>
+<li class="chapter" data-level="18.3" data-path="density.html"><a href="density.html#the-empirical-distribution-function"><i class="fa fa-check"></i><b>18.3</b> The empirical distribution function</a></li>
+<li class="chapter" data-level="18.4" data-path="density.html"><a href="density.html#example-5"><i class="fa fa-check"></i><b>18.4</b> Example</a></li>
+<li class="chapter" data-level="18.5" data-path="density.html"><a href="density.html#kernal-function"><i class="fa fa-check"></i><b>18.5</b> Kernal function</a></li>
+<li class="chapter" data-level="18.6" data-path="density.html"><a href="density.html#triangle-kernal"><i class="fa fa-check"></i><b>18.6</b> Triangle Kernal</a></li>
 </ul></li>
 <li class="chapter" data-level="19" data-path="friedman-rank-2.html"><a href="friedman-rank-2.html"><i class="fa fa-check"></i><b>19</b> Friedman Rank</a></li>
 <li class="chapter" data-level="20" data-path="semi-parametric.html"><a href="semi-parametric.html"><i class="fa fa-check"></i><b>20</b> Semi-Parametric</a></li>
@@ -250,7 +255,124 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">18.1</span> Parametric continuous distribution</h2>
 <ul>
 <li>The sampled data are from a continuous distribution with density function <span class="math inline">\(f_{\theta}\)</span></li>
+<li><span class="math inline">\(f(x) \ge 0\)</span> for all x</li>
+<li><span class="math inline">\(\int_{-\infty}^{\infty} f(x)dx = 1\)</span></li>
+<li><span class="math inline">\(F(b) = P(X \le b) = \int_{-\infty}^{b}f(x)dx\)</span></li>
+<li><span class="math inline">\(P(a &lt; X \le b) = \int_{a}^{b} f(x)dx = F(b) - F(a), a \le b\)</span></li>
 </ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="density.html#cb43-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">50</span>; xis<span class="ot">=</span><span class="fu">rnorm</span>(n,<span class="dv">0</span>,<span class="dv">1</span>); xbar<span class="ot">=</span><span class="fu">mean</span>(xis);sdx<span class="ot">=</span><span class="fu">sd</span>(xis)</span>
+<span id="cb43-2"><a href="density.html#cb43-2" aria-hidden="true" tabindex="-1"></a>xs<span class="ot">=</span><span class="fu">seq</span>(<span class="fu">min</span>(xis),<span class="fu">max</span>(xis),<span class="at">length=</span><span class="dv">100</span>); nden<span class="ot">=</span><span class="fu">dnorm</span>(xs)</span>
+<span id="cb43-3"><a href="density.html#cb43-3" aria-hidden="true" tabindex="-1"></a>dene<span class="ot">=</span><span class="fu">dnorm</span>(xs,xbar,sdx); ry<span class="ot">=</span><span class="fu">range</span>(nden,dene)</span>
+<span id="cb43-4"><a href="density.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(xs,nden,<span class="at">las=</span><span class="dv">1</span>,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylim=</span>ry,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Normal density&quot;</span>)</span>
+<span id="cb43-5"><a href="density.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xs,dene,<span class="at">col=</span><span class="dv">2</span>); <span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>,<span class="at">col=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">&quot;n&quot;</span>,</span>
+<span id="cb43-6"><a href="density.html#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;Standard normal&quot;</span>,<span class="st">&quot;Estimated&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>##Histogram Version</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="density.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(xis,<span class="at">las=</span><span class="dv">1</span>,<span class="at">xlab=</span><span class="st">&quot;observed x&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="nonparametric-density-estimation" class="section level2" number="18.2">
+<h2><span class="header-section-number">18.2</span> Nonparametric density estimation</h2>
+<p>Nonparametric estimation of f does not assume ahead of time that the density belongs to a certain class or family of parametric distribution functions
+<span class="math inline">\(P(x- \frac{h}{2} &lt; X \le n + \frac{h}{2}) = \int_{x-\frac{h}{2}}^{x + \frac{h}{2}} f(u)du \\ = F(x+\frac{h}{2}) - F(x-\frac{h}{2})\)</span></p>
+<p>If f is smooth and h is small,
+<span class="math inline">\(\int_{x-\frac{h}{2}}^{x + \frac{h}{2}} f(u)du \approx h f(x)\)</span></p>
+<p>A reasonable estimate of f(x) is then
+<span class="math inline">\(\hat{f}_{h}x = \frac{F(x+ \frac{h}{2}) - F(x - \frac{h}{2})}{h}\)</span></p>
+</div>
+<div id="the-empirical-distribution-function" class="section level2" number="18.3">
+<h2><span class="header-section-number">18.3</span> The empirical distribution function</h2>
+<ul>
+<li>Observation: <span class="math inline">\(x_1, ..., X_n\)</span></li>
+<li><span class="math inline">\(F_{n}(x) = \frac{1}{n}(\# x_{i} \le x)\)</span></li>
+<li>Ordered observation: <span class="math inline">\(x_{(1)} \le x_{(2)} \le ... \le x_{(n)}\)</span></li>
+<li><span class="math inline">\(F_{n}(x) = 0 \text{, if } x \le x_{(1)}\)</span>;</li>
+<li><span class="math inline">\(F_{n}(x) = \frac{1}{n}\text{, if } x_{1} \le x &lt; x_{(2)}\)</span>;</li>
+<li><span class="math inline">\(F_{n}(x) = \frac{k}{n}\text{, if } x_{(k)} \le x &lt; x_{(k+1)}\)</span>;</li>
+<li>If there is a single observation with value <span class="math inline">\(x_i\)</span>, <span class="math inline">\(F_n\)</span> has a jump of height <span class="math inline">\(1/n\)</span> at $x_i;</li>
+<li>If there are r observations with the same value <span class="math inline">\(x_i\)</span>, <span class="math inline">\(F_{n}\)</span> has a jump of height <span class="math inline">\(r/n\)</span> at <span class="math inline">\(x_i\)</span></li>
+<li><span class="math inline">\(F_{n}(x)\)</span> gives the proportion of the numbers less than or equal to x</li>
+</ul>
+</div>
+<div id="example-5" class="section level2" number="18.4">
+<h2><span class="header-section-number">18.4</span> Example</h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="density.html#cb45-1" aria-hidden="true" tabindex="-1"></a>fhat<span class="ot">=</span><span class="cf">function</span>(obx,x,h){</span>
+<span id="cb45-2"><a href="density.html#cb45-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(obx)</span>
+<span id="cb45-3"><a href="density.html#cb45-3" aria-hidden="true" tabindex="-1"></a>sdif<span class="ot">=</span><span class="fu">abs</span>(obx<span class="sc">-</span>x)<span class="sc">/</span>h</span>
+<span id="cb45-4"><a href="density.html#cb45-4" aria-hidden="true" tabindex="-1"></a>fhx<span class="ot">=</span><span class="fu">sum</span>(sdif<span class="sc">&lt;=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">/</span>(n<span class="sc">*</span>h)</span>
+<span id="cb45-5"><a href="density.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(fhx)</span>
+<span id="cb45-6"><a href="density.html#cb45-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-7"><a href="density.html#cb45-7" aria-hidden="true" tabindex="-1"></a>xobs<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="fl">1.3</span>,<span class="fl">1.6</span>,<span class="fl">1.8</span>,<span class="fl">2.4</span>); x<span class="ot">=</span><span class="fl">1.7</span></span>
+<span id="cb45-8"><a href="density.html#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">fhat</span>(xobs,x,<span class="fl">0.5</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="density.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.8</span></span>
+<span id="cb47-2"><a href="density.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fhat</span>(xobs,x,<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 0.6</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="density.html#cb49-1" aria-hidden="true" tabindex="-1"></a>h<span class="ot">=</span><span class="dv">1</span>; do<span class="ot">=</span><span class="fu">density</span>(xobs,<span class="at">bw=</span>h,<span class="at">kernel=</span><span class="st">&quot;r&quot;</span>,<span class="at">n=</span><span class="dv">5</span>,<span class="at">cut=</span><span class="dv">0</span>);</span>
+<span id="cb49-2"><a href="density.html#cb49-2" aria-hidden="true" tabindex="-1"></a>do<span class="sc">$</span>x</span></code></pre></div>
+<pre><code>## [1] 1.00 1.35 1.70 2.05 2.40</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="density.html#cb51-1" aria-hidden="true" tabindex="-1"></a>do<span class="sc">$</span>y</span></code></pre></div>
+<pre><code>## [1] 0.2886751 0.2886751 0.2886751 0.2886751 0.2886751</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="density.html#cb53-1" aria-hidden="true" tabindex="-1"></a>do<span class="ot">=</span><span class="fu">density</span>(xobs,<span class="at">bw=</span>h<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">3</span>)),<span class="at">kernel=</span><span class="st">&quot;r&quot;</span>,<span class="at">n=</span><span class="dv">5</span>,<span class="at">cut=</span><span class="dv">0</span>);</span>
+<span id="cb53-2"><a href="density.html#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="density.html#cb53-3" aria-hidden="true" tabindex="-1"></a>h1<span class="ot">=</span><span class="fl">0.5</span>; d1<span class="ot">=</span><span class="fu">density</span>(xis,<span class="at">bw=</span>h1,<span class="at">kernel=</span><span class="st">&quot;r&quot;</span>); h2<span class="ot">=</span><span class="fl">1.5</span>; d2<span class="ot">=</span><span class="fu">density</span>(xis,<span class="at">bw=</span>h2,</span>
+<span id="cb53-4"><a href="density.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="at">kernel=</span><span class="st">&quot;r&quot;</span>); rx<span class="ot">=</span><span class="fu">range</span>(xs,d1<span class="sc">$</span>x,d2<span class="sc">$</span>x); ry<span class="ot">=</span><span class="fu">range</span>(nden,d1<span class="sc">$</span>y,d2<span class="sc">$</span>y)</span>
+<span id="cb53-5"><a href="density.html#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1<span class="sc">$</span>x,d1<span class="sc">$</span>y,<span class="at">las=</span><span class="dv">1</span>,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">xlim=</span>rx,<span class="at">ylim=</span>ry,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;f(x)&quot;</span>)</span>
+<span id="cb53-6"><a href="density.html#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xs,nden,<span class="at">col=</span><span class="dv">2</span>); <span class="fu">lines</span>(d2<span class="sc">$</span>x,d2<span class="sc">$</span>y,<span class="at">col=</span><span class="dv">4</span>); <span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>,</span>
+<span id="cb53-7"><a href="density.html#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="at">legend=</span><span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">&quot;h=&quot;</span>,h1),<span class="st">&quot;normal&quot;</span>,<span class="fu">paste</span>(<span class="st">&quot;h=&quot;</span>,h2)),<span class="at">col=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>),</span>
+<span id="cb53-8"><a href="density.html#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="kernal-function" class="section level2" number="18.5">
+<h2><span class="header-section-number">18.5</span> Kernal function</h2>
+<p>A kernal function K is a function such that</p>
+<ul>
+<li><p><span class="math inline">\(K(u) \ge 0, -\infty &lt; u &lt;\infty\)</span></p></li>
+<li><p><span class="math inline">\(K(-u) = K(u)\)</span></p></li>
+<li><p><span class="math inline">\(\int_{-\infty}^{\infty} K(u)du = 1\)</span>
+Uniform, rectangular, or box, kernal:
+<span class="math display">\[
+K(u) = \begin{cases}
+  1 , \frac{-1}{2} \le u &lt; \frac{1}{2} \\
+  0 , otherwise
+\end{cases}
+\]</span></p></li>
+<li><p>It takes on the value 1 whenever an observation <span class="math inline">\(x_i\)</span> is near x, <span class="math inline">\(u = (x_{i} - x)\h\)</span></p></li>
+<li><p>The notion of nearness is determined by the bandwidth h</p></li>
+<li><p>Taking the sum, the estimate at x is the number of data points <span class="math inline">\(x_i\)</span> near x multiplied by the factor <span class="math inline">\(1\nh\)</span></p></li>
+</ul>
+<p>Given the data, the kernal density estimate is</p>
+<p><span class="math inline">\(\hat{f}x = \frac{1}{nh}\sum_{i=1}^{n} K(\frac{x-x_{i}}{h})\)</span></p>
+<ul>
+<li>Triangle kernal:</li>
+<li>Epanechnikov Kernal:</li>
+<li>Gaussian Kernel</li>
+</ul>
+<p>Kernel function provides a weighted value for the nubmer of <span class="math inline">\(x_i\)</span> near x. In particular, data values near x give more weight than those further away. A common choice of bandwidth is $h = 1.06n<sup>{}min{</sup>2, IQR/1.34} $</p>
+</div>
+<div id="triangle-kernal" class="section level2" number="18.6">
+<h2><span class="header-section-number">18.6</span> Triangle Kernal</h2>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="density.html#cb54-1" aria-hidden="true" tabindex="-1"></a>u<span class="ot">=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="at">length=</span><span class="dv">100</span>); <span class="fu">plot</span>(u,<span class="dv">1</span><span class="sc">-</span><span class="fu">abs</span>(u),<span class="at">las=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="st">&quot;&quot;</span>,<span class="at">type=</span><span class="st">&quot;l&quot;</span>)</span>
+<span id="cb54-2"><a href="density.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">col=</span><span class="dv">2</span>); <span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>),<span class="at">col=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="density.html#cb55-1" aria-hidden="true" tabindex="-1"></a>fhat<span class="ot">=</span><span class="cf">function</span>(obx,x,h){</span>
+<span id="cb55-2"><a href="density.html#cb55-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(obx)</span>
+<span id="cb55-3"><a href="density.html#cb55-3" aria-hidden="true" tabindex="-1"></a>sdif<span class="ot">=</span><span class="fu">abs</span>(obx<span class="sc">-</span>x)<span class="sc">/</span>h</span>
+<span id="cb55-4"><a href="density.html#cb55-4" aria-hidden="true" tabindex="-1"></a>fhx<span class="ot">=</span><span class="fu">sum</span>( (<span class="dv">1</span><span class="sc">-</span>sdif) <span class="sc">*</span>( sdif<span class="sc">&lt;=</span><span class="dv">1</span>) )<span class="sc">/</span>(n<span class="sc">*</span>h)</span>
+<span id="cb55-5"><a href="density.html#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(fhx)</span>
+<span id="cb55-6"><a href="density.html#cb55-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb55-7"><a href="density.html#cb55-7" aria-hidden="true" tabindex="-1"></a>h<span class="ot">=</span><span class="fl">0.5</span>; x<span class="ot">=</span><span class="fl">1.7</span></span>
+<span id="cb55-8"><a href="density.html#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="fu">fhat</span>(xobs,x,h)</span></code></pre></div>
+<pre><code>## [1] 0.72</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="density.html#cb57-1" aria-hidden="true" tabindex="-1"></a>dg<span class="ot">=</span><span class="fu">density</span>(xis,<span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>); dr<span class="ot">=</span><span class="fu">density</span>(xis,<span class="at">kernel=</span><span class="st">&quot;r&quot;</span>);</span>
+<span id="cb57-2"><a href="density.html#cb57-2" aria-hidden="true" tabindex="-1"></a>de<span class="ot">=</span><span class="fu">density</span>(xis,<span class="at">kernel=</span><span class="st">&quot;epanechnikov&quot;</span>); rx<span class="ot">=</span><span class="fu">range</span>(xs,dg<span class="sc">$</span>x,dr<span class="sc">$</span>x,de<span class="sc">$</span>x)</span>
+<span id="cb57-3"><a href="density.html#cb57-3" aria-hidden="true" tabindex="-1"></a>ry<span class="ot">=</span><span class="fu">range</span>(nden,dg<span class="sc">$</span>y,dr<span class="sc">$</span>y,de<span class="sc">$</span>y); <span class="fu">plot</span>(dg<span class="sc">$</span>x,dg<span class="sc">$</span>y,<span class="at">las=</span><span class="dv">1</span>,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">xlim=</span>rx,</span>
+<span id="cb57-4"><a href="density.html#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="at">ylim=</span>ry,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;f(x)&quot;</span>); <span class="fu">lines</span>(xs,nden,<span class="at">ylim=</span>ry,<span class="at">col=</span><span class="dv">2</span>);<span class="fu">lines</span>(dr<span class="sc">$</span>x,</span>
+<span id="cb57-5"><a href="density.html#cb57-5" aria-hidden="true" tabindex="-1"></a>dr<span class="sc">$</span>y,<span class="at">ylim=</span>ry,<span class="at">col=</span><span class="dv">4</span>); <span class="fu">lines</span>(de<span class="sc">$</span>x,de<span class="sc">$</span>y,<span class="at">ylim=</span>ry,<span class="at">col=</span><span class="st">&quot;darkgreen&quot;</span>);</span>
+<span id="cb57-6"><a href="density.html#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;gaussian kernel&quot;</span>,<span class="st">&quot;rectangle kernel&quot;</span>,</span>
+<span id="cb57-7"><a href="density.html#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;epanechnikov kernel&quot;</span>,<span class="st">&quot;normal density&quot;</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;darkgreen&quot;</span>,<span class="dv">2</span>),</span>
+<span id="cb57-8"><a href="density.html#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
 
 </div>
 </div>
