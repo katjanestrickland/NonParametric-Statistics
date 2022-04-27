@@ -118,3 +118,5 @@ semi-parametric-regression-with-splines
 basis-functions
 example-9
 broken-stick-model
+exasmple
+example-10

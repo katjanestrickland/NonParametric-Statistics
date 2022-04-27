@@ -1,1 +1,35 @@
 # B Splines
+
+* Any given basis function is nonzero over a span of at most five distinct knots
+* This means that their evaluation rarely gets out of hand, and the resulting regression matrix is banded
+
+## Example
+
+```{r}
+library(splines2) # ?bSpline
+n=100; xi=seq(0,1,length=n)
+mx=1/(0.1+xi)+8*exp(-400*(xi-0.5)^2); y=mx+rnorm(n,0,2)
+plot(xi,y,las=1,xlab="x"); lines(xi,mx,lty=2)
+
+kts=c(0.2,0.4,0.45,0.5,0.55,0.6,0.8)
+bsm1=bSpline(xi,knots=kts,degree=3,intercept=T);
+head(bsm1,10)
+
+plot(xi,y,las=1,xlab="x"); lines(xi,mx,lty=2)
+mod1=lm(y~bsm1-1); lines(xi,mod1$fit,col=2)
+
+bsm2=bSpline(xi,knots=kts,degree=2,intercept=T)
+head(bsm2,15)
+
+plot(xi,y,las=1,xlab="x"); lines(xi,mx,lty=2)
+mod2=lm(y~bsm2-1); lines(xi,mod2$fit,col=4)
+
+bsm3=bSpline(xi,knots=kts,degree=2); head(bsm3,15)
+
+plot(xi,y,las=1,xlab="x"); lines(xi,mx,lty=2)
+mod3=lm(y~bsm3); lines(xi,mod3$fit,col=4)
+
+plot(xi,mod3$fit-mod2$fit,ylab="",xlab="x")
+```
+
+
