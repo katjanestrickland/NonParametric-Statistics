@@ -100,3 +100,4 @@ example-4
 hypergeometric-distribution
 binomial-coefficient
 multinomial-distribution
+parametric-continuous-distribution

@@ -1,1 +1,5 @@
 # Density
+
+## Parametric continuous distribution
+
+* The sampled data are from a continuous distribution with density function $f_{\theta}$
