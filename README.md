@@ -8,6 +8,22 @@
 * Wilcoxon rank sum test
 * signed rank test
 * Kruskal-Wallis test
-* two sample tests on proportions
-* smoothing methods (kernal smoothing and spline smoothing)
-* generalized additive models
+* Friedman
+* Correlation
+* Chi-Squared
+* Fishers
+* MantelHaenszel
+* McNemars
+* StuartMaxwell
+* Loglinear
+* Simpsons
+* Linear Regression
+* Multiple Regression
+* Logistic
+* Density
+* Nonparametric
+* Semiparametric
+* BSplines
+* GLM
+* GAM
+* Bootsrap
