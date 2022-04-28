@@ -3,7 +3,7 @@
 * Any given basis function is nonzero over a span of at most five distinct knots
 * This means that their evaluation rarely gets out of hand, and the resulting regression matrix is banded
 
-## Example
+### Example
 
 ```{r}
 library(splines2) # ?bSpline

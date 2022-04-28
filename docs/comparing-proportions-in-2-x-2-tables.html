@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Comparing proportions in 2 X 2 tables | NonParametric Stats</title>
-  <meta name="description" content="8 Comparing proportions in 2 X 2 tables | NonParametric Stats" />
+  <title>6 Comparing proportions in 2 X 2 tables | NonParametric Stats</title>
+  <meta name="description" content="6 Comparing proportions in 2 X 2 tables | NonParametric Stats" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Comparing proportions in 2 X 2 tables | NonParametric Stats" />
+  <meta property="og:title" content="6 Comparing proportions in 2 X 2 tables | NonParametric Stats" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Comparing proportions in 2 X 2 tables | NonParametric Stats" />
+  <meta name="twitter:title" content="6 Comparing proportions in 2 X 2 tables | NonParametric Stats" />
   
   
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Katherine Wilson" />
 
 
-<meta name="date" content="2022-04-26" />
+<meta name="date" content="2022-04-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="correlation.html"/>
-<link rel="next" href="mh.html"/>
+<link rel="prev" href="kruskal-wallis.html"/>
+<link rel="next" href="bootsrap.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -140,77 +140,119 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="binomial.html"><a href="binomial.html#binomial-distribution"><i class="fa fa-check"></i><b>2.1</b> Binomial Distribution</a></li>
-<li class="chapter" data-level="2.2" data-path="binomial.html"><a href="binomial.html#normal-approximation-to-the-binomial-distribution"><i class="fa fa-check"></i><b>2.2</b> Normal approximation to the binomial distribution</a></li>
-<li class="chapter" data-level="2.3" data-path="binomial.html"><a href="binomial.html#central-limit-theorum"><i class="fa fa-check"></i><b>2.3</b> Central Limit Theorum</a></li>
-<li class="chapter" data-level="2.4" data-path="binomial.html"><a href="binomial.html#bernoulli-power-calculations"><i class="fa fa-check"></i><b>2.4</b> Bernoulli Power Calculations</a></li>
+<li class="chapter" data-level="2.0.1" data-path="binomial.html"><a href="binomial.html#binomial-distribution"><i class="fa fa-check"></i><b>2.0.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="2.0.2" data-path="binomial.html"><a href="binomial.html#normal-approximation-to-the-binomial-distribution"><i class="fa fa-check"></i><b>2.0.2</b> Normal approximation to the binomial distribution</a></li>
+<li class="chapter" data-level="2.0.3" data-path="binomial.html"><a href="binomial.html#central-limit-theorum"><i class="fa fa-check"></i><b>2.0.3</b> Central Limit Theorum</a></li>
+<li class="chapter" data-level="2.0.4" data-path="binomial.html"><a href="binomial.html#bernoulli-power-calculations"><i class="fa fa-check"></i><b>2.0.4</b> Bernoulli Power Calculations</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html"><i class="fa fa-check"></i><b>3</b> Wilcoxon rank sum</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.1</b> Two sample T test</a></li>
-<li class="chapter" data-level="3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>3.2</b> Wilcoxon Rank Sum Test</a></li>
-<li class="chapter" data-level="3.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hypothesis"><i class="fa fa-check"></i><b>3.3</b> Hypothesis</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.3.1</b> Location Shift Model</a></li>
-<li class="chapter" data-level="3.3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.3.2</b> Rank</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.4</b> Test Statistic</a></li>
-<li class="chapter" data-level="3.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.5</b> Distribution of W</a></li>
-<li class="chapter" data-level="3.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.6</b> Computation</a></li>
-<li class="chapter" data-level="3.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.7</b> Example</a></li>
-<li class="chapter" data-level="3.8" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.8</b> Hodges-Lehman Estimate</a></li>
-<li class="chapter" data-level="3.9" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.9</b> Example</a>
-<ul>
-<li class="chapter" data-level="3.9.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.9.1</b> Kolmogorov Smirnov</a></li>
-</ul></li>
+<li class="chapter" data-level="3.0.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.0.1</b> Two sample T test</a></li>
+<li class="chapter" data-level="3.0.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>3.0.2</b> Wilcoxon Rank Sum Test</a></li>
+<li class="chapter" data-level="3.0.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hypothesis"><i class="fa fa-check"></i><b>3.0.3</b> Hypothesis</a></li>
+<li class="chapter" data-level="3.0.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.0.4</b> Location Shift Model</a></li>
+<li class="chapter" data-level="3.0.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.0.5</b> Rank</a></li>
+<li class="chapter" data-level="3.0.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.0.6</b> Test Statistic</a></li>
+<li class="chapter" data-level="3.0.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.0.7</b> Distribution of W</a></li>
+<li class="chapter" data-level="3.0.8" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.0.8</b> Computation</a></li>
+<li class="chapter" data-level="3.0.9" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.0.9</b> Example</a></li>
+<li class="chapter" data-level="3.0.10" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.0.10</b> Hodges-Lehman Estimate</a></li>
+<li class="chapter" data-level="3.0.11" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.0.11</b> Example</a></li>
+<li class="chapter" data-level="3.0.12" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.0.12</b> Kolmogorov Smirnov</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html"><i class="fa fa-check"></i><b>4</b> Sign test and Wilcoxon signed rank</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.1</b> Sign test and Wilcoxon signed rank test</a></li>
-<li class="chapter" data-level="4.2" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-2"><i class="fa fa-check"></i><b>4.2</b> Example</a></li>
-<li class="chapter" data-level="4.3" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-test"><i class="fa fa-check"></i><b>4.3</b> Large sample test</a></li>
-<li class="chapter" data-level="4.4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.4</b> Wilcoxon signed rank test</a></li>
-<li class="chapter" data-level="4.5" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-3"><i class="fa fa-check"></i><b>4.5</b> Example</a></li>
-<li class="chapter" data-level="4.6" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.6</b> Large sample approximation</a></li>
+<li class="chapter" data-level="4.0.1" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.0.1</b> Sign test and Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.0.2" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-2"><i class="fa fa-check"></i><b>4.0.2</b> Example</a></li>
+<li class="chapter" data-level="4.0.3" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.0.3</b> Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.0.4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.0.4</b> Large sample approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.1</b> F test</a></li>
-<li class="chapter" data-level="5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.2</b> Ansari-Bradley</a></li>
-<li class="chapter" data-level="5.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.3</b> Kruskal-Wallis</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="friedman-rank.html"><a href="friedman-rank.html"><i class="fa fa-check"></i><b>6</b> Friedman Rank</a></li>
-<li class="chapter" data-level="7" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>7</b> Correlation</a>
+<li class="chapter" data-level="5.0.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.0.1</b> F test</a></li>
+<li class="chapter" data-level="5.0.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.0.2</b> Ansari-Bradley</a></li>
+<li class="chapter" data-level="5.0.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.0.3</b> Kruskal-Wallis</a></li>
+<li class="chapter" data-level="5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#friedman-rank"><i class="fa fa-check"></i><b>5.1</b> Friedman Rank</a></li>
+<li class="chapter" data-level="5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#correlation"><i class="fa fa-check"></i><b>5.2</b> Correlation</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="correlation.html"><a href="correlation.html#pearson"><i class="fa fa-check"></i><b>7.0.1</b> Pearson</a></li>
-<li class="chapter" data-level="7.0.2" data-path="correlation.html"><a href="correlation.html#kendall"><i class="fa fa-check"></i><b>7.0.2</b> Kendall</a></li>
-<li class="chapter" data-level="7.0.3" data-path="correlation.html"><a href="correlation.html#spearman-rank"><i class="fa fa-check"></i><b>7.0.3</b> Spearman Rank</a></li>
-<li class="chapter" data-level="7.0.4" data-path="correlation.html"><a href="correlation.html#cohens-kappa"><i class="fa fa-check"></i><b>7.0.4</b> Cohen’s kappa</a></li>
+<li class="chapter" data-level="5.2.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#pearson"><i class="fa fa-check"></i><b>5.2.1</b> Pearson</a></li>
+<li class="chapter" data-level="5.2.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kendall"><i class="fa fa-check"></i><b>5.2.2</b> Kendall</a></li>
+<li class="chapter" data-level="5.2.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#spearman-rank"><i class="fa fa-check"></i><b>5.2.3</b> Spearman Rank</a></li>
+<li class="chapter" data-level="5.2.4" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#cohens-kappa"><i class="fa fa-check"></i><b>5.2.4</b> Cohen’s kappa</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html"><i class="fa fa-check"></i><b>8</b> Comparing proportions in 2 X 2 tables</a>
+</ul></li>
+<li class="chapter" data-level="6" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html"><i class="fa fa-check"></i><b>6</b> Comparing proportions in 2 X 2 tables</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#large-sample-test-procedures"><i class="fa fa-check"></i><b>8.1</b> Large sample test procedures</a></li>
-<li class="chapter" data-level="8.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#x2-chi-squared-test-of-homogeneity"><i class="fa fa-check"></i><b>8.2</b> 2X2 Chi-Squared test of homogeneity</a></li>
-<li class="chapter" data-level="8.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#x2-chi-squared-test-of-independence"><i class="fa fa-check"></i><b>8.3</b> 2X2 Chi-Squared test of independence</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="mh.html"><a href="mh.html"><i class="fa fa-check"></i><b>9</b> MH</a></li>
-<li class="chapter" data-level="10" data-path="mcnemars.html"><a href="mcnemars.html"><i class="fa fa-check"></i><b>10</b> McNemars</a></li>
-<li class="chapter" data-level="11" data-path="stuart.html"><a href="stuart.html"><i class="fa fa-check"></i><b>11</b> Stuart</a></li>
-<li class="chapter" data-level="12" data-path="correlation-1.html"><a href="correlation-1.html"><i class="fa fa-check"></i><b>12</b> Correlation</a>
+<li class="chapter" data-level="6.0.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#large-sample-test-procedures"><i class="fa fa-check"></i><b>6.0.1</b> Large sample test procedures</a></li>
+<li class="chapter" data-level="6.0.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#x2-chi-squared-test-of-homogeneity"><i class="fa fa-check"></i><b>6.0.2</b> 2X2 Chi-Squared test of homogeneity</a></li>
+<li class="chapter" data-level="6.0.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#x2-chi-squared-test-of-independence"><i class="fa fa-check"></i><b>6.0.3</b> 2X2 Chi-Squared test of independence</a></li>
+<li class="chapter" data-level="6.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#relative-riskodds-ratio"><i class="fa fa-check"></i><b>6.1</b> Relative Risk/Odds Ratio</a>
 <ul>
-<li class="chapter" data-level="12.0.1" data-path="correlation-1.html"><a href="correlation-1.html#pearson-1"><i class="fa fa-check"></i><b>12.0.1</b> Pearson</a></li>
-<li class="chapter" data-level="12.0.2" data-path="correlation-1.html"><a href="correlation-1.html#kendall-1"><i class="fa fa-check"></i><b>12.0.2</b> Kendall</a></li>
-<li class="chapter" data-level="12.0.3" data-path="correlation-1.html"><a href="correlation-1.html#spearman-rank-1"><i class="fa fa-check"></i><b>12.0.3</b> Spearman Rank</a></li>
-<li class="chapter" data-level="12.0.4" data-path="correlation-1.html"><a href="correlation-1.html#cohens-kappa-1"><i class="fa fa-check"></i><b>12.0.4</b> Cohen’s kappa</a></li>
+<li class="chapter" data-level="6.1.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#relative-risk"><i class="fa fa-check"></i><b>6.1.1</b> Relative Risk</a></li>
+<li class="chapter" data-level="6.1.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#odds"><i class="fa fa-check"></i><b>6.1.2</b> Odds</a></li>
+<li class="chapter" data-level="6.1.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#example-3"><i class="fa fa-check"></i><b>6.1.3</b> Example</a></li>
+<li class="chapter" data-level="6.1.4" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#hypergeometric-distribution"><i class="fa fa-check"></i><b>6.1.4</b> Hypergeometric distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="friedman-rank-1.html"><a href="friedman-rank-1.html"><i class="fa fa-check"></i><b>13</b> Friedman Rank</a></li>
-<li class="chapter" data-level="14" data-path="linear.html"><a href="linear.html"><i class="fa fa-check"></i><b>14</b> Linear</a></li>
-<li class="chapter" data-level="15" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>15</b> Multiple Regression</a></li>
-<li class="chapter" data-level="16" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>16</b> Logistic</a></li>
-<li class="chapter" data-level="17" data-path="density.html"><a href="density.html"><i class="fa fa-check"></i><b>17</b> Density</a></li>
-<li class="chapter" data-level="18" data-path="friedman-rank-2.html"><a href="friedman-rank-2.html"><i class="fa fa-check"></i><b>18</b> Friedman Rank</a></li>
-<li class="chapter" data-level="19" data-path="semi-parametric.html"><a href="semi-parametric.html"><i class="fa fa-check"></i><b>19</b> Semi-Parametric</a></li>
-<li class="chapter" data-level="20" data-path="b-splines.html"><a href="b-splines.html"><i class="fa fa-check"></i><b>20</b> B Splines</a></li>
+<li class="chapter" data-level="6.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#mh"><i class="fa fa-check"></i><b>6.2</b> MH</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#binomial-coefficient"><i class="fa fa-check"></i><b>6.2.1</b> Binomial coefficient</a></li>
+<li class="chapter" data-level="6.2.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#multinomial-distribution"><i class="fa fa-check"></i><b>6.2.2</b> Multinomial Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#mcnemars"><i class="fa fa-check"></i><b>6.3</b> McNemars</a></li>
+<li class="chapter" data-level="6.4" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#stuart"><i class="fa fa-check"></i><b>6.4</b> Stuart</a></li>
+<li class="chapter" data-level="6.5" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#correlation-1"><i class="fa fa-check"></i><b>6.5</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#pearson-1"><i class="fa fa-check"></i><b>6.5.1</b> Pearson</a></li>
+<li class="chapter" data-level="6.5.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#kendall-1"><i class="fa fa-check"></i><b>6.5.2</b> Kendall</a></li>
+<li class="chapter" data-level="6.5.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#spearman-rank-1"><i class="fa fa-check"></i><b>6.5.3</b> Spearman Rank</a></li>
+<li class="chapter" data-level="6.5.4" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#cohens-kappa-1"><i class="fa fa-check"></i><b>6.5.4</b> Cohen’s kappa</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#friedman-rank-1"><i class="fa fa-check"></i><b>6.6</b> Friedman Rank</a></li>
+<li class="chapter" data-level="6.7" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#linear"><i class="fa fa-check"></i><b>6.7</b> Linear</a></li>
+<li class="chapter" data-level="6.8" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#multiple-regression"><i class="fa fa-check"></i><b>6.8</b> Multiple Regression</a></li>
+<li class="chapter" data-level="6.9" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#logistic"><i class="fa fa-check"></i><b>6.9</b> Logistic</a></li>
+<li class="chapter" data-level="6.10" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#density"><i class="fa fa-check"></i><b>6.10</b> Density</a>
+<ul>
+<li class="chapter" data-level="6.10.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#parametric-continuous-distribution"><i class="fa fa-check"></i><b>6.10.1</b> Parametric continuous distribution</a></li>
+<li class="chapter" data-level="6.10.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#histogram-version"><i class="fa fa-check"></i><b>6.10.2</b> Histogram Version</a></li>
+<li class="chapter" data-level="6.10.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#nonparametric-density-estimation"><i class="fa fa-check"></i><b>6.10.3</b> Nonparametric density estimation</a></li>
+<li class="chapter" data-level="6.10.4" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#the-empirical-distribution-function"><i class="fa fa-check"></i><b>6.10.4</b> The empirical distribution function</a></li>
+<li class="chapter" data-level="6.10.5" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#example-4"><i class="fa fa-check"></i><b>6.10.5</b> Example</a></li>
+<li class="chapter" data-level="6.10.6" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#kernal-function"><i class="fa fa-check"></i><b>6.10.6</b> Kernal function</a></li>
+<li class="chapter" data-level="6.10.7" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#triangle-kernal"><i class="fa fa-check"></i><b>6.10.7</b> Triangle Kernal</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#nonparametric-regression"><i class="fa fa-check"></i><b>6.11</b> Nonparametric Regression</a>
+<ul>
+<li class="chapter" data-level="6.11.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#step-up"><i class="fa fa-check"></i><b>6.11.1</b> Step up</a></li>
+<li class="chapter" data-level="6.11.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#nearest-neighborhood-method"><i class="fa fa-check"></i><b>6.11.2</b> Nearest Neighborhood method</a></li>
+<li class="chapter" data-level="6.11.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#example-5"><i class="fa fa-check"></i><b>6.11.3</b> Example</a></li>
+<li class="chapter" data-level="6.11.4" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#local-linear-estimator"><i class="fa fa-check"></i><b>6.11.4</b> Local linear estimator</a></li>
+<li class="chapter" data-level="6.11.5" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#local-polynomial-estimator"><i class="fa fa-check"></i><b>6.11.5</b> Local polynomial estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="6.12" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#semi-parametric-regression-with-splines"><i class="fa fa-check"></i><b>6.12</b> Semi-Parametric Regression with splines</a>
+<ul>
+<li class="chapter" data-level="6.12.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#basis-functions"><i class="fa fa-check"></i><b>6.12.1</b> Basis functions</a></li>
+<li class="chapter" data-level="6.12.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#example-6"><i class="fa fa-check"></i><b>6.12.2</b> Example</a></li>
+<li class="chapter" data-level="6.12.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#broken-stick-model"><i class="fa fa-check"></i><b>6.12.3</b> Broken Stick Model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#b-splines"><i class="fa fa-check"></i><b>6.13</b> B Splines</a>
+<ul>
+<li class="chapter" data-level="6.13.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#example-7"><i class="fa fa-check"></i><b>6.13.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.14" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#generalized-linear-model"><i class="fa fa-check"></i><b>6.14</b> Generalized Linear Model</a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#glm"><i class="fa fa-check"></i><b>6.14.1</b> GLM</a></li>
+<li class="chapter" data-level="6.14.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#exponential-family"><i class="fa fa-check"></i><b>6.14.2</b> Exponential Family</a></li>
+<li class="chapter" data-level="6.14.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#normal-distribution"><i class="fa fa-check"></i><b>6.14.3</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#generalized-additive-models"><i class="fa fa-check"></i><b>6.15</b> Generalized Additive Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bootsrap.html"><a href="bootsrap.html"><i class="fa fa-check"></i><b>7</b> Bootsrap</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="bootsrap.html"><a href="bootsrap.html#bootstrap-estimation-of-bias"><i class="fa fa-check"></i><b>7.0.1</b> Bootstrap estimation of bias</a></li>
+<li class="chapter" data-level="7.0.2" data-path="bootsrap.html"><a href="bootsrap.html#bootstrap-estimation-of-variance"><i class="fa fa-check"></i><b>7.0.2</b> Bootstrap estimation of variance</a></li>
+<li class="chapter" data-level="7.0.3" data-path="bootsrap.html"><a href="bootsrap.html#bootsrap-confidence-intervals"><i class="fa fa-check"></i><b>7.0.3</b> Bootsrap confidence intervals</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -230,10 +272,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="comparing-proportions-in-2-x-2-tables" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Comparing proportions in 2 X 2 tables</h1>
-<div id="large-sample-test-procedures" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Large sample test procedures</h2>
+<div id="comparing-proportions-in-2-x-2-tables" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Comparing proportions in 2 X 2 tables</h1>
+<div id="large-sample-test-procedures" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Large sample test procedures</h3>
 <p><span class="math display">\[H_o: \pi_1 = \pi_2\]</span></p>
 <ul>
 <li><span class="math inline">\(p = \frac{n_{11} + n_{21}}{{n_1} + n_{2}}\)</span> : an estimator of the hypothesized common success probability</li>
@@ -293,8 +335,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##    prop 1    prop 2 
 ## 0.3333333 0.7500000</code></pre>
 </div>
-<div id="x2-chi-squared-test-of-homogeneity" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> 2X2 Chi-Squared test of homogeneity</h2>
+<div id="x2-chi-squared-test-of-homogeneity" class="section level3" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> 2X2 Chi-Squared test of homogeneity</h3>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb40-1" aria-hidden="true" tabindex="-1"></a>n<span class="fl">.1</span><span class="ot">=</span>n11<span class="sc">+</span>n21; p<span class="ot">=</span>n<span class="fl">.1</span><span class="sc">/</span>n</span>
 <span id="cb40-2"><a href="comparing-proportions-in-2-x-2-tables.html#cb40-2" aria-hidden="true" tabindex="-1"></a>nv<span class="ot">=</span><span class="fu">c</span>(n11,n1<span class="sc">-</span>n11,n21,n2<span class="sc">-</span>n21)</span>
 <span id="cb40-3"><a href="comparing-proportions-in-2-x-2-tables.html#cb40-3" aria-hidden="true" tabindex="-1"></a>ev<span class="ot">=</span><span class="fu">c</span>(n1<span class="sc">*</span>p,n1<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p),n2<span class="sc">*</span>p,n2<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))</span>
@@ -326,8 +368,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## data:  xm
 ## X-squared = 15.042, df = 1, p-value = 0.0001052</code></pre>
 </div>
-<div id="x2-chi-squared-test-of-independence" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> 2X2 Chi-Squared test of independence</h2>
+<div id="x2-chi-squared-test-of-independence" class="section level3" number="6.0.3">
+<h3><span class="header-section-number">6.0.3</span> 2X2 Chi-Squared test of independence</h3>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb48-1" aria-hidden="true" tabindex="-1"></a>n11<span class="ot">=</span><span class="dv">50</span>; n12<span class="ot">=</span><span class="dv">40</span>; n21<span class="ot">=</span><span class="dv">60</span>; n22<span class="ot">=</span><span class="dv">50</span></span>
 <span id="cb48-2"><a href="comparing-proportions-in-2-x-2-tables.html#cb48-2" aria-hidden="true" tabindex="-1"></a>xm<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(n11,n12,n21,n22),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span>T);</span>
 <span id="cb48-3"><a href="comparing-proportions-in-2-x-2-tables.html#cb48-3" aria-hidden="true" tabindex="-1"></a>xm</span></code></pre></div>
@@ -360,14 +402,231 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [7] &quot;expected&quot;  &quot;residuals&quot; &quot;stdres&quot;</code></pre>
 
 </div>
+<div id="relative-riskodds-ratio" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Relative Risk/Odds Ratio</h2>
+<div id="relative-risk" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Relative Risk</h3>
+</div>
+<div id="odds" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Odds</h3>
+</div>
+<div id="example-3" class="section level3" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Example</h3>
+</div>
+<div id="hypergeometric-distribution" class="section level3" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> Hypergeometric distribution</h3>
+
+</div>
+</div>
+<div id="mh" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> MH</h2>
+<div id="binomial-coefficient" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Binomial coefficient</h3>
+<p>The number of unordered samples of y objects selected from n objects without replacement is</p>
+<p><span class="math display">\[ {n \choose y} = \frac{n \times (n-1) \times (n-y-1)}{y!}) \\
+= \frac{[n \times (n-1) \times (n-y+1)](n-1)!}{(n-1)!y!} \\
+= \frac{n!}{(n-1)!y!}\]</span></p>
+</div>
+<div id="multinomial-distribution" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Multinomial Distribution</h3>
+
+</div>
+</div>
+<div id="mcnemars" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> McNemars</h2>
+
+</div>
+<div id="stuart" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Stuart</h2>
+
+</div>
+<div id="correlation-1" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Correlation</h2>
+<div id="pearson-1" class="section level3" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> Pearson</h3>
+</div>
+<div id="kendall-1" class="section level3" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> Kendall</h3>
+</div>
+<div id="spearman-rank-1" class="section level3" number="6.5.3">
+<h3><span class="header-section-number">6.5.3</span> Spearman Rank</h3>
+</div>
+<div id="cohens-kappa-1" class="section level3" number="6.5.4">
+<h3><span class="header-section-number">6.5.4</span> Cohen’s kappa</h3>
+
+</div>
+</div>
+<div id="friedman-rank-1" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> Friedman Rank</h2>
+<p>Nonparametric version of two-way ANOVA. The collected data of an experimental design involves two factors, each at two or more levels, the treatment factor and blocking factor.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb56-2"><a href="comparing-proportions-in-2-x-2-tables.html#cb56-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">1.83</span>,<span class="fl">0.50</span>,<span class="fl">1.62</span>,<span class="fl">2.48</span>,<span class="fl">1.68</span>,<span class="fl">1.88</span>,<span class="fl">1.55</span>,<span class="fl">3.06</span>,<span class="fl">1.30</span>);</span>
+<span id="cb56-3"><a href="comparing-proportions-in-2-x-2-tables.html#cb56-3" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.878</span>,<span class="fl">0.647</span>,<span class="fl">0.598</span>,<span class="fl">2.05</span>,<span class="fl">1.06</span>,<span class="fl">1.29</span>,<span class="fl">1.06</span>,<span class="fl">3.14</span>,<span class="fl">1.29</span>);</span>
+<span id="cb56-4"><a href="comparing-proportions-in-2-x-2-tables.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">las=</span><span class="dv">1</span>); <span class="fu">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb57-1" aria-hidden="true" tabindex="-1"></a>xy<span class="ot">=</span><span class="fu">cbind</span>(x,y); xy</span></code></pre></div>
+<pre><code>##          x     y
+##  [1,] 1.83 0.878
+##  [2,] 0.50 0.647
+##  [3,] 1.62 0.598
+##  [4,] 2.48 2.050
+##  [5,] 1.68 1.060
+##  [6,] 1.88 1.290
+##  [7,] 1.55 1.060
+##  [8,] 3.06 3.140
+##  [9,] 1.30 1.290</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb59-1" aria-hidden="true" tabindex="-1"></a>axy<span class="ot">=</span><span class="fu">apply</span>(xy,<span class="dv">1</span>,rank); axy</span></code></pre></div>
+<pre><code>##   [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+## x    2    1    2    2    2    2    2    1    2
+## y    1    2    1    1    1    1    1    2    1</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb61-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">rowMeans</span>(axy)<span class="sc">-</span><span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>##          x          y 
+## 0.07716049 0.07716049</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb63-1" aria-hidden="true" tabindex="-1"></a>S<span class="ot">=</span><span class="fu">sum</span>((<span class="fu">rowMeans</span>(axy)<span class="sc">-</span><span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="dv">12</span><span class="sc">*</span><span class="dv">9</span><span class="sc">/</span><span class="dv">6</span></span>
+<span id="cb63-2"><a href="comparing-proportions-in-2-x-2-tables.html#cb63-2" aria-hidden="true" tabindex="-1"></a>S</span></code></pre></div>
+<pre><code>## [1] 2.777778</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(S,<span class="dv">1</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
+<pre><code>## [1] 0.0955807</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb67-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(x); da<span class="ot">=</span><span class="fu">cbind</span>(<span class="at">z=</span><span class="fu">c</span>(x,y),<span class="at">gr=</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,n),<span class="fu">rep</span>(<span class="dv">2</span>,n)),<span class="at">blk=</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="dv">2</span>))</span>
+<span id="cb67-2"><a href="comparing-proportions-in-2-x-2-tables.html#cb67-2" aria-hidden="true" tabindex="-1"></a>da</span></code></pre></div>
+<pre><code>##           z gr blk
+##  [1,] 1.830  1   1
+##  [2,] 0.500  1   2
+##  [3,] 1.620  1   3
+##  [4,] 2.480  1   4
+##  [5,] 1.680  1   5
+##  [6,] 1.880  1   6
+##  [7,] 1.550  1   7
+##  [8,] 3.060  1   8
+##  [9,] 1.300  1   9
+## [10,] 0.878  2   1
+## [11,] 0.647  2   2
+## [12,] 0.598  2   3
+## [13,] 2.050  2   4
+## [14,] 1.060  2   5
+## [15,] 1.290  2   6
+## [16,] 1.060  2   7
+## [17,] 3.140  2   8
+## [18,] 1.290  2   9</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">friedman.test</span>(z<span class="sc">~</span>gr<span class="sc">|</span>blk,<span class="at">data=</span>da)</span></code></pre></div>
+<pre><code>## 
+##  Friedman rank sum test
+## 
+## data:  z and gr and blk
+## Friedman chi-squared = 2.7778, df = 1, p-value = 0.09558</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb71-1" aria-hidden="true" tabindex="-1"></a>test.stat<span class="ot">=</span>(<span class="fu">sum</span>(x<span class="sc">&gt;</span>y)<span class="sc">-</span>n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">/</span><span class="fu">sqrt</span>(n<span class="sc">/</span><span class="dv">4</span>); t2<span class="ot">=</span>test.stat<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb71-2"><a href="comparing-proportions-in-2-x-2-tables.html#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">pnorm</span>(test.stat,<span class="at">lower.tail=</span>F),t2,<span class="fu">pchisq</span>(t2,<span class="dv">1</span>,<span class="at">lower.tail=</span>F))</span></code></pre></div>
+<pre><code>## [1] 0.0955807 2.7777778 0.0955807</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="comparing-proportions-in-2-x-2-tables.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(x,y,<span class="at">paired=</span>T)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon signed rank exact test
+## 
+## data:  x and y
+## V = 40, p-value = 0.03906
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+
+</div>
+<div id="linear" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> Linear</h2>
+
+</div>
+<div id="multiple-regression" class="section level2" number="6.8">
+<h2><span class="header-section-number">6.8</span> Multiple Regression</h2>
+
+</div>
+<div id="logistic" class="section level2" number="6.9">
+<h2><span class="header-section-number">6.9</span> Logistic</h2>
+
+</div>
+<div id="density" class="section level2" number="6.10">
+<h2><span class="header-section-number">6.10</span> Density</h2>
+<div id="parametric-continuous-distribution" class="section level3" number="6.10.1">
+<h3><span class="header-section-number">6.10.1</span> Parametric continuous distribution</h3>
+</div>
+<div id="histogram-version" class="section level3" number="6.10.2">
+<h3><span class="header-section-number">6.10.2</span> Histogram Version</h3>
+</div>
+<div id="nonparametric-density-estimation" class="section level3" number="6.10.3">
+<h3><span class="header-section-number">6.10.3</span> Nonparametric density estimation</h3>
+</div>
+<div id="the-empirical-distribution-function" class="section level3" number="6.10.4">
+<h3><span class="header-section-number">6.10.4</span> The empirical distribution function</h3>
+</div>
+<div id="example-4" class="section level3" number="6.10.5">
+<h3><span class="header-section-number">6.10.5</span> Example</h3>
+</div>
+<div id="kernal-function" class="section level3" number="6.10.6">
+<h3><span class="header-section-number">6.10.6</span> Kernal function</h3>
+</div>
+<div id="triangle-kernal" class="section level3" number="6.10.7">
+<h3><span class="header-section-number">6.10.7</span> Triangle Kernal</h3>
+
+</div>
+</div>
+<div id="nonparametric-regression" class="section level2" number="6.11">
+<h2><span class="header-section-number">6.11</span> Nonparametric Regression</h2>
+<div id="step-up" class="section level3" number="6.11.1">
+<h3><span class="header-section-number">6.11.1</span> Step up</h3>
+</div>
+<div id="nearest-neighborhood-method" class="section level3" number="6.11.2">
+<h3><span class="header-section-number">6.11.2</span> Nearest Neighborhood method</h3>
+</div>
+<div id="example-5" class="section level3" number="6.11.3">
+<h3><span class="header-section-number">6.11.3</span> Example</h3>
+</div>
+<div id="local-linear-estimator" class="section level3" number="6.11.4">
+<h3><span class="header-section-number">6.11.4</span> Local linear estimator</h3>
+</div>
+<div id="local-polynomial-estimator" class="section level3" number="6.11.5">
+<h3><span class="header-section-number">6.11.5</span> Local polynomial estimator</h3>
+
+</div>
+</div>
+<div id="semi-parametric-regression-with-splines" class="section level2" number="6.12">
+<h2><span class="header-section-number">6.12</span> Semi-Parametric Regression with splines</h2>
+<div id="basis-functions" class="section level3" number="6.12.1">
+<h3><span class="header-section-number">6.12.1</span> Basis functions</h3>
+</div>
+<div id="example-6" class="section level3" number="6.12.2">
+<h3><span class="header-section-number">6.12.2</span> Example</h3>
+</div>
+<div id="broken-stick-model" class="section level3" number="6.12.3">
+<h3><span class="header-section-number">6.12.3</span> Broken Stick Model</h3>
+
+</div>
+</div>
+<div id="b-splines" class="section level2" number="6.13">
+<h2><span class="header-section-number">6.13</span> B Splines</h2>
+<div id="example-7" class="section level3" number="6.13.1">
+<h3><span class="header-section-number">6.13.1</span> Example</h3>
+
+</div>
+</div>
+<div id="generalized-linear-model" class="section level2" number="6.14">
+<h2><span class="header-section-number">6.14</span> Generalized Linear Model</h2>
+<div id="glm" class="section level3" number="6.14.1">
+<h3><span class="header-section-number">6.14.1</span> GLM</h3>
+</div>
+<div id="exponential-family" class="section level3" number="6.14.2">
+<h3><span class="header-section-number">6.14.2</span> Exponential Family</h3>
+</div>
+<div id="normal-distribution" class="section level3" number="6.14.3">
+<h3><span class="header-section-number">6.14.3</span> Normal Distribution</h3>
+
+</div>
+</div>
+<div id="generalized-additive-models" class="section level2" number="6.15">
+<h2><span class="header-section-number">6.15</span> Generalized Additive Models</h2>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="correlation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mh.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="kruskal-wallis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bootsrap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

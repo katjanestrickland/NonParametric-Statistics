@@ -24,7 +24,7 @@
 <meta name="author" content="Katherine Wilson" />
 
 
-<meta name="date" content="2022-02-14" />
+<meta name="date" content="2022-04-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="sign-test-and-wilcoxon-signed-rank.html"/>
-<link rel="next" href="two-sample-tests.html"/>
+<link rel="next" href="bootsrap.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -140,48 +140,119 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="binomial.html"><a href="binomial.html#binomial-distribution"><i class="fa fa-check"></i><b>2.1</b> Binomial Distribution</a></li>
-<li class="chapter" data-level="2.2" data-path="binomial.html"><a href="binomial.html#normal-approximation-to-the-binomial-distribution"><i class="fa fa-check"></i><b>2.2</b> Normal approximation to the binomial distribution</a></li>
-<li class="chapter" data-level="2.3" data-path="binomial.html"><a href="binomial.html#central-limit-theorum"><i class="fa fa-check"></i><b>2.3</b> Central Limit Theorum</a></li>
-<li class="chapter" data-level="2.4" data-path="binomial.html"><a href="binomial.html#bernoulli-power-calculations"><i class="fa fa-check"></i><b>2.4</b> Bernoulli Power Calculations</a></li>
+<li class="chapter" data-level="2.0.1" data-path="binomial.html"><a href="binomial.html#binomial-distribution"><i class="fa fa-check"></i><b>2.0.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="2.0.2" data-path="binomial.html"><a href="binomial.html#normal-approximation-to-the-binomial-distribution"><i class="fa fa-check"></i><b>2.0.2</b> Normal approximation to the binomial distribution</a></li>
+<li class="chapter" data-level="2.0.3" data-path="binomial.html"><a href="binomial.html#central-limit-theorum"><i class="fa fa-check"></i><b>2.0.3</b> Central Limit Theorum</a></li>
+<li class="chapter" data-level="2.0.4" data-path="binomial.html"><a href="binomial.html#bernoulli-power-calculations"><i class="fa fa-check"></i><b>2.0.4</b> Bernoulli Power Calculations</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html"><i class="fa fa-check"></i><b>3</b> Wilcoxon rank sum</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.1</b> Two sample T test</a></li>
-<li class="chapter" data-level="3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>3.2</b> Wilcoxon Rank Sum Test</a></li>
-<li class="chapter" data-level="3.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hypothesis"><i class="fa fa-check"></i><b>3.3</b> Hypothesis</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.3.1</b> Location Shift Model</a></li>
-<li class="chapter" data-level="3.3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.3.2</b> Rank</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.4</b> Test Statistic</a></li>
-<li class="chapter" data-level="3.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.5</b> Distribution of W</a></li>
-<li class="chapter" data-level="3.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.6</b> Computation</a></li>
-<li class="chapter" data-level="3.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.7</b> Example</a></li>
-<li class="chapter" data-level="3.8" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.8</b> Hodges-Lehman Estimate</a></li>
-<li class="chapter" data-level="3.9" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.9</b> Example</a>
-<ul>
-<li class="chapter" data-level="3.9.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.9.1</b> Kolmogorov Smirnov</a></li>
-</ul></li>
+<li class="chapter" data-level="3.0.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.0.1</b> Two sample T test</a></li>
+<li class="chapter" data-level="3.0.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>3.0.2</b> Wilcoxon Rank Sum Test</a></li>
+<li class="chapter" data-level="3.0.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hypothesis"><i class="fa fa-check"></i><b>3.0.3</b> Hypothesis</a></li>
+<li class="chapter" data-level="3.0.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.0.4</b> Location Shift Model</a></li>
+<li class="chapter" data-level="3.0.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.0.5</b> Rank</a></li>
+<li class="chapter" data-level="3.0.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.0.6</b> Test Statistic</a></li>
+<li class="chapter" data-level="3.0.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.0.7</b> Distribution of W</a></li>
+<li class="chapter" data-level="3.0.8" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.0.8</b> Computation</a></li>
+<li class="chapter" data-level="3.0.9" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.0.9</b> Example</a></li>
+<li class="chapter" data-level="3.0.10" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.0.10</b> Hodges-Lehman Estimate</a></li>
+<li class="chapter" data-level="3.0.11" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.0.11</b> Example</a></li>
+<li class="chapter" data-level="3.0.12" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.0.12</b> Kolmogorov Smirnov</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html"><i class="fa fa-check"></i><b>4</b> Sign test and Wilcoxon signed rank</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.1</b> Sign test and Wilcoxon signed rank test</a></li>
-<li class="chapter" data-level="4.2" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-2"><i class="fa fa-check"></i><b>4.2</b> Example</a></li>
-<li class="chapter" data-level="4.3" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-test"><i class="fa fa-check"></i><b>4.3</b> Large sample test</a></li>
-<li class="chapter" data-level="4.4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.4</b> Wilcoxon signed rank test</a></li>
-<li class="chapter" data-level="4.5" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-3"><i class="fa fa-check"></i><b>4.5</b> Example</a></li>
-<li class="chapter" data-level="4.6" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.6</b> Large sample approximation</a></li>
+<li class="chapter" data-level="4.0.1" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.0.1</b> Sign test and Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.0.2" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-2"><i class="fa fa-check"></i><b>4.0.2</b> Example</a></li>
+<li class="chapter" data-level="4.0.3" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.0.3</b> Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.0.4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.0.4</b> Large sample approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.1</b> F test</a></li>
-<li class="chapter" data-level="5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.2</b> Ansari-Bradley</a></li>
-<li class="chapter" data-level="5.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.3</b> Kruskal-Wallis</a></li>
+<li class="chapter" data-level="5.0.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.0.1</b> F test</a></li>
+<li class="chapter" data-level="5.0.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.0.2</b> Ansari-Bradley</a></li>
+<li class="chapter" data-level="5.0.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.0.3</b> Kruskal-Wallis</a></li>
+<li class="chapter" data-level="5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#friedman-rank"><i class="fa fa-check"></i><b>5.1</b> Friedman Rank</a></li>
+<li class="chapter" data-level="5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#correlation"><i class="fa fa-check"></i><b>5.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#pearson"><i class="fa fa-check"></i><b>5.2.1</b> Pearson</a></li>
+<li class="chapter" data-level="5.2.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kendall"><i class="fa fa-check"></i><b>5.2.2</b> Kendall</a></li>
+<li class="chapter" data-level="5.2.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#spearman-rank"><i class="fa fa-check"></i><b>5.2.3</b> Spearman Rank</a></li>
+<li class="chapter" data-level="5.2.4" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#cohens-kappa"><i class="fa fa-check"></i><b>5.2.4</b> Cohen’s kappa</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="two-sample-tests.html"><a href="two-sample-tests.html"><i class="fa fa-check"></i><b>6</b> Two Sample Tests</a></li>
-<li class="chapter" data-level="7" data-path="smoothing-methods.html"><a href="smoothing-methods.html"><i class="fa fa-check"></i><b>7</b> Smoothing Methods</a></li>
-<li class="chapter" data-level="8" data-path="third-topic.html"><a href="third-topic.html"><i class="fa fa-check"></i><b>8</b> Third Topic</a></li>
+<li class="chapter" data-level="5.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#comparing-proportions-in-2-x-2-tables"><i class="fa fa-check"></i><b>5.3</b> Comparing proportions in 2 X 2 tables</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#large-sample-test-procedures"><i class="fa fa-check"></i><b>5.3.1</b> Large sample test procedures</a></li>
+<li class="chapter" data-level="5.3.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#x2-chi-squared-test-of-homogeneity"><i class="fa fa-check"></i><b>5.3.2</b> 2X2 Chi-Squared test of homogeneity</a></li>
+<li class="chapter" data-level="5.3.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#x2-chi-squared-test-of-independence"><i class="fa fa-check"></i><b>5.3.3</b> 2X2 Chi-Squared test of independence</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#relative-riskodds-ratio"><i class="fa fa-check"></i><b>5.4</b> Relative Risk/Odds Ratio</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#relative-risk"><i class="fa fa-check"></i><b>5.4.1</b> Relative Risk</a></li>
+<li class="chapter" data-level="5.4.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#odds"><i class="fa fa-check"></i><b>5.4.2</b> Odds</a></li>
+<li class="chapter" data-level="5.4.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#example-3"><i class="fa fa-check"></i><b>5.4.3</b> Example</a></li>
+<li class="chapter" data-level="5.4.4" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#hypergeometric-distribution"><i class="fa fa-check"></i><b>5.4.4</b> Hypergeometric distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#mh"><i class="fa fa-check"></i><b>5.5</b> MH</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#binomial-coefficient"><i class="fa fa-check"></i><b>5.5.1</b> Binomial coefficient</a></li>
+<li class="chapter" data-level="5.5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#multinomial-distribution"><i class="fa fa-check"></i><b>5.5.2</b> Multinomial Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#mcnemars"><i class="fa fa-check"></i><b>5.6</b> McNemars</a></li>
+<li class="chapter" data-level="5.7" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#stuart"><i class="fa fa-check"></i><b>5.7</b> Stuart</a></li>
+<li class="chapter" data-level="5.8" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#correlation-1"><i class="fa fa-check"></i><b>5.8</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#pearson-1"><i class="fa fa-check"></i><b>5.8.1</b> Pearson</a></li>
+<li class="chapter" data-level="5.8.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kendall-1"><i class="fa fa-check"></i><b>5.8.2</b> Kendall</a></li>
+<li class="chapter" data-level="5.8.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#spearman-rank-1"><i class="fa fa-check"></i><b>5.8.3</b> Spearman Rank</a></li>
+<li class="chapter" data-level="5.8.4" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#cohens-kappa-1"><i class="fa fa-check"></i><b>5.8.4</b> Cohen’s kappa</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#friedman-rank-1"><i class="fa fa-check"></i><b>5.9</b> Friedman Rank</a></li>
+<li class="chapter" data-level="5.10" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#linear"><i class="fa fa-check"></i><b>5.10</b> Linear</a></li>
+<li class="chapter" data-level="5.11" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#multiple-regression"><i class="fa fa-check"></i><b>5.11</b> Multiple Regression</a></li>
+<li class="chapter" data-level="5.12" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#logistic"><i class="fa fa-check"></i><b>5.12</b> Logistic</a></li>
+<li class="chapter" data-level="5.13" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#density"><i class="fa fa-check"></i><b>5.13</b> Density</a>
+<ul>
+<li class="chapter" data-level="5.13.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#parametric-continuous-distribution"><i class="fa fa-check"></i><b>5.13.1</b> Parametric continuous distribution</a></li>
+<li class="chapter" data-level="5.13.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#histogram-version"><i class="fa fa-check"></i><b>5.13.2</b> Histogram Version</a></li>
+<li class="chapter" data-level="5.13.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#nonparametric-density-estimation"><i class="fa fa-check"></i><b>5.13.3</b> Nonparametric density estimation</a></li>
+<li class="chapter" data-level="5.13.4" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#the-empirical-distribution-function"><i class="fa fa-check"></i><b>5.13.4</b> The empirical distribution function</a></li>
+<li class="chapter" data-level="5.13.5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#example-4"><i class="fa fa-check"></i><b>5.13.5</b> Example</a></li>
+<li class="chapter" data-level="5.13.6" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kernal-function"><i class="fa fa-check"></i><b>5.13.6</b> Kernal function</a></li>
+<li class="chapter" data-level="5.13.7" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#triangle-kernal"><i class="fa fa-check"></i><b>5.13.7</b> Triangle Kernal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.14" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#nonparametric-regression"><i class="fa fa-check"></i><b>5.14</b> Nonparametric Regression</a>
+<ul>
+<li class="chapter" data-level="5.14.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#step-up"><i class="fa fa-check"></i><b>5.14.1</b> Step up</a></li>
+<li class="chapter" data-level="5.14.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#nearest-neighborhood-method"><i class="fa fa-check"></i><b>5.14.2</b> Nearest Neighborhood method</a></li>
+<li class="chapter" data-level="5.14.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#example-5"><i class="fa fa-check"></i><b>5.14.3</b> Example</a></li>
+<li class="chapter" data-level="5.14.4" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#local-linear-estimator"><i class="fa fa-check"></i><b>5.14.4</b> Local linear estimator</a></li>
+<li class="chapter" data-level="5.14.5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#local-polynomial-estimator"><i class="fa fa-check"></i><b>5.14.5</b> Local polynomial estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#semi-parametric-regression-with-splines"><i class="fa fa-check"></i><b>5.15</b> Semi-Parametric Regression with splines</a>
+<ul>
+<li class="chapter" data-level="5.15.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#basis-functions"><i class="fa fa-check"></i><b>5.15.1</b> Basis functions</a></li>
+<li class="chapter" data-level="5.15.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#example-6"><i class="fa fa-check"></i><b>5.15.2</b> Example</a></li>
+<li class="chapter" data-level="5.15.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#broken-stick-model"><i class="fa fa-check"></i><b>5.15.3</b> Broken Stick Model</a></li>
+</ul></li>
+<li class="chapter" data-level="5.16" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#b-splines"><i class="fa fa-check"></i><b>5.16</b> B Splines</a>
+<ul>
+<li class="chapter" data-level="5.16.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#example-7"><i class="fa fa-check"></i><b>5.16.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.17" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#generalized-linear-model"><i class="fa fa-check"></i><b>5.17</b> Generalized Linear Model</a>
+<ul>
+<li class="chapter" data-level="5.17.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#glm"><i class="fa fa-check"></i><b>5.17.1</b> GLM</a></li>
+<li class="chapter" data-level="5.17.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#exponential-family"><i class="fa fa-check"></i><b>5.17.2</b> Exponential Family</a></li>
+<li class="chapter" data-level="5.17.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#normal-distribution"><i class="fa fa-check"></i><b>5.17.3</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="5.18" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#generalized-additive-models"><i class="fa fa-check"></i><b>5.18</b> Generalized Additive Models</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bootsrap.html"><a href="bootsrap.html"><i class="fa fa-check"></i><b>6</b> Bootsrap</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="bootsrap.html"><a href="bootsrap.html#bootstrap-estimation-of-bias"><i class="fa fa-check"></i><b>6.0.1</b> Bootstrap estimation of bias</a></li>
+<li class="chapter" data-level="6.0.2" data-path="bootsrap.html"><a href="bootsrap.html#bootstrap-estimation-of-variance"><i class="fa fa-check"></i><b>6.0.2</b> Bootstrap estimation of variance</a></li>
+<li class="chapter" data-level="6.0.3" data-path="bootsrap.html"><a href="bootsrap.html#bootsrap-confidence-intervals"><i class="fa fa-check"></i><b>6.0.3</b> Bootsrap confidence intervals</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -203,14 +274,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="kruskal-wallis" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Kruskal Wallis</h1>
-<div id="f-test" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> F test</h2>
+<div id="f-test" class="section level3" number="5.0.1">
+<h3><span class="header-section-number">5.0.1</span> F test</h3>
 <p><span class="math display">\[\begin{equation}
 X_i ~ N(\mu_x, \sigma_x^2), iid\\
 Y_j ~ N(\mu_y, \sigma_y^2), iid\\
 X_i \text{independent of} Y_j \\
 S_x^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i -\bar{x})^2\\
-S_y^2 = \frac{1}{m-1}\sum_{i=1}^{n}(Y_j -\bar{Y})^2\\ 
+S_y^2 = \frac{1}{m-1}\sum_{i=1}^{n}(Y_j -\bar{Y})^2\\
 \bar{X} ~ N(\mu_x, \frac{\sigma^2}{n}) \\
 \frac{(n-1)S_x^2}{\sigma_x^2} ~ X_{n-1}^2 \\
 \bar{X} \perp \!\!\! \perp S_x^2 \\
@@ -228,16 +299,16 @@ H_0: \sigma_x = \sigma_y \\
 ##  F test to compare two variances
 ## 
 ## data:  x and y
-## F = 3.9892, num df = 29, denom df = 19, p-value = 0.002645
+## F = 6.2961, num df = 29, denom df = 19, p-value = 0.0001076
 ## alternative hypothesis: true ratio of variances is not equal to 1
 ## 95 percent confidence interval:
-##  1.660833 8.901053
+##   2.621241 14.048258
 ## sample estimates:
 ## ratio of variances 
-##           3.989225</code></pre>
+##           6.296071</code></pre>
 </div>
-<div id="ansari-bradley" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Ansari-Bradley</h2>
+<div id="ansari-bradley" class="section level3" number="5.0.2">
+<h3><span class="header-section-number">5.0.2</span> Ansari-Bradley</h3>
 <p><span class="math display">\[\begin{equation}
 \frac{X-\theta}{\eta_x} \overset{d}= \frac{Y-\theta}{\eta_y}\\
 \eta_x: \text{scale parameters of G}; \\
@@ -284,8 +355,8 @@ H_0: \gamma^2 = 1
 ## ratio of variances 
 ##           1.398476</code></pre>
 </div>
-<div id="kruskal-wallis-1" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Kruskal-Wallis</h2>
+<div id="kruskal-wallis-1" class="section level3" number="5.0.3">
+<h3><span class="header-section-number">5.0.3</span> Kruskal-Wallis</h3>
 <p><span class="math display">\[\begin{equation}
 y_{ik} = \theta + \tau_i + \epsilon_{ik} \\
 i = 1,...,1,k=1,...,n_i; \\
@@ -314,6 +385,328 @@ i = 1,...,1,k=1,...,n_i; \\
 ## Kruskal-Wallis chi-squared = 0.77143, df = 2, p-value = 0.68</code></pre>
 
 </div>
+<div id="friedman-rank" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Friedman Rank</h2>
+<p>Nonparametric version of two-way ANOVA. The collected data of an experimental design involves two factors, each at two or more levels, the treatment factor and blocking factor.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="kruskal-wallis.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span></code></pre></div>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## 
+## Attaching package: &#39;BSDA&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:datasets&#39;:
+## 
+##     Orange</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="kruskal-wallis.html#cb22-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">1.83</span>,<span class="fl">0.50</span>,<span class="fl">1.62</span>,<span class="fl">2.48</span>,<span class="fl">1.68</span>,<span class="fl">1.88</span>,<span class="fl">1.55</span>,<span class="fl">3.06</span>,<span class="fl">1.30</span>);</span>
+<span id="cb22-2"><a href="kruskal-wallis.html#cb22-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.878</span>,<span class="fl">0.647</span>,<span class="fl">0.598</span>,<span class="fl">2.05</span>,<span class="fl">1.06</span>,<span class="fl">1.29</span>,<span class="fl">1.06</span>,<span class="fl">3.14</span>,<span class="fl">1.29</span>);</span>
+<span id="cb22-3"><a href="kruskal-wallis.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">las=</span><span class="dv">1</span>); <span class="fu">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="kruskal-wallis.html#cb23-1" aria-hidden="true" tabindex="-1"></a>xy<span class="ot">=</span><span class="fu">cbind</span>(x,y); xy</span></code></pre></div>
+<pre><code>##          x     y
+##  [1,] 1.83 0.878
+##  [2,] 0.50 0.647
+##  [3,] 1.62 0.598
+##  [4,] 2.48 2.050
+##  [5,] 1.68 1.060
+##  [6,] 1.88 1.290
+##  [7,] 1.55 1.060
+##  [8,] 3.06 3.140
+##  [9,] 1.30 1.290</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="kruskal-wallis.html#cb25-1" aria-hidden="true" tabindex="-1"></a>axy<span class="ot">=</span><span class="fu">apply</span>(xy,<span class="dv">1</span>,rank); axy</span></code></pre></div>
+<pre><code>##   [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+## x    2    1    2    2    2    2    2    1    2
+## y    1    2    1    1    1    1    1    2    1</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="kruskal-wallis.html#cb27-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">rowMeans</span>(axy)<span class="sc">-</span><span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>##          x          y 
+## 0.07716049 0.07716049</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="kruskal-wallis.html#cb29-1" aria-hidden="true" tabindex="-1"></a>S<span class="ot">=</span><span class="fu">sum</span>((<span class="fu">rowMeans</span>(axy)<span class="sc">-</span><span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="dv">12</span><span class="sc">*</span><span class="dv">9</span><span class="sc">/</span><span class="dv">6</span></span>
+<span id="cb29-2"><a href="kruskal-wallis.html#cb29-2" aria-hidden="true" tabindex="-1"></a>S</span></code></pre></div>
+<pre><code>## [1] 2.777778</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="kruskal-wallis.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(S,<span class="dv">1</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
+<pre><code>## [1] 0.0955807</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="kruskal-wallis.html#cb33-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(x); da<span class="ot">=</span><span class="fu">cbind</span>(<span class="at">z=</span><span class="fu">c</span>(x,y),<span class="at">gr=</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,n),<span class="fu">rep</span>(<span class="dv">2</span>,n)),<span class="at">blk=</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="dv">2</span>))</span>
+<span id="cb33-2"><a href="kruskal-wallis.html#cb33-2" aria-hidden="true" tabindex="-1"></a>da</span></code></pre></div>
+<pre><code>##           z gr blk
+##  [1,] 1.830  1   1
+##  [2,] 0.500  1   2
+##  [3,] 1.620  1   3
+##  [4,] 2.480  1   4
+##  [5,] 1.680  1   5
+##  [6,] 1.880  1   6
+##  [7,] 1.550  1   7
+##  [8,] 3.060  1   8
+##  [9,] 1.300  1   9
+## [10,] 0.878  2   1
+## [11,] 0.647  2   2
+## [12,] 0.598  2   3
+## [13,] 2.050  2   4
+## [14,] 1.060  2   5
+## [15,] 1.290  2   6
+## [16,] 1.060  2   7
+## [17,] 3.140  2   8
+## [18,] 1.290  2   9</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="kruskal-wallis.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">friedman.test</span>(z<span class="sc">~</span>gr<span class="sc">|</span>blk,<span class="at">data=</span>da)</span></code></pre></div>
+<pre><code>## 
+##  Friedman rank sum test
+## 
+## data:  z and gr and blk
+## Friedman chi-squared = 2.7778, df = 1, p-value = 0.09558</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="kruskal-wallis.html#cb37-1" aria-hidden="true" tabindex="-1"></a>test.stat<span class="ot">=</span>(<span class="fu">sum</span>(x<span class="sc">&gt;</span>y)<span class="sc">-</span>n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">/</span><span class="fu">sqrt</span>(n<span class="sc">/</span><span class="dv">4</span>); t2<span class="ot">=</span>test.stat<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb37-2"><a href="kruskal-wallis.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">pnorm</span>(test.stat,<span class="at">lower.tail=</span>F),t2,<span class="fu">pchisq</span>(t2,<span class="dv">1</span>,<span class="at">lower.tail=</span>F))</span></code></pre></div>
+<pre><code>## [1] 0.0955807 2.7777778 0.0955807</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="kruskal-wallis.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(x,y,<span class="at">paired=</span>T)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon signed rank exact test
+## 
+## data:  x and y
+## V = 40, p-value = 0.03906
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+
+</div>
+<div id="correlation" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Correlation</h2>
+<div id="pearson" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Pearson</h3>
+</div>
+<div id="kendall" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Kendall</h3>
+</div>
+<div id="spearman-rank" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Spearman Rank</h3>
+</div>
+<div id="cohens-kappa" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Cohen’s kappa</h3>
+
+</div>
+</div>
+<div id="comparing-proportions-in-2-x-2-tables" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Comparing proportions in 2 X 2 tables</h2>
+<div id="large-sample-test-procedures" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Large sample test procedures</h3>
+</div>
+<div id="x2-chi-squared-test-of-homogeneity" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> 2X2 Chi-Squared test of homogeneity</h3>
+</div>
+<div id="x2-chi-squared-test-of-independence" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> 2X2 Chi-Squared test of independence</h3>
+
+</div>
+</div>
+<div id="relative-riskodds-ratio" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Relative Risk/Odds Ratio</h2>
+<div id="relative-risk" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Relative Risk</h3>
+</div>
+<div id="odds" class="section level3" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Odds</h3>
+</div>
+<div id="example-3" class="section level3" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Example</h3>
+</div>
+<div id="hypergeometric-distribution" class="section level3" number="5.4.4">
+<h3><span class="header-section-number">5.4.4</span> Hypergeometric distribution</h3>
+
+</div>
+</div>
+<div id="mh" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> MH</h2>
+<div id="binomial-coefficient" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Binomial coefficient</h3>
+<p>The number of unordered samples of y objects selected from n objects without replacement is</p>
+<p><span class="math display">\[ {n \choose y} = \frac{n \times (n-1) \times (n-y-1)}{y!}) \\
+= \frac{[n \times (n-1) \times (n-y+1)](n-1)!}{(n-1)!y!} \\
+= \frac{n!}{(n-1)!y!}\]</span></p>
+</div>
+<div id="multinomial-distribution" class="section level3" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Multinomial Distribution</h3>
+
+</div>
+</div>
+<div id="mcnemars" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> McNemars</h2>
+
+</div>
+<div id="stuart" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Stuart</h2>
+
+</div>
+<div id="correlation-1" class="section level2" number="5.8">
+<h2><span class="header-section-number">5.8</span> Correlation</h2>
+<div id="pearson-1" class="section level3" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> Pearson</h3>
+</div>
+<div id="kendall-1" class="section level3" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> Kendall</h3>
+</div>
+<div id="spearman-rank-1" class="section level3" number="5.8.3">
+<h3><span class="header-section-number">5.8.3</span> Spearman Rank</h3>
+</div>
+<div id="cohens-kappa-1" class="section level3" number="5.8.4">
+<h3><span class="header-section-number">5.8.4</span> Cohen’s kappa</h3>
+
+</div>
+</div>
+<div id="friedman-rank-1" class="section level2" number="5.9">
+<h2><span class="header-section-number">5.9</span> Friedman Rank</h2>
+<p>Nonparametric version of two-way ANOVA. The collected data of an experimental design involves two factors, each at two or more levels, the treatment factor and blocking factor.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="kruskal-wallis.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb41-2"><a href="kruskal-wallis.html#cb41-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">1.83</span>,<span class="fl">0.50</span>,<span class="fl">1.62</span>,<span class="fl">2.48</span>,<span class="fl">1.68</span>,<span class="fl">1.88</span>,<span class="fl">1.55</span>,<span class="fl">3.06</span>,<span class="fl">1.30</span>);</span>
+<span id="cb41-3"><a href="kruskal-wallis.html#cb41-3" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.878</span>,<span class="fl">0.647</span>,<span class="fl">0.598</span>,<span class="fl">2.05</span>,<span class="fl">1.06</span>,<span class="fl">1.29</span>,<span class="fl">1.06</span>,<span class="fl">3.14</span>,<span class="fl">1.29</span>);</span>
+<span id="cb41-4"><a href="kruskal-wallis.html#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">las=</span><span class="dv">1</span>); <span class="fu">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="kruskal-wallis.html#cb42-1" aria-hidden="true" tabindex="-1"></a>xy<span class="ot">=</span><span class="fu">cbind</span>(x,y); xy</span></code></pre></div>
+<pre><code>##          x     y
+##  [1,] 1.83 0.878
+##  [2,] 0.50 0.647
+##  [3,] 1.62 0.598
+##  [4,] 2.48 2.050
+##  [5,] 1.68 1.060
+##  [6,] 1.88 1.290
+##  [7,] 1.55 1.060
+##  [8,] 3.06 3.140
+##  [9,] 1.30 1.290</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="kruskal-wallis.html#cb44-1" aria-hidden="true" tabindex="-1"></a>axy<span class="ot">=</span><span class="fu">apply</span>(xy,<span class="dv">1</span>,rank); axy</span></code></pre></div>
+<pre><code>##   [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+## x    2    1    2    2    2    2    2    1    2
+## y    1    2    1    1    1    1    1    2    1</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="kruskal-wallis.html#cb46-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">rowMeans</span>(axy)<span class="sc">-</span><span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>##          x          y 
+## 0.07716049 0.07716049</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="kruskal-wallis.html#cb48-1" aria-hidden="true" tabindex="-1"></a>S<span class="ot">=</span><span class="fu">sum</span>((<span class="fu">rowMeans</span>(axy)<span class="sc">-</span><span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="dv">12</span><span class="sc">*</span><span class="dv">9</span><span class="sc">/</span><span class="dv">6</span></span>
+<span id="cb48-2"><a href="kruskal-wallis.html#cb48-2" aria-hidden="true" tabindex="-1"></a>S</span></code></pre></div>
+<pre><code>## [1] 2.777778</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="kruskal-wallis.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(S,<span class="dv">1</span>,<span class="at">lower.tail=</span>F)</span></code></pre></div>
+<pre><code>## [1] 0.0955807</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="kruskal-wallis.html#cb52-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(x); da<span class="ot">=</span><span class="fu">cbind</span>(<span class="at">z=</span><span class="fu">c</span>(x,y),<span class="at">gr=</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,n),<span class="fu">rep</span>(<span class="dv">2</span>,n)),<span class="at">blk=</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="dv">2</span>))</span>
+<span id="cb52-2"><a href="kruskal-wallis.html#cb52-2" aria-hidden="true" tabindex="-1"></a>da</span></code></pre></div>
+<pre><code>##           z gr blk
+##  [1,] 1.830  1   1
+##  [2,] 0.500  1   2
+##  [3,] 1.620  1   3
+##  [4,] 2.480  1   4
+##  [5,] 1.680  1   5
+##  [6,] 1.880  1   6
+##  [7,] 1.550  1   7
+##  [8,] 3.060  1   8
+##  [9,] 1.300  1   9
+## [10,] 0.878  2   1
+## [11,] 0.647  2   2
+## [12,] 0.598  2   3
+## [13,] 2.050  2   4
+## [14,] 1.060  2   5
+## [15,] 1.290  2   6
+## [16,] 1.060  2   7
+## [17,] 3.140  2   8
+## [18,] 1.290  2   9</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="kruskal-wallis.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">friedman.test</span>(z<span class="sc">~</span>gr<span class="sc">|</span>blk,<span class="at">data=</span>da)</span></code></pre></div>
+<pre><code>## 
+##  Friedman rank sum test
+## 
+## data:  z and gr and blk
+## Friedman chi-squared = 2.7778, df = 1, p-value = 0.09558</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="kruskal-wallis.html#cb56-1" aria-hidden="true" tabindex="-1"></a>test.stat<span class="ot">=</span>(<span class="fu">sum</span>(x<span class="sc">&gt;</span>y)<span class="sc">-</span>n<span class="sc">/</span><span class="dv">2</span>)<span class="sc">/</span><span class="fu">sqrt</span>(n<span class="sc">/</span><span class="dv">4</span>); t2<span class="ot">=</span>test.stat<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb56-2"><a href="kruskal-wallis.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">pnorm</span>(test.stat,<span class="at">lower.tail=</span>F),t2,<span class="fu">pchisq</span>(t2,<span class="dv">1</span>,<span class="at">lower.tail=</span>F))</span></code></pre></div>
+<pre><code>## [1] 0.0955807 2.7777778 0.0955807</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="kruskal-wallis.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(x,y,<span class="at">paired=</span>T)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon signed rank exact test
+## 
+## data:  x and y
+## V = 40, p-value = 0.03906
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+
+</div>
+<div id="linear" class="section level2" number="5.10">
+<h2><span class="header-section-number">5.10</span> Linear</h2>
+
+</div>
+<div id="multiple-regression" class="section level2" number="5.11">
+<h2><span class="header-section-number">5.11</span> Multiple Regression</h2>
+
+</div>
+<div id="logistic" class="section level2" number="5.12">
+<h2><span class="header-section-number">5.12</span> Logistic</h2>
+
+</div>
+<div id="density" class="section level2" number="5.13">
+<h2><span class="header-section-number">5.13</span> Density</h2>
+<div id="parametric-continuous-distribution" class="section level3" number="5.13.1">
+<h3><span class="header-section-number">5.13.1</span> Parametric continuous distribution</h3>
+</div>
+<div id="histogram-version" class="section level3" number="5.13.2">
+<h3><span class="header-section-number">5.13.2</span> Histogram Version</h3>
+</div>
+<div id="nonparametric-density-estimation" class="section level3" number="5.13.3">
+<h3><span class="header-section-number">5.13.3</span> Nonparametric density estimation</h3>
+</div>
+<div id="the-empirical-distribution-function" class="section level3" number="5.13.4">
+<h3><span class="header-section-number">5.13.4</span> The empirical distribution function</h3>
+</div>
+<div id="example-4" class="section level3" number="5.13.5">
+<h3><span class="header-section-number">5.13.5</span> Example</h3>
+</div>
+<div id="kernal-function" class="section level3" number="5.13.6">
+<h3><span class="header-section-number">5.13.6</span> Kernal function</h3>
+</div>
+<div id="triangle-kernal" class="section level3" number="5.13.7">
+<h3><span class="header-section-number">5.13.7</span> Triangle Kernal</h3>
+
+</div>
+</div>
+<div id="nonparametric-regression" class="section level2" number="5.14">
+<h2><span class="header-section-number">5.14</span> Nonparametric Regression</h2>
+<div id="step-up" class="section level3" number="5.14.1">
+<h3><span class="header-section-number">5.14.1</span> Step up</h3>
+</div>
+<div id="nearest-neighborhood-method" class="section level3" number="5.14.2">
+<h3><span class="header-section-number">5.14.2</span> Nearest Neighborhood method</h3>
+</div>
+<div id="example-5" class="section level3" number="5.14.3">
+<h3><span class="header-section-number">5.14.3</span> Example</h3>
+</div>
+<div id="local-linear-estimator" class="section level3" number="5.14.4">
+<h3><span class="header-section-number">5.14.4</span> Local linear estimator</h3>
+</div>
+<div id="local-polynomial-estimator" class="section level3" number="5.14.5">
+<h3><span class="header-section-number">5.14.5</span> Local polynomial estimator</h3>
+
+</div>
+</div>
+<div id="semi-parametric-regression-with-splines" class="section level2" number="5.15">
+<h2><span class="header-section-number">5.15</span> Semi-Parametric Regression with splines</h2>
+<div id="basis-functions" class="section level3" number="5.15.1">
+<h3><span class="header-section-number">5.15.1</span> Basis functions</h3>
+</div>
+<div id="example-6" class="section level3" number="5.15.2">
+<h3><span class="header-section-number">5.15.2</span> Example</h3>
+</div>
+<div id="broken-stick-model" class="section level3" number="5.15.3">
+<h3><span class="header-section-number">5.15.3</span> Broken Stick Model</h3>
+
+</div>
+</div>
+<div id="b-splines" class="section level2" number="5.16">
+<h2><span class="header-section-number">5.16</span> B Splines</h2>
+<div id="example-7" class="section level3" number="5.16.1">
+<h3><span class="header-section-number">5.16.1</span> Example</h3>
+
+</div>
+</div>
+<div id="generalized-linear-model" class="section level2" number="5.17">
+<h2><span class="header-section-number">5.17</span> Generalized Linear Model</h2>
+<div id="glm" class="section level3" number="5.17.1">
+<h3><span class="header-section-number">5.17.1</span> GLM</h3>
+</div>
+<div id="exponential-family" class="section level3" number="5.17.2">
+<h3><span class="header-section-number">5.17.2</span> Exponential Family</h3>
+</div>
+<div id="normal-distribution" class="section level3" number="5.17.3">
+<h3><span class="header-section-number">5.17.3</span> Normal Distribution</h3>
+
+</div>
+</div>
+<div id="generalized-additive-models" class="section level2" number="5.18">
+<h2><span class="header-section-number">5.18</span> Generalized Additive Models</h2>
+
+</div>
 </div>
             </section>
 
@@ -321,7 +714,7 @@ i = 1,...,1,k=1,...,n_i; \\
         </div>
       </div>
 <a href="sign-test-and-wilcoxon-signed-rank.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="two-sample-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bootsrap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

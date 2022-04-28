@@ -5,7 +5,7 @@ Traditional parametric testing methods are based on the assumption that dat are 
 Nonparametric methods require mild assumptions regarding the underlying populations from which data are obtained. When parametric assumptions do not hold, they are valid, and when parametric assumptions hold, nonparametric methods are only slighly less powerful than parametric. 
 
 
-## Two sample T test
+### Two sample T test
 
 $$\begin{equation}
 X_i \overset{\text{iid}}{\sim} N(\mu_x, \sigma^2), i \le m \\
@@ -25,11 +25,11 @@ m=28; n=30; x=rnorm(m,mean=1,sd=1); y=rnorm(n,mean=1.1,sd=1);
 t.test(x,y)
 
 ```
-## Wilcoxon Rank Sum Test
+### Wilcoxon Rank Sum Test
 
 We have two samples, from two populations (X and Y), and interest is in the difference of the two population means. T.test can be used for one sample and two sample. Wilcoxon is a nonparametric version of the two sample t test. X and Y must be independent. Alternative hypothesis is that X at a given point t is less than the given distribution of Y... in other words, X larger than Y.
 
-## Hypothesis
+### Hypothesis
 
 * $H_0 : G(t) = F(t) $, for all t
 * $H_1: G(t) \le F(t) $, X is stochastically larger than Y
@@ -56,7 +56,7 @@ u=c(-1,-1,0,2); rank(u); #?rank
 
 
 
-## Test Statistic
+### Test Statistic
 
 * Combine the two sample ${X_1,...,X_m}$ and ${Y_1,...,Y_n}$ into one, and tank them from 1 to m+n, low to high
 * Let $R_i$ denote the rank of $X_i$ in this combined ranking
@@ -64,7 +64,7 @@ u=c(-1,-1,0,2); rank(u); #?rank
 * where $min W = 1+ ... + m = m(m+1)/2$
 * max $W = (n+1) + ... + (n+m) = m(2n+m+1)/2$
 
-## Distribution of W
+### Distribution of W
 
 * $P(W=k)$ = ?, min $W\le k \le max W$
 * P(W = minW) = P(W = maxW) = n!m!/(m+n)!
@@ -74,7 +74,7 @@ u=c(-1,-1,0,2); rank(u); #?rank
 * $W = U + \frac{m(m+1)}{2}$
 * min U = 0, max U = mn
 
-## Computation
+### Computation
 
 ```{r}
 m=4; n=5; mn=m*n
@@ -91,7 +91,7 @@ u=0:mn; plot(u, dwilcox(u,m,n),type="h",las=1)
 * $H_0: \Delta = 0$ vs. $H_1: \Delta \ne 0$
 
 
-## Example
+### Example
 
 ```{r}
 x=c(0.80, 0.83, 1.89, 1.04, 1.45, 1.38, 1.91, 1.64,
@@ -104,13 +104,13 @@ wilcox.test(x, y, alternative = "g",conf.int=T);
 
 ```
 
-## Hodges-Lehman Estimate
+### Hodges-Lehman Estimate
 
 ```{r}
 xy=outer(x,y,"-"); median(xy)
 ```
 
-## Example
+### Example
 
 ```{r}
 x=c(18.85,16.93,19.29,18.31,17.27,18.64,17.82,19.00,19.58,18.04,17.27,

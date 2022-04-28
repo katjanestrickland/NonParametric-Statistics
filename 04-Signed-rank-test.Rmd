@@ -18,7 +18,7 @@ t.test(x-y)
 
 
 
-## Sign test and Wilcoxon signed rank test
+### Sign test and Wilcoxon signed rank test
 
 Nonparametric version of the paired or one sample t. test. Primary interest is centered on the location (median) of the population. Two scenarios: pared data, such as pretreatment and posttreatment where we are looking at shift in location due to treatment, or one sample data, where obserbations from a single population about whose location we wish to make inferences.
 
@@ -38,7 +38,7 @@ Under $H_0$:
 * T follows a binomial(n,1/2) distribution
 
 
-## Example
+### Example
 
 ```{r}
 
@@ -62,9 +62,8 @@ median(z-median(z))
 ```
 
 
-## Large sample test
 
-## Wilcoxon signed rank test
+### Wilcoxon signed rank test
 
 ```{r}
 n=10; rn=(n*(n+1)/2); tv=0:rn;
@@ -75,7 +74,7 @@ psignrank(x0,n);
 psignrank(rn-x0-1,n,lower.tail=F);
 ```
 
-## Example
+
 
 ```{r}
 rbind(z, rank(z)); n=length(z)
@@ -91,7 +90,7 @@ wilcox.test(z, alternative = "greater",conf.int=T)
 
 
 
-## Large sample approximation
+### Large sample approximation
 
 ```{r}
 wilcox.test(z, alternative = "greater", conf.int=T,

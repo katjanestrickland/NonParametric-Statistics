@@ -1,6 +1,5 @@
 # Density
-
-## Parametric continuous distribution
+### Parametric continuous distribution
 
 * The sampled data are from a continuous distribution with density function $f_{\theta}$
 * $f(x) \ge 0$ for all x
@@ -17,13 +16,13 @@ lines(xs,dene,col=2); legend("topleft",col=c(1,2),lty=1,bty="n",
 legend=c("Standard normal","Estimated"))
 ```
 
-##Histogram Version
+### Histogram Version
 
 ```{r}
 hist(xis,las=1,xlab="observed x",main="")
 ```
 
-## Nonparametric density estimation
+### Nonparametric density estimation
 
 Nonparametric estimation of f does not assume ahead of time that the density belongs to a certain class or family of parametric distribution functions
 $P(x- \frac{h}{2} < X \le n + \frac{h}{2}) = \int_{x-\frac{h}{2}}^{x + \frac{h}{2}} f(u)du \\ = F(x+\frac{h}{2}) - F(x-\frac{h}{2})$
@@ -34,7 +33,7 @@ $\int_{x-\frac{h}{2}}^{x + \frac{h}{2}} f(u)du \approx h f(x)$
 A reasonable estimate of f(x) is then
 $\hat{f}_{h}x = \frac{F(x+ \frac{h}{2}) - F(x - \frac{h}{2})}{h}$
 
-## The empirical distribution function
+### The empirical distribution function
 
 * Observation: $x_1, ..., X_n$
 * $F_{n}(x) = \frac{1}{n}(\# x_{i} \le x)$
@@ -46,7 +45,7 @@ $\hat{f}_{h}x = \frac{F(x+ \frac{h}{2}) - F(x - \frac{h}{2})}{h}$
 * If there are r observations with the same value $x_i$, $F_{n}$ has a jump of height $r/n$ at $x_i$
 * $F_{n}(x)$ gives the proportion of the numbers less than or equal to x
 
-## Example
+### Example
 
 ```{r}
 fhat=function(obx,x,h){
@@ -76,7 +75,7 @@ lty=1,bty="n")
 
 ```
 
-## Kernal function
+### Kernal function
 
 A kernal function K is a function such that
 
@@ -105,7 +104,7 @@ $\hat{f}x = \frac{1}{nh}\sum_{i=1}^{n} K(\frac{x-x_{i}}{h})$
 
 Kernel function provides a weighted value for the nubmer of $x_i$ near x. In particular, data values near x give more weight than those further away. A common choice of bandwidth is $h = 1.06n^{\frac{-1}{5}}min\{\sigma^2, IQR/1.34\} $
 
-## Triangle Kernal
+### Triangle Kernal
 
 ```{r}
 u=seq(-1,1,length=100); plot(u,1-abs(u),las=1,ylab="",type="l")

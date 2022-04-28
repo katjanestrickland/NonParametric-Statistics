@@ -11,7 +11,7 @@ EX = p \\
 VarX = p(1-p)
 $$
 
-## Binomial Distribution
+### Binomial Distribution
 
 Suppose there are n identical, independent Bernoulli random variables: X1...Xn. Each $X_i$ has probability p of being 1. Then $Y=\int_{i=1}^{n}X_i$ follows the binomial(n,p) distribution, where $EY=np$ and $VarY = np(1-p)$
 $$
@@ -64,13 +64,13 @@ n=30; y=23
 binom.test(23,30,0.5)
 ```
 
-## Normal approximation to the binomial distribution
+### Normal approximation to the binomial distribution
 
 * The approximation is best when the binomial distribution is symemtric- that is, when p =1/2
 * A frequently used rule of thumb is that the approximation is reasonable when np > 5 and n(1-p) >5
 * The approximation is especially useful for large values of n
 
-## Central Limit Theorum
+### Central Limit Theorum
 
 Let ${X_1,...,X_n}$ be a sequence of iid random variables with mean $\mu$ and variance $\sigma^2 < \infty$. Let $\bar{X} = \frac{1}{n} \int_{-\infty}^{x} e^-\frac{y^2}{2}\frac{1}{\sqrt{2\pi\sigma}}$. That is, $\frac{\sqrt(n)(\bar{X}_n - \mu)}{\sigma}$ has a standard normal distribution.
 
@@ -136,7 +136,7 @@ library(binom)
 binom.confint(x=23,n=30)
 ```
 
-## Bernoulli Power Calculations
+### Bernoulli Power Calculations
 
 
 

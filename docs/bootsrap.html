@@ -24,7 +24,7 @@
 <meta name="author" content="Katherine Wilson" />
 
 
-<meta name="date" content="2022-04-27" />
+<meta name="date" content="2022-04-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -260,7 +260,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="22.7" data-path="generalized-linear-model.html"><a href="generalized-linear-model.html#canonical-link-function"><i class="fa fa-check"></i><b>22.7</b> Canonical link function</a></li>
 </ul></li>
 <li class="chapter" data-level="23" data-path="generalized-additive-models.html"><a href="generalized-additive-models.html"><i class="fa fa-check"></i><b>23</b> Generalized Additive Models</a></li>
-<li class="chapter" data-level="24" data-path="bootsrap.html"><a href="bootsrap.html"><i class="fa fa-check"></i><b>24</b> Bootsrap</a></li>
+<li class="chapter" data-level="24" data-path="bootsrap.html"><a href="bootsrap.html"><i class="fa fa-check"></i><b>24</b> Bootsrap</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="bootsrap.html"><a href="bootsrap.html#bootstrap-estimation-of-bias"><i class="fa fa-check"></i><b>24.1</b> Bootstrap estimation of bias</a></li>
+<li class="chapter" data-level="24.2" data-path="bootsrap.html"><a href="bootsrap.html#bootstrap-estimation-of-variance"><i class="fa fa-check"></i><b>24.2</b> Bootstrap estimation of variance</a></li>
+<li class="chapter" data-level="24.3" data-path="bootsrap.html"><a href="bootsrap.html#bootsrap-confidence-intervals"><i class="fa fa-check"></i><b>24.3</b> Bootsrap confidence intervals</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -282,7 +287,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="bootsrap" class="section level1" number="24">
 <h1><span class="header-section-number">24</span> Bootsrap</h1>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="bootsrap.html#cb43-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">50</span>)</span>
+<span id="cb43-2"><a href="bootsrap.html#cb43-2" aria-hidden="true" tabindex="-1"></a>mx<span class="ot">=</span><span class="fu">mean</span>(x); vx<span class="ot">=</span><span class="fu">var</span>(x);mex<span class="ot">=</span><span class="fu">median</span>(x); q25<span class="ot">=</span><span class="fu">quantile</span>(x,<span class="at">prob=</span><span class="fl">0.25</span>)</span>
+<span id="cb43-3"><a href="bootsrap.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(mx,mex,vx,q25)</span></code></pre></div>
+<pre><code>##                                         25% 
+## -0.1241286 -0.2109748  1.3418396 -0.8900516</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="bootsrap.html#cb45-1" aria-hidden="true" tabindex="-1"></a>m<span class="ot">=</span><span class="fu">length</span>(x); B<span class="ot">=</span><span class="dv">500</span>; bmx<span class="ot">=</span>bvx<span class="ot">=</span>bq25<span class="ot">=</span>bmex<span class="ot">=</span><span class="fu">rep</span>(<span class="dv">0</span>,B)</span>
+<span id="cb45-2"><a href="bootsrap.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B){</span>
+<span id="cb45-3"><a href="bootsrap.html#cb45-3" aria-hidden="true" tabindex="-1"></a>si<span class="ot">=</span><span class="fu">sample</span>(x,<span class="at">size=</span>m,<span class="at">replace=</span>T)</span>
+<span id="cb45-4"><a href="bootsrap.html#cb45-4" aria-hidden="true" tabindex="-1"></a>bmx[i]<span class="ot">=</span><span class="fu">mean</span>(si)</span>
+<span id="cb45-5"><a href="bootsrap.html#cb45-5" aria-hidden="true" tabindex="-1"></a>bmex[i]<span class="ot">=</span><span class="fu">median</span>(si)</span>
+<span id="cb45-6"><a href="bootsrap.html#cb45-6" aria-hidden="true" tabindex="-1"></a>bq25[i]<span class="ot">=</span><span class="fu">quantile</span>(si,<span class="at">prob=</span><span class="fl">0.25</span>)</span>
+<span id="cb45-7"><a href="bootsrap.html#cb45-7" aria-hidden="true" tabindex="-1"></a>bvx[i]<span class="ot">=</span><span class="fu">var</span>(si)</span>
+<span id="cb45-8"><a href="bootsrap.html#cb45-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-9"><a href="bootsrap.html#cb45-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-10"><a href="bootsrap.html#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb45-11"><a href="bootsrap.html#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(bmx,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>,<span class="at">main=</span><span class="st">&quot;Mean&quot;</span>); <span class="fu">abline</span>(<span class="at">v=</span>mx,<span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb45-12"><a href="bootsrap.html#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(bvx,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>,<span class="at">main=</span><span class="st">&quot;Variance&quot;</span>); <span class="fu">abline</span>(<span class="at">v=</span>vx,<span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb45-13"><a href="bootsrap.html#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(bmex,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>,<span class="at">main=</span><span class="st">&quot;Median&quot;</span>); <span class="fu">abline</span>(<span class="at">v=</span>mex,<span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb45-14"><a href="bootsrap.html#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(bq25,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>,<span class="at">main=</span><span class="st">&quot;25% quantile&quot;</span>); <span class="fu">abline</span>(<span class="at">v=</span>q25,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div id="bootstrap-estimation-of-bias" class="section level2" number="24.1">
+<h2><span class="header-section-number">24.1</span> Bootstrap estimation of bias</h2>
+</div>
+<div id="bootstrap-estimation-of-variance" class="section level2" number="24.2">
+<h2><span class="header-section-number">24.2</span> Bootstrap estimation of variance</h2>
+</div>
+<div id="bootsrap-confidence-intervals" class="section level2" number="24.3">
+<h2><span class="header-section-number">24.3</span> Bootsrap confidence intervals</h2>
 
+</div>
 </div>
             </section>
 

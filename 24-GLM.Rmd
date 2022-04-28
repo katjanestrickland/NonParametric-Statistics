@@ -1,6 +1,5 @@
 # Generalized Linear Model
 
-## Review
 
 Let $\mu_i = EY_{i}$
 
@@ -23,7 +22,7 @@ log\frac{\mu_i}{1-\mu_i} = \beta_0 + \sum_{j=1}^p \beta_jx_{ij}
 \end{aligned}
 $$
 
-## GLM
+### GLM
 
 A generalized linear model (GLM) is defined by specifying two components:
 
@@ -32,7 +31,7 @@ A generalized linear model (GLM) is defined by specifying two components:
 
 Any monotone continuous and differentiable function will do, but there are some convenient and common choices for the standard GLMs
 
-## Exponential Family
+###  Exponential Family
 
 In a GLM the distribution of Y is from the exponential family of distributions which take the general form:
 $f(y \mid \theta, \phi) = exp\{ \frac{y\theta-b(\theta)}{a(\phi)} + c(y, \phi) \}$
@@ -46,18 +45,12 @@ $f(y \mid \theta, \phi) = exp\{ \frac{y\theta-b(\theta)}{a(\phi)} + c(y, \phi) \
 ** $b''(\theta)$ is called the variance function and describes how the variance relates to the mean using the known relatinship between $\theta$ and $\mu$
 
 
-## Normal Distribution
+### Normal Distribution
 
 $$ f(y\mid \mu, \sigma^2) = \frac{1}{\sqrt(2\pi\sigma)}exp{\Big\{-\frac{(y-\mu)^2}{2\sigma^2}} \Big\} \\
 = exp \Big\{\frac{y\mu - \frac{\mu^2}{2}}{{\sigma^2}} -  \frac{1}{2}\Big[\frac{y^2}{\sigma^2} + log(2\pi\sigma^2)\Big] \Big\} 
 $$
 
-
-## Poisson
-
-## Binomial
-
-## Canonical link function
 
 
 

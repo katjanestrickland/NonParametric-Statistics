@@ -1,7 +1,7 @@
 # Nonparametric Regression
 
 
-## Step up
+### Step up
 
 * Data: $(x_{i}, y_{i}), i = 1.,,,,n$
 * $y_i = m(x_{i}) + \epsilon_{i}, i =1,...,n$
@@ -10,7 +10,6 @@
 * $\epsilon_i$ iid from a continuous distribution, $E\epsilon_i = 0$
 * $E(y_{i} \mid x_{1}) = m(x_{i})$
 
-## Example
 
 ```{r}
 n=30; x=sort(runif(n,0,1)); y=sin(x*pi)+rnorm(n,0,0.1)
@@ -55,7 +54,7 @@ lines(x,m4$fit,col="darkgreen",lty=1,type="b")
 * Local averaging
 * Local linear regression
 
-## Example
+### Example
 
 ```{r}
 
@@ -69,11 +68,11 @@ fit3=ksmooth(xis, yis,band= 5);lines(fit3,col=3)
 
 ```
 
-## Local linear estimator
+### Local linear estimator
 
-## Local polynomial estimator
+### Local polynomial estimator
 
-## Example
+
 
 ```{r}
 est=locpoly(xis, bandwidth = 0.25); do=density(xis);

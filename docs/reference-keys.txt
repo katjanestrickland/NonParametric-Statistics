@@ -132,3 +132,7 @@ binomial-1
 canonical-link-function
 generalized-additive-models
 bootsrap
+bootstrap-estimation-of-bias
+bootstrap-estimation-of-variance
+bootsrap-confidence-intervals
+histogram-version

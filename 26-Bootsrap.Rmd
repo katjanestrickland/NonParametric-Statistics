@@ -1,2 +1,31 @@
 # Bootsrap
 
+
+
+```{r}
+x = rnorm(50)
+mx=mean(x); vx=var(x);mex=median(x); q25=quantile(x,prob=0.25)
+c(mx,mex,vx,q25)
+m=length(x); B=500; bmx=bvx=bq25=bmex=rep(0,B)
+for(i in 1:B){
+si=sample(x,size=m,replace=T)
+bmx[i]=mean(si)
+bmex[i]=median(si)
+bq25[i]=quantile(si,prob=0.25)
+bvx[i]=var(si)
+}
+
+par(mfrow=c(2,2))
+hist(bmx,xlab="",main="Mean"); abline(v=mx,col=2)
+hist(bvx,xlab="",main="Variance"); abline(v=vx,col=2)
+hist(bmex,xlab="",main="Median"); abline(v=mex,col=2)
+hist(bq25,xlab="",main="25% quantile"); abline(v=q25,col=2)
+
+```
+
+###  Bootstrap estimation of bias 
+
+###  Bootstrap estimation of variance
+
+###  Bootsrap confidence intervals 
+

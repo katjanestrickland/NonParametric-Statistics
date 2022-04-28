@@ -3,6 +3,9 @@ title: "NonParametric Stats"
 author: "Katherine Wilson"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+toc_float:
+  collapsed: yes
+  smooth_scroll: no
 ---
 
 # Hypothesis Testing

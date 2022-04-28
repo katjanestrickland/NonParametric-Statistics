@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>19 Nonparametric Regression | NonParametric Stats</title>
-  <meta name="description" content="19 Nonparametric Regression | NonParametric Stats" />
+  <title>18 Nonparametric Regression | NonParametric Stats</title>
+  <meta name="description" content="18 Nonparametric Regression | NonParametric Stats" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="19 Nonparametric Regression | NonParametric Stats" />
+  <meta property="og:title" content="18 Nonparametric Regression | NonParametric Stats" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="19 Nonparametric Regression | NonParametric Stats" />
+  <meta name="twitter:title" content="18 Nonparametric Regression | NonParametric Stats" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Katherine Wilson" />
 
 
-<meta name="date" content="2022-04-27" />
+<meta name="date" content="2022-04-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="density.html"/>
-<link rel="next" href="semi-parametric.html"/>
+<link rel="next" href="semi-parametric-regression-with-splines.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -140,44 +140,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> Binomial</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="binomial.html"><a href="binomial.html#binomial-distribution"><i class="fa fa-check"></i><b>2.1</b> Binomial Distribution</a></li>
-<li class="chapter" data-level="2.2" data-path="binomial.html"><a href="binomial.html#normal-approximation-to-the-binomial-distribution"><i class="fa fa-check"></i><b>2.2</b> Normal approximation to the binomial distribution</a></li>
-<li class="chapter" data-level="2.3" data-path="binomial.html"><a href="binomial.html#central-limit-theorum"><i class="fa fa-check"></i><b>2.3</b> Central Limit Theorum</a></li>
-<li class="chapter" data-level="2.4" data-path="binomial.html"><a href="binomial.html#bernoulli-power-calculations"><i class="fa fa-check"></i><b>2.4</b> Bernoulli Power Calculations</a></li>
+<li class="chapter" data-level="2.0.1" data-path="binomial.html"><a href="binomial.html#binomial-distribution"><i class="fa fa-check"></i><b>2.0.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="2.0.2" data-path="binomial.html"><a href="binomial.html#normal-approximation-to-the-binomial-distribution"><i class="fa fa-check"></i><b>2.0.2</b> Normal approximation to the binomial distribution</a></li>
+<li class="chapter" data-level="2.0.3" data-path="binomial.html"><a href="binomial.html#central-limit-theorum"><i class="fa fa-check"></i><b>2.0.3</b> Central Limit Theorum</a></li>
+<li class="chapter" data-level="2.0.4" data-path="binomial.html"><a href="binomial.html#bernoulli-power-calculations"><i class="fa fa-check"></i><b>2.0.4</b> Bernoulli Power Calculations</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html"><i class="fa fa-check"></i><b>3</b> Wilcoxon rank sum</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.1</b> Two sample T test</a></li>
-<li class="chapter" data-level="3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>3.2</b> Wilcoxon Rank Sum Test</a></li>
-<li class="chapter" data-level="3.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hypothesis"><i class="fa fa-check"></i><b>3.3</b> Hypothesis</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.3.1</b> Location Shift Model</a></li>
-<li class="chapter" data-level="3.3.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.3.2</b> Rank</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.4</b> Test Statistic</a></li>
-<li class="chapter" data-level="3.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.5</b> Distribution of W</a></li>
-<li class="chapter" data-level="3.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.6</b> Computation</a></li>
-<li class="chapter" data-level="3.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.7</b> Example</a></li>
-<li class="chapter" data-level="3.8" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.8</b> Hodges-Lehman Estimate</a></li>
-<li class="chapter" data-level="3.9" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.9</b> Example</a>
-<ul>
-<li class="chapter" data-level="3.9.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.9.1</b> Kolmogorov Smirnov</a></li>
-</ul></li>
+<li class="chapter" data-level="3.0.1" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#two-sample-t-test"><i class="fa fa-check"></i><b>3.0.1</b> Two sample T test</a></li>
+<li class="chapter" data-level="3.0.2" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>3.0.2</b> Wilcoxon Rank Sum Test</a></li>
+<li class="chapter" data-level="3.0.3" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hypothesis"><i class="fa fa-check"></i><b>3.0.3</b> Hypothesis</a></li>
+<li class="chapter" data-level="3.0.4" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#location-shift-model"><i class="fa fa-check"></i><b>3.0.4</b> Location Shift Model</a></li>
+<li class="chapter" data-level="3.0.5" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#rank"><i class="fa fa-check"></i><b>3.0.5</b> Rank</a></li>
+<li class="chapter" data-level="3.0.6" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#test-statistic"><i class="fa fa-check"></i><b>3.0.6</b> Test Statistic</a></li>
+<li class="chapter" data-level="3.0.7" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#distribution-of-w"><i class="fa fa-check"></i><b>3.0.7</b> Distribution of W</a></li>
+<li class="chapter" data-level="3.0.8" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#computation"><i class="fa fa-check"></i><b>3.0.8</b> Computation</a></li>
+<li class="chapter" data-level="3.0.9" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example"><i class="fa fa-check"></i><b>3.0.9</b> Example</a></li>
+<li class="chapter" data-level="3.0.10" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#hodges-lehman-estimate"><i class="fa fa-check"></i><b>3.0.10</b> Hodges-Lehman Estimate</a></li>
+<li class="chapter" data-level="3.0.11" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#example-1"><i class="fa fa-check"></i><b>3.0.11</b> Example</a></li>
+<li class="chapter" data-level="3.0.12" data-path="wilcoxon-rank-sum.html"><a href="wilcoxon-rank-sum.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>3.0.12</b> Kolmogorov Smirnov</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html"><i class="fa fa-check"></i><b>4</b> Sign test and Wilcoxon signed rank</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.1</b> Sign test and Wilcoxon signed rank test</a></li>
-<li class="chapter" data-level="4.2" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-2"><i class="fa fa-check"></i><b>4.2</b> Example</a></li>
-<li class="chapter" data-level="4.3" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-test"><i class="fa fa-check"></i><b>4.3</b> Large sample test</a></li>
-<li class="chapter" data-level="4.4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.4</b> Wilcoxon signed rank test</a></li>
-<li class="chapter" data-level="4.5" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-3"><i class="fa fa-check"></i><b>4.5</b> Example</a></li>
-<li class="chapter" data-level="4.6" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.6</b> Large sample approximation</a></li>
+<li class="chapter" data-level="4.0.1" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#sign-test-and-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.0.1</b> Sign test and Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.0.2" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#example-2"><i class="fa fa-check"></i><b>4.0.2</b> Example</a></li>
+<li class="chapter" data-level="4.0.3" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>4.0.3</b> Wilcoxon signed rank test</a></li>
+<li class="chapter" data-level="4.0.4" data-path="sign-test-and-wilcoxon-signed-rank.html"><a href="sign-test-and-wilcoxon-signed-rank.html#large-sample-approximation"><i class="fa fa-check"></i><b>4.0.4</b> Large sample approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html"><i class="fa fa-check"></i><b>5</b> Kruskal Wallis</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.1</b> F test</a></li>
-<li class="chapter" data-level="5.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.2</b> Ansari-Bradley</a></li>
-<li class="chapter" data-level="5.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.3</b> Kruskal-Wallis</a></li>
+<li class="chapter" data-level="5.0.1" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#f-test"><i class="fa fa-check"></i><b>5.0.1</b> F test</a></li>
+<li class="chapter" data-level="5.0.2" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#ansari-bradley"><i class="fa fa-check"></i><b>5.0.2</b> Ansari-Bradley</a></li>
+<li class="chapter" data-level="5.0.3" data-path="kruskal-wallis.html"><a href="kruskal-wallis.html#kruskal-wallis-1"><i class="fa fa-check"></i><b>5.0.3</b> Kruskal-Wallis</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="friedman-rank.html"><a href="friedman-rank.html"><i class="fa fa-check"></i><b>6</b> Friedman Rank</a></li>
 <li class="chapter" data-level="7" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>7</b> Correlation</a>
@@ -189,21 +183,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html"><i class="fa fa-check"></i><b>8</b> Comparing proportions in 2 X 2 tables</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#large-sample-test-procedures"><i class="fa fa-check"></i><b>8.1</b> Large sample test procedures</a></li>
-<li class="chapter" data-level="8.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#x2-chi-squared-test-of-homogeneity"><i class="fa fa-check"></i><b>8.2</b> 2X2 Chi-Squared test of homogeneity</a></li>
-<li class="chapter" data-level="8.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#x2-chi-squared-test-of-independence"><i class="fa fa-check"></i><b>8.3</b> 2X2 Chi-Squared test of independence</a></li>
+<li class="chapter" data-level="8.0.1" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#large-sample-test-procedures"><i class="fa fa-check"></i><b>8.0.1</b> Large sample test procedures</a></li>
+<li class="chapter" data-level="8.0.2" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#x2-chi-squared-test-of-homogeneity"><i class="fa fa-check"></i><b>8.0.2</b> 2X2 Chi-Squared test of homogeneity</a></li>
+<li class="chapter" data-level="8.0.3" data-path="comparing-proportions-in-2-x-2-tables.html"><a href="comparing-proportions-in-2-x-2-tables.html#x2-chi-squared-test-of-independence"><i class="fa fa-check"></i><b>8.0.3</b> 2X2 Chi-Squared test of independence</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="relative-riskodds-ratio.html"><a href="relative-riskodds-ratio.html"><i class="fa fa-check"></i><b>9</b> Relative Risk/Odds Ratio</a>
 <ul>
 <li class="chapter" data-level="9.0.1" data-path="relative-riskodds-ratio.html"><a href="relative-riskodds-ratio.html#relative-risk"><i class="fa fa-check"></i><b>9.0.1</b> Relative Risk</a></li>
 <li class="chapter" data-level="9.0.2" data-path="relative-riskodds-ratio.html"><a href="relative-riskodds-ratio.html#odds"><i class="fa fa-check"></i><b>9.0.2</b> Odds</a></li>
-<li class="chapter" data-level="9.0.3" data-path="relative-riskodds-ratio.html"><a href="relative-riskodds-ratio.html#example-4"><i class="fa fa-check"></i><b>9.0.3</b> Example</a></li>
+<li class="chapter" data-level="9.0.3" data-path="relative-riskodds-ratio.html"><a href="relative-riskodds-ratio.html#example-3"><i class="fa fa-check"></i><b>9.0.3</b> Example</a></li>
 <li class="chapter" data-level="9.0.4" data-path="relative-riskodds-ratio.html"><a href="relative-riskodds-ratio.html#hypergeometric-distribution"><i class="fa fa-check"></i><b>9.0.4</b> Hypergeometric distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="mh.html"><a href="mh.html"><i class="fa fa-check"></i><b>10</b> MH</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="mh.html"><a href="mh.html#binomial-coefficient"><i class="fa fa-check"></i><b>10.1</b> Binomial coefficient</a></li>
-<li class="chapter" data-level="10.2" data-path="mh.html"><a href="mh.html#multinomial-distribution"><i class="fa fa-check"></i><b>10.2</b> Multinomial Distribution</a></li>
+<li class="chapter" data-level="10.0.1" data-path="mh.html"><a href="mh.html#binomial-coefficient"><i class="fa fa-check"></i><b>10.0.1</b> Binomial coefficient</a></li>
+<li class="chapter" data-level="10.0.2" data-path="mh.html"><a href="mh.html#multinomial-distribution"><i class="fa fa-check"></i><b>10.0.2</b> Multinomial Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="mcnemars.html"><a href="mcnemars.html"><i class="fa fa-check"></i><b>11</b> McNemars</a></li>
 <li class="chapter" data-level="12" data-path="stuart.html"><a href="stuart.html"><i class="fa fa-check"></i><b>12</b> Stuart</a></li>
@@ -215,32 +209,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.0.4" data-path="correlation-1.html"><a href="correlation-1.html#cohens-kappa-1"><i class="fa fa-check"></i><b>13.0.4</b> Cohen’s kappa</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="friedman-rank-1.html"><a href="friedman-rank-1.html"><i class="fa fa-check"></i><b>14</b> Friedman Rank</a></li>
-<li class="chapter" data-level="15" data-path="linear.html"><a href="linear.html"><i class="fa fa-check"></i><b>15</b> Linear</a></li>
-<li class="chapter" data-level="16" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i><b>16</b> Multiple Regression</a></li>
-<li class="chapter" data-level="17" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>17</b> Logistic</a></li>
-<li class="chapter" data-level="18" data-path="density.html"><a href="density.html"><i class="fa fa-check"></i><b>18</b> Density</a>
+<li class="chapter" data-level="15" data-path="linear.html"><a href="linear.html"><i class="fa fa-check"></i><b>15</b> Linear</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="density.html"><a href="density.html#parametric-continuous-distribution"><i class="fa fa-check"></i><b>18.1</b> Parametric continuous distribution</a></li>
-<li class="chapter" data-level="18.2" data-path="density.html"><a href="density.html#nonparametric-density-estimation"><i class="fa fa-check"></i><b>18.2</b> Nonparametric density estimation</a></li>
-<li class="chapter" data-level="18.3" data-path="density.html"><a href="density.html#the-empirical-distribution-function"><i class="fa fa-check"></i><b>18.3</b> The empirical distribution function</a></li>
-<li class="chapter" data-level="18.4" data-path="density.html"><a href="density.html#example-5"><i class="fa fa-check"></i><b>18.4</b> Example</a></li>
-<li class="chapter" data-level="18.5" data-path="density.html"><a href="density.html#kernal-function"><i class="fa fa-check"></i><b>18.5</b> Kernal function</a></li>
-<li class="chapter" data-level="18.6" data-path="density.html"><a href="density.html#triangle-kernal"><i class="fa fa-check"></i><b>18.6</b> Triangle Kernal</a></li>
+<li class="chapter" data-level="15.1" data-path="linear.html"><a href="linear.html#multiple-regression"><i class="fa fa-check"></i><b>15.1</b> Multiple Regression</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html"><i class="fa fa-check"></i><b>19</b> Nonparametric Regression</a>
+<li class="chapter" data-level="16" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>16</b> Logistic</a></li>
+<li class="chapter" data-level="17" data-path="density.html"><a href="density.html"><i class="fa fa-check"></i><b>17</b> Density</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#step-up"><i class="fa fa-check"></i><b>19.1</b> Step up</a></li>
-<li class="chapter" data-level="19.2" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#example-6"><i class="fa fa-check"></i><b>19.2</b> Example</a>
+<li class="chapter" data-level="17.0.1" data-path="density.html"><a href="density.html#parametric-continuous-distribution"><i class="fa fa-check"></i><b>17.0.1</b> Parametric continuous distribution</a></li>
+<li class="chapter" data-level="17.0.2" data-path="density.html"><a href="density.html#histogram-version"><i class="fa fa-check"></i><b>17.0.2</b> Histogram Version</a></li>
+<li class="chapter" data-level="17.0.3" data-path="density.html"><a href="density.html#nonparametric-density-estimation"><i class="fa fa-check"></i><b>17.0.3</b> Nonparametric density estimation</a></li>
+<li class="chapter" data-level="17.0.4" data-path="density.html"><a href="density.html#the-empirical-distribution-function"><i class="fa fa-check"></i><b>17.0.4</b> The empirical distribution function</a></li>
+<li class="chapter" data-level="17.0.5" data-path="density.html"><a href="density.html#example-4"><i class="fa fa-check"></i><b>17.0.5</b> Example</a></li>
+<li class="chapter" data-level="17.0.6" data-path="density.html"><a href="density.html#kernal-function"><i class="fa fa-check"></i><b>17.0.6</b> Kernal function</a></li>
+<li class="chapter" data-level="17.0.7" data-path="density.html"><a href="density.html#triangle-kernal"><i class="fa fa-check"></i><b>17.0.7</b> Triangle Kernal</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html"><i class="fa fa-check"></i><b>18</b> Nonparametric Regression</a>
 <ul>
-<li class="chapter" data-level="19.2.1" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#nearest-neighborhood-method"><i class="fa fa-check"></i><b>19.2.1</b> Nearest Neighborhood method</a></li>
+<li class="chapter" data-level="18.0.1" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#step-up"><i class="fa fa-check"></i><b>18.0.1</b> Step up</a></li>
+<li class="chapter" data-level="18.0.2" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#nearest-neighborhood-method"><i class="fa fa-check"></i><b>18.0.2</b> Nearest Neighborhood method</a></li>
+<li class="chapter" data-level="18.0.3" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#example-5"><i class="fa fa-check"></i><b>18.0.3</b> Example</a></li>
+<li class="chapter" data-level="18.0.4" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#local-linear-estimator"><i class="fa fa-check"></i><b>18.0.4</b> Local linear estimator</a></li>
+<li class="chapter" data-level="18.0.5" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#local-polynomial-estimator"><i class="fa fa-check"></i><b>18.0.5</b> Local polynomial estimator</a></li>
 </ul></li>
-<li class="chapter" data-level="19.3" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#example-7"><i class="fa fa-check"></i><b>19.3</b> Example</a></li>
-<li class="chapter" data-level="19.4" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#local-linear-estimator"><i class="fa fa-check"></i><b>19.4</b> Local linear estimator</a></li>
-<li class="chapter" data-level="19.5" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#local-polynomial-estimator"><i class="fa fa-check"></i><b>19.5</b> Local polynomial estimator</a></li>
-<li class="chapter" data-level="19.6" data-path="nonparametric-regression.html"><a href="nonparametric-regression.html#example-8"><i class="fa fa-check"></i><b>19.6</b> Example</a></li>
+<li class="chapter" data-level="19" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html"><i class="fa fa-check"></i><b>19</b> Semi-Parametric Regression with splines</a>
+<ul>
+<li class="chapter" data-level="19.0.1" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#basis-functions"><i class="fa fa-check"></i><b>19.0.1</b> Basis functions</a></li>
+<li class="chapter" data-level="19.0.2" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#example-6"><i class="fa fa-check"></i><b>19.0.2</b> Example</a></li>
+<li class="chapter" data-level="19.0.3" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#broken-stick-model"><i class="fa fa-check"></i><b>19.0.3</b> Broken Stick Model</a></li>
+<li class="chapter" data-level="19.1" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#b-splines"><i class="fa fa-check"></i><b>19.1</b> B Splines</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#example-7"><i class="fa fa-check"></i><b>19.1.1</b> Example</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="semi-parametric.html"><a href="semi-parametric.html"><i class="fa fa-check"></i><b>20</b> Semi-Parametric</a></li>
-<li class="chapter" data-level="21" data-path="b-splines.html"><a href="b-splines.html"><i class="fa fa-check"></i><b>21</b> B Splines</a></li>
+<li class="chapter" data-level="19.2" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#generalized-linear-model"><i class="fa fa-check"></i><b>19.2</b> Generalized Linear Model</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#glm"><i class="fa fa-check"></i><b>19.2.1</b> GLM</a></li>
+<li class="chapter" data-level="19.2.2" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#exponential-family"><i class="fa fa-check"></i><b>19.2.2</b> Exponential Family</a></li>
+<li class="chapter" data-level="19.2.3" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#normal-distribution"><i class="fa fa-check"></i><b>19.2.3</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="semi-parametric-regression-with-splines.html"><a href="semi-parametric-regression-with-splines.html#generalized-additive-models"><i class="fa fa-check"></i><b>19.3</b> Generalized Additive Models</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="bootsrap.html"><a href="bootsrap.html"><i class="fa fa-check"></i><b>20</b> Bootsrap</a>
+<ul>
+<li class="chapter" data-level="20.0.1" data-path="bootsrap.html"><a href="bootsrap.html#bootstrap-estimation-of-bias"><i class="fa fa-check"></i><b>20.0.1</b> Bootstrap estimation of bias</a></li>
+<li class="chapter" data-level="20.0.2" data-path="bootsrap.html"><a href="bootsrap.html#bootstrap-estimation-of-variance"><i class="fa fa-check"></i><b>20.0.2</b> Bootstrap estimation of variance</a></li>
+<li class="chapter" data-level="20.0.3" data-path="bootsrap.html"><a href="bootsrap.html#bootsrap-confidence-intervals"><i class="fa fa-check"></i><b>20.0.3</b> Bootsrap confidence intervals</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -260,10 +274,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="nonparametric-regression" class="section level1" number="19">
-<h1><span class="header-section-number">19</span> Nonparametric Regression</h1>
-<div id="step-up" class="section level2" number="19.1">
-<h2><span class="header-section-number">19.1</span> Step up</h2>
+<div id="nonparametric-regression" class="section level1" number="18">
+<h1><span class="header-section-number">18</span> Nonparametric Regression</h1>
+<div id="step-up" class="section level3" number="18.0.1">
+<h3><span class="header-section-number">18.0.1</span> Step up</h3>
 <ul>
 <li>Data: <span class="math inline">\((x_{i}, y_{i}), i = 1.,,,,n\)</span></li>
 <li><span class="math inline">\(y_i = m(x_{i}) + \epsilon_{i}, i =1,...,n\)</span></li>
@@ -272,9 +286,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(\epsilon_i\)</span> iid from a continuous distribution, <span class="math inline">\(E\epsilon_i = 0\)</span></li>
 <li><span class="math inline">\(E(y_{i} \mid x_{1}) = m(x_{i})\)</span></li>
 </ul>
-</div>
-<div id="example-6" class="section level2" number="19.2">
-<h2><span class="header-section-number">19.2</span> Example</h2>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="nonparametric-regression.html#cb43-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">30</span>; x<span class="ot">=</span><span class="fu">sort</span>(<span class="fu">runif</span>(n,<span class="dv">0</span>,<span class="dv">1</span>)); y<span class="ot">=</span><span class="fu">sin</span>(x<span class="sc">*</span>pi)<span class="sc">+</span><span class="fu">rnorm</span>(n,<span class="dv">0</span>,<span class="fl">0.1</span>)</span>
 <span id="cb43-2"><a href="nonparametric-regression.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y); m1<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x); <span class="fu">abline</span>(m1)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
@@ -288,61 +299,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.71616 -0.24359  0.06758  0.24594  0.48140 
+## -0.52032 -0.19870  0.01687  0.22739  0.40622 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)  0.64795    0.13095   4.948  3.2e-05 ***
-## x            0.08651    0.22398   0.386    0.702    
+## (Intercept)   0.5575     0.0962   5.795 3.18e-06 ***
+## x             0.1216     0.1746   0.697    0.492    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.342 on 28 degrees of freedom
-## Multiple R-squared:  0.0053, Adjusted R-squared:  -0.03022 
-## F-statistic: 0.1492 on 1 and 28 DF,  p-value: 0.7022</code></pre>
+## Residual standard error: 0.2829 on 28 degrees of freedom
+## Multiple R-squared:  0.01704,    Adjusted R-squared:  -0.01807 
+## F-statistic: 0.4853 on 1 and 28 DF,  p-value: 0.4918</code></pre>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="nonparametric-regression.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = y ~ x + x2)
 ## 
 ## Residuals:
-##       Min        1Q    Median        3Q       Max 
-## -0.166123 -0.053245  0.005157  0.056727  0.185725 
+##      Min       1Q   Median       3Q      Max 
+## -0.17140 -0.06102  0.01239  0.05229  0.19515 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -0.04444    0.04656  -0.954    0.348    
-## x            4.32840    0.21207  20.410   &lt;2e-16 ***
-## x2          -4.35165    0.20998 -20.724   &lt;2e-16 ***
+## (Intercept) -0.03334    0.04744  -0.703    0.488    
+## x            3.99108    0.24641  16.197 1.98e-15 ***
+## x2          -3.97834    0.24705 -16.104 2.28e-15 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.08471 on 27 degrees of freedom
-## Multiple R-squared:  0.9412, Adjusted R-squared:  0.9368 
-## F-statistic:   216 on 2 and 27 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.08846 on 27 degrees of freedom
+## Multiple R-squared:  0.9073, Adjusted R-squared:  0.9004 
+## F-statistic: 132.1 on 2 and 27 DF,  p-value: 1.135e-14</code></pre>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="nonparametric-regression.html#cb49-1" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">sin</span>(x<span class="sc">*</span>pi<span class="sc">*</span><span class="dv">2</span>)<span class="sc">+</span><span class="fu">rnorm</span>(n,<span class="dv">0</span>,<span class="fl">0.1</span>); <span class="fu">plot</span>(x,y); m1<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x); <span class="fu">abline</span>(m1,<span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-3.png" width="672" /></p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="nonparametric-regression.html#cb50-1" aria-hidden="true" tabindex="-1"></a>m2<span class="ot">=</span><span class="fu">update</span>(m1,<span class="sc">~</span>.<span class="sc">+</span><span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>));<span class="fu">plot</span>(x,y); <span class="fu">abline</span>(m1,<span class="at">lty=</span><span class="dv">3</span>);</span>
 <span id="cb50-2"><a href="nonparametric-regression.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,m2<span class="sc">$</span>fit,<span class="at">col=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">2</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-4.png" width="672" /></p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="nonparametric-regression.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(x); cx5<span class="ot">=</span><span class="fu">cut</span>(x,<span class="dv">5</span>); <span class="fu">levels</span>(cx5);</span></code></pre></div>
-<pre><code>## [1] 0.02791506 0.99661324</code></pre>
-<pre><code>## [1] &quot;(0.0269,0.222]&quot; &quot;(0.222,0.415]&quot;  &quot;(0.415,0.609]&quot;  &quot;(0.609,0.803]&quot; 
-## [5] &quot;(0.803,0.998]&quot;</code></pre>
+<pre><code>## [1] 0.02845452 0.91776554</code></pre>
+<pre><code>## [1] &quot;(0.0276,0.206]&quot; &quot;(0.206,0.384]&quot;  &quot;(0.384,0.562]&quot;  &quot;(0.562,0.74]&quot;  
+## [5] &quot;(0.74,0.919]&quot;</code></pre>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="nonparametric-regression.html#cb54-1" aria-hidden="true" tabindex="-1"></a>cx5<span class="ot">=</span><span class="fu">cut</span>(x,<span class="dv">5</span>,<span class="at">include.lowest=</span>T); <span class="fu">levels</span>(cx5)</span></code></pre></div>
-<pre><code>## [1] &quot;[0.0269,0.222]&quot; &quot;(0.222,0.415]&quot;  &quot;(0.415,0.609]&quot;  &quot;(0.609,0.803]&quot; 
-## [5] &quot;(0.803,0.998]&quot;</code></pre>
+<pre><code>## [1] &quot;[0.0276,0.206]&quot; &quot;(0.206,0.384]&quot;  &quot;(0.384,0.562]&quot;  &quot;(0.562,0.74]&quot;  
+## [5] &quot;(0.74,0.919]&quot;</code></pre>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="nonparametric-regression.html#cb56-1" aria-hidden="true" tabindex="-1"></a>m3<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>cx5);</span>
 <span id="cb56-2"><a href="nonparametric-regression.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m3)<span class="sc">$</span>coef</span></code></pre></div>
 <pre><code>##                    Estimate Std. Error    t value     Pr(&gt;|t|)
-## (Intercept)       0.6211089 0.09190806   6.757937 4.403900e-07
-## cx5(0.222,0.415]  0.2874353 0.16780039   1.712960 9.909708e-02
-## cx5(0.415,0.609] -0.7964956 0.12585029  -6.328913 1.266533e-06
-## cx5(0.609,0.803] -1.5348934 0.12997762 -11.808905 1.012543e-11
-## cx5(0.803,0.998] -1.1562994 0.14238335  -8.121030 1.785084e-08</code></pre>
+## (Intercept)       0.5510877 0.08780423   6.276323 1.443660e-06
+## cx5(0.206,0.384]  0.3160596 0.12417393   2.545298 1.746608e-02
+## cx5(0.384,0.562] -0.5172925 0.13602573  -3.802902 8.204702e-04
+## cx5(0.562,0.74]  -1.3575528 0.18626090  -7.288448 1.229450e-07
+## cx5(0.74,0.919]  -1.2725515 0.11707231 -10.869791 5.804049e-11</code></pre>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="nonparametric-regression.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(y,cx5,mean)</span></code></pre></div>
-<pre><code>## [0.0269,0.222]  (0.222,0.415]  (0.415,0.609]  (0.609,0.803]  (0.803,0.998] 
-##      0.6211089      0.9085441     -0.1753867     -0.9137846     -0.5351906</code></pre>
+<pre><code>## [0.0276,0.206]  (0.206,0.384]  (0.384,0.562]   (0.562,0.74]   (0.74,0.919] 
+##     0.55108773     0.86714737     0.03379524    -0.80646507    -0.72146375</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="nonparametric-regression.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y); <span class="fu">abline</span>(m1,<span class="at">lty=</span><span class="dv">3</span>); <span class="fu">lines</span>(x,m2<span class="sc">$</span>fit,<span class="at">col=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
 <span id="cb60-2"><a href="nonparametric-regression.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,m3<span class="sc">$</span>fit,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lty=</span><span class="dv">5</span>,<span class="at">type=</span><span class="st">&quot;b&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-5.png" width="672" /></p>
@@ -351,16 +362,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb61-3"><a href="nonparametric-regression.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,m3<span class="sc">$</span>fit,<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lty=</span><span class="dv">5</span>,<span class="at">type=</span><span class="st">&quot;b&quot;</span>);</span>
 <span id="cb61-4"><a href="nonparametric-regression.html#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,m4<span class="sc">$</span>fit,<span class="at">col=</span><span class="st">&quot;darkgreen&quot;</span>,<span class="at">lty=</span><span class="dv">1</span>,<span class="at">type=</span><span class="st">&quot;b&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-4-6.png" width="672" /></p>
-<div id="nearest-neighborhood-method" class="section level3" number="19.2.1">
-<h3><span class="header-section-number">19.2.1</span> Nearest Neighborhood method</h3>
+</div>
+<div id="nearest-neighborhood-method" class="section level3" number="18.0.2">
+<h3><span class="header-section-number">18.0.2</span> Nearest Neighborhood method</h3>
 <ul>
 <li>Local averaging</li>
 <li>Local linear regression</li>
 </ul>
 </div>
-</div>
-<div id="example-7" class="section level2" number="19.3">
-<h2><span class="header-section-number">19.3</span> Example</h2>
+<div id="example-5" class="section level3" number="18.0.3">
+<h3><span class="header-section-number">18.0.3</span> Example</h3>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="nonparametric-regression.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(KernSmooth); <span class="fu">data</span>(geyser, <span class="at">package =</span> <span class="st">&quot;MASS&quot;</span>)</span></code></pre></div>
 <pre><code>## KernSmooth 2.23 loaded
 ## Copyright M. P. Wand 1997-2009</code></pre>
@@ -371,14 +382,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb64-5"><a href="nonparametric-regression.html#cb64-5" aria-hidden="true" tabindex="-1"></a>fit3<span class="ot">=</span><span class="fu">ksmooth</span>(xis, yis,<span class="at">band=</span> <span class="dv">5</span>);<span class="fu">lines</span>(fit3,<span class="at">col=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
-<div id="local-linear-estimator" class="section level2" number="19.4">
-<h2><span class="header-section-number">19.4</span> Local linear estimator</h2>
+<div id="local-linear-estimator" class="section level3" number="18.0.4">
+<h3><span class="header-section-number">18.0.4</span> Local linear estimator</h3>
 </div>
-<div id="local-polynomial-estimator" class="section level2" number="19.5">
-<h2><span class="header-section-number">19.5</span> Local polynomial estimator</h2>
-</div>
-<div id="example-8" class="section level2" number="19.6">
-<h2><span class="header-section-number">19.6</span> Example</h2>
+<div id="local-polynomial-estimator" class="section level3" number="18.0.5">
+<h3><span class="header-section-number">18.0.5</span> Local polynomial estimator</h3>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="nonparametric-regression.html#cb65-1" aria-hidden="true" tabindex="-1"></a>est<span class="ot">=</span><span class="fu">locpoly</span>(xis, <span class="at">bandwidth =</span> <span class="fl">0.25</span>); do<span class="ot">=</span><span class="fu">density</span>(xis);</span>
 <span id="cb65-2"><a href="nonparametric-regression.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(xis,<span class="at">prob=</span>T,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.6</span>),<span class="at">xlim=</span><span class="fu">range</span>(est<span class="sc">$</span>x,xis,do<span class="sc">$</span>x),<span class="at">las=</span><span class="dv">1</span>)</span>
 <span id="cb65-3"><a href="nonparametric-regression.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(est<span class="sc">$</span>x,est<span class="sc">$</span>y); <span class="fu">lines</span>(do<span class="sc">$</span>x,do<span class="sc">$</span>y,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div>
@@ -397,7 +405,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="density.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="semi-parametric.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="semi-parametric-regression-with-splines.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
