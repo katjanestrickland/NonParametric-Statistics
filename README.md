@@ -1,6 +1,6 @@
 ## STAT 501 NonParametric
 
-[Bookdown Link Page](https://katjanewilson.github.io/NonParametric-Statistics/)
+[Bookdown Link Page](https://katjanestrickland.github.io/NonParametric-Statistics/)
 
 ## Topics Overview
 
